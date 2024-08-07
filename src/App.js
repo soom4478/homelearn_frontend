@@ -1,21 +1,20 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from 'react';
+import Tabs from './components/Tabs';
+import './App.css';  
 
 function App() {
+  const tabData = [
+    { title: '공격방법' },
+    { title: '판정' },
+    { title: '구역' },
+    { title: '포지션' },
+    { title: '응원' }
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>homelearn2</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="title">야구 백과사전</h1>
+      <Tabs tabs={tabData} />
     </div>
   );
 }

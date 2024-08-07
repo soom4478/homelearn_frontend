@@ -1,0 +1,105 @@
+.tabs-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.tabs-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-titles {
+  display: flex;
+  margin-bottom: 10px; 
+}
+
+.tab-title {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px 4px 0 0;
+  background: #f1f1f1;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.tab-title.active {
+  background: white;
+  border-bottom: 5px solid rgba(126, 216, 207, 1);
+  font-weight: bold;
+}
+
+.tab-content {
+  padding: 10px;
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px; 
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column; 
+  gap: 10px; 
+}
+
+.image-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.image-button img {
+  width: auto; 
+  height: auto;
+  border-radius: 4px;
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  width: 300px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.close-modal:hover {
+  background: #ccc;
+}
