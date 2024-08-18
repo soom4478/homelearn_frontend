@@ -9,7 +9,8 @@ const BottomNav = () => {
   };
 
   return (
-    <nav className="wrapper">
+
+    <nav className="wrapper" id="footer">
       <div
         className={activeButton === 0 ? "active" : ""}
         onClick={() => handleClick(0)}
@@ -20,19 +21,25 @@ const BottomNav = () => {
         className={activeButton === 1 ? "active" : ""}
         onClick={() => handleClick(1)}
       >
-        구장
+        구단
       </div>
       <div
         className={activeButton === 2 ? "active" : ""}
         onClick={() => handleClick(2)}
       >
-        구단
+        먹거리
       </div>
       <div
         className={activeButton === 3 ? "active" : ""}
         onClick={() => handleClick(3)}
       >
         커뮤니티
+      </div>
+      <div
+        className={activeButton === 4 ? "active" : ""}
+        onClick={() => handleClick(4)}
+      >
+        마이
       </div>
     </nav>
   );

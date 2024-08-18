@@ -1,0 +1,57 @@
+nav{
+    width: 100%;
+    height: 100%;
+    background-color: #1B7065;
+    margin: 0;
+}
+
+#name {
+    color: white;
+    margin-top: 4%;
+    margin-left: 5%;
+    font-size: 150%;
+}
+
+.serch {
+    background-color: white;
+    color: #AEAEB2;
+    width: 90%;
+    height: 60px;
+    border-radius: 10px;
+    align-content: center;
+    padding-left: 10px;
+    margin: 0 auto;
+}
+
+.container2 {
+    background-color: white;
+    border-top-left-radius: 20px; 
+    border-top-right-radius: 20px;
+    height: 80%;
+    width: 100%;
+    margin-top: 5%;
+    display: block;
+    padding-top: 5%;
+}
+
+.display {
+    border: solid 2px;
+    border-color: #7ED8CF;
+    border-radius: 20px;
+    width: 70%;
+    height: 20%;
+    align-content: center;
+    margin: 0 auto;
+}
+
+.text {
+    margin-left: 5%;
+}
+
+#beer1 {
+    margin-bottom: 4px;
+}
+
+#beer2 {
+    margin-top: 4px;
+}

@@ -17,24 +17,30 @@ const Rule = () => {
 
   return (
     <div>
-      <div>
-        <p>경기 규칙 설명</p>
+      <div className="top-name">
+        <h3>경기 규칙 설명</h3>
       </div>
       <div className="container" onBlur={handleBlurContainer}>
         <label onClick={() => handleClickDropdown(1)}>
-          <div>야구 기초 알아보기 {activeDropdown === 1 ? "▲" : "▼"}</div>
+          <div className="drop" >
+            <div className="text">
+              <p>이것부터 알고 가자!</p>
+              <h4>야구 기초 알아보기</h4>
+            </div>
+            <div className="button">{activeDropdown === 1 ? "<" : ">"}</div>
+          </div>
         </label>
         {activeDropdown === 1 && <Dropdown1 />}
         <label onClick={() => handleClickDropdown(2)}>
-          <div>선수 포지션 알아보기 {activeDropdown === 2 ? "▲" : "▼"}</div>
+          <div className="drop">선수 포지션 알아보기 {activeDropdown === 2 ? "<" : ">"}</div>
         </label>
         {activeDropdown === 2 && <Dropdown2 />}
         <label onClick={() => handleClickDropdown(3)}>
-          <div>그라운드 알아보기 {activeDropdown === 3 ? "▲" : "▼"}</div>
+          <div className="drop">그라운드 알아보기 {activeDropdown === 3 ? "<" : ">"}</div>
         </label>
         {activeDropdown === 3 && <Dropdown3 />}
         <label onClick={() => handleClickDropdown(4)}>
-          <div>야구에서 득점 인정 {activeDropdown === 4 ? "▲" : "▼"}</div>
+          <div className="drop">야구에서 득점 인정 {activeDropdown === 4 ? "<" : ">"}</div>
         </label>
         {activeDropdown === 4 && <Dropdown4 />}
       </div>
