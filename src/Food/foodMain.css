@@ -1,9 +1,10 @@
-nav{
+nav {
     width: 100%;
     height: 100%;
     background-color: #1B7065;
     margin: 0;
     padding: 0;
+    overflow: auto; /* 스크롤바를 추가 */
 }
 
 #name {
@@ -14,7 +15,7 @@ nav{
     margin-bottom: 13px;
 }
 
-.serch {
+.search {
     background-color: white;
     color: #AEAEB2;
     width: 85%;
@@ -25,18 +26,25 @@ nav{
     text-align: left;
     align-content: center;
     margin-top: 0;
+    display: flex; /* flexbox 사용 */
+    align-items: center; /* 상하 가운데 정렬 */
+}
+
+#search_icon {
+    margin: auto;
 }
 
 #input {
-    width: 200px;
+    width: 250px;
     font-size: 16px;
+    border: none;
 }
 
 .container2 {
     background-color: white;
     border-top-left-radius: 20px; 
     border-top-right-radius: 20px;
-    height: 80%;
+    height: auto;
     width: 100%;
     margin-top: 3%;
     display: block;
@@ -44,6 +52,7 @@ nav{
     padding-left: 0;
     align-content: flex-start;
     text-align: left;
+    padding-bottom: 80px; /* 네비게이션바 높이만큼 padding-bottom 추가 */
 }
 
 .display {
@@ -55,11 +64,19 @@ nav{
     align-content: center;
     margin: 0 auto;
     text-align: left;
+    display: flex;
+}
+
+#beer_img {
+    width: 65px;
+    height: 62.72px;
+    margin: auto;
 }
 
 .text {
     margin-left: 5%;
     width: 200px;
+    margin: auto;
 }
 
 #beer1 {
@@ -75,9 +92,16 @@ nav{
 }
 
 #text2 {
-    margin-top: 5%;
+    margin-bottom: 15px;
+    margin-top: 30px;
     margin-left: 24px;
-    font-size: 15px;
+}
+
+#text2 p {
+    margin: 0;
+    font-size: 18px;
+    width: auto;
+    font-weight: bold;
 }
 
 .category {
@@ -113,9 +137,46 @@ nav{
     height: 132px;
     border: solid 1px;
     border-color: #E8ECEF;
+    display: flex;
 }
 
 .storeIfo {
+    align-content: flex-start;
+    width: auto;
+    margin-right: 24px;
+}
+
+#store_name {
+    font-size: 16px;
+    width: 199px;
+    height: 40px;
+    margin: 5px 0;
+    align-content: flex-end;
+}
+
+#img1 {
+    margin: auto 10px auto 24px;
+}
+
+#star_point {
     display: inline-block;
-    
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: #767676;
+}
+
+.order, .popurler {
+    display: flex;
+    margin-top: 5px;
+}
+
+#info_text, #populer_menu, #today_order {
+    font-size: 14;
+    color: #767676;
+    width: auto;
+    display: inline-block;
+}
+
+#populer_menu, #today_order {
+    margin-left: auto;
 }
