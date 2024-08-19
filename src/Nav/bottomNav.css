@@ -26,6 +26,7 @@ nav > div {
   bottom: 0;
   height: 83px;
   padding: 0;
+  font-size: 13px;
 }
 
 .wrapper div {
@@ -35,4 +36,9 @@ nav > div {
 
 .wrapper div.active {
   color: #009788;
+}
+
+#text {
+  margin-top: 5px;
+  width: auto;
 }
