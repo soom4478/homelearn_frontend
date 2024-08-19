@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import Rule from "./Rule/rule";
 import FoodMain from "./Food/foodMain";
@@ -16,6 +16,7 @@ function App() {
           <Route path="/food" element={<FoodMain />} />
           <Route path="/community" element={<div>커뮤니티 페이지</div>} />
           <Route path="/my" element={<div>마이 페이지</div>} />
+          <Route path="*" element={<Navigate to="/" />} /> {/* 기본 경로 설정 */}
         </Routes>
       </div>
     </Router>

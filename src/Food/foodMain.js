@@ -2,14 +2,17 @@ import React, { useState, useEffect, useRef } from "react";
 import "./foodMain.css";
 import arrowIcon from "../image/open2_1.png";
 import search_icon from "../image/search_icon.png";
+import search_icon2 from "../image/search_icon2.png";
 import beer from "../image/beer.png";
 import img1 from "../image/foodImg.png";
 import img2 from "../image/star.png";
+import img3 from "../image/foodImg2.png";
 
 const FoodMain = () => {
   const [activeBlock, setActiveBlock] = useState("전체");
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
+  const [searchIcon, setSearchIcon] = useState(search_icon); // search_icon 상태 추가
   const selectRef = useRef(null);
   const [selectWidth, setSelectWidth] = useState(0);
   const [containerHeight, setContainerHeight] = useState("500px");
@@ -23,6 +26,11 @@ const FoodMain = () => {
   };
 
   const handleSearchClick = () => {
+    setSearchIcon(search_icon2); // search_icon2로 변경
+    setTimeout(() => {
+      setSearchIcon(search_icon); // 1초 후에 다시 search_icon으로 변경
+    }, 100);
+
     const searchValue = searchTerm;
     console.log("Search Term:", searchValue);
     // 여기서 searchValue를 원하는 대로 사용할 수 있습니다.
@@ -45,6 +53,13 @@ const FoodMain = () => {
       popularMenu: "짬뽕만두",
       todayOrder: 14,
       imgSrc: img1,
+    },
+    {
+      name: "해피치즈스마일 대구삼성라이온즈파크점",
+      rating: 4.8,
+      popularMenu: "해피크림 SET",
+      todayOrder: 10,
+      imgSrc: img3,
     },
     {
       name: "치킨전문점 한치킨",
@@ -93,7 +108,7 @@ const FoodMain = () => {
         />
         <img
           id="search_icon"
-          src={search_icon}
+          src={searchIcon}
           alt="search_icon"
           onClick={handleSearchClick}
         />
