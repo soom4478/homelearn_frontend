@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./foodMain.css";
-// import img from "../image/foodImg.png"; // 이미지 파일을 import
+import img1 from "../image/foodImg.png"; // 이미지 파일을 import
 
 const FoodMain = () => {
   const [activeBlock, setActiveBlock] = useState("전체");
@@ -12,7 +12,7 @@ const FoodMain = () => {
   return (
     <nav>
       <h3 id="name">대구 삼성라이온즈 파크</h3>
-      <div className="serch"> <h3>검색어를 입력해주세요</h3> </div>
+      <div className="serch"> <p id="input">검색어를 입력해주세요</p> </div>
       <div className="container2">
         <div className="display">
           <div className="text">
@@ -36,7 +36,10 @@ const FoodMain = () => {
           ))}
         </div>
         <div className="store">
-          
+        <img id="img1" src={img1} alt="img1" /> {/* 이미지 파일을 src 속성에 추가 */}
+          <div className="storeIfo">
+            <h3>만두전문점 한만두</h3>
+          </div>
         </div>
       </div>
     </nav>

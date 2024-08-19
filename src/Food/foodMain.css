@@ -8,20 +8,27 @@ nav{
 
 #name {
     color: white;
-    margin-top: 4%;
-    margin-left: 5%;
-    font-size: 150%;
+    margin-top: 35px;
+    margin-left: 24px;
+    font-size: 20px;
 }
 
 .serch {
     background-color: white;
     color: #AEAEB2;
-    width: 90%;
-    height: 60px;
+    width: 85%;
+    height: 40px;
     border-radius: 10px;
-    padding-left: 10px;
+    padding-left: 15px;
     margin-left: 5%;
     text-align: left;
+    align-content: center;
+    margin-top: 0;
+}
+
+#input {
+    width: 200px;
+    font-size: 16px;
 }
 
 .container2 {
@@ -33,6 +40,7 @@ nav{
     margin-top: 3%;
     display: block;
     padding-top: 5%;
+    padding-left: 0;
     align-content: flex-start;
     text-align: left;
 }
@@ -41,8 +49,8 @@ nav{
     border: solid 1.5px;
     border-color: #7ED8CF;
     border-radius: 20px;
-    width: 70%;
-    height: 20%;
+    width: 85%;
+    height: 99px;
     align-content: center;
     margin: 0 auto;
     text-align: left;
@@ -50,29 +58,34 @@ nav{
 
 .text {
     margin-left: 5%;
+    width: 200px;
 }
 
 #beer1 {
     margin-bottom: 4px;
+    width: 100%;
+    font-size: 14px;
 }
 
 #beer2 {
     margin-top: 4px;
+    font-size: 18px;
+    margin-bottom: 0;
 }
 
 #text2 {
     margin-top: 5%;
-    margin-left: 15%;
+    margin-left: 24px;
     font-size: 15px;
 }
 
 .category {
-    margin-left: 15%;
+    margin-left: 24px;
 }
 
 #block {
-    width: 50px;
-    height: 20px;
+    width: 45px;
+    height: 23px;
     background-color: #DEE1E6;
     border-radius: 10px;
     font-size: 15px;
@@ -81,10 +94,12 @@ nav{
     align-content: center;
     display: inline-block;
     margin-left: 5px;
+
 }
 
 .category #block {
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .category #block.active {
@@ -92,12 +107,11 @@ nav{
     color: white;
 }
 
-.stroe {
-    width: 100px;
-    height: 100px;
+.store {
+    width: 100%;
+    height: 132px;
     border: solid 1px;
     border-color: #E8ECEF;
-    background-color: black;
 }
 
 .storeIfo {
