@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./foodMain.css";
+// import img from "../image/foodImg.png"; // 이미지 파일을 import
 
 const FoodMain = () => {
+  const [activeBlock, setActiveBlock] = useState("전체");
+
+  const handleClick = (category) => {
+    setActiveBlock(category);
+  };
+
   return (
     <nav>
       <h3 id="name">대구 삼성라이온즈 파크</h3>
@@ -13,7 +20,24 @@ const FoodMain = () => {
             <h3 id="beer2">맥주 주문하기</h3>
           </div>
         </div>
-        <h3>인기매장 픽업 주문하기</h3>
+        <div id="text2">
+          <h2>인기매장 픽업 주문하기</h2>
+        </div>
+        <div className="category">
+          {["전체", "분식", "치킨", "만두"].map((category) => (
+            <div
+              key={category}
+              id="block"
+              className={activeBlock === category ? "active" : ""}
+              onClick={() => handleClick(category)}
+            >
+              {category}
+            </div>
+          ))}
+        </div>
+        <div className="store">
+          
+        </div>
       </div>
     </nav>
   );

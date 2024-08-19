@@ -3,6 +3,7 @@ nav{
     height: 100%;
     background-color: #1B7065;
     margin: 0;
+    padding: 0;
 }
 
 #name {
@@ -18,9 +19,9 @@ nav{
     width: 90%;
     height: 60px;
     border-radius: 10px;
-    align-content: center;
     padding-left: 10px;
-    margin: 0 auto;
+    margin-left: 5%;
+    text-align: left;
 }
 
 .container2 {
@@ -29,19 +30,22 @@ nav{
     border-top-right-radius: 20px;
     height: 80%;
     width: 100%;
-    margin-top: 5%;
+    margin-top: 3%;
     display: block;
     padding-top: 5%;
+    align-content: flex-start;
+    text-align: left;
 }
 
 .display {
-    border: solid 2px;
+    border: solid 1.5px;
     border-color: #7ED8CF;
     border-radius: 20px;
     width: 70%;
     height: 20%;
     align-content: center;
     margin: 0 auto;
+    text-align: left;
 }
 
 .text {
@@ -54,4 +58,49 @@ nav{
 
 #beer2 {
     margin-top: 4px;
+}
+
+#text2 {
+    margin-top: 5%;
+    margin-left: 15%;
+    font-size: 15px;
+}
+
+.category {
+    margin-left: 15%;
+}
+
+#block {
+    width: 50px;
+    height: 20px;
+    background-color: #DEE1E6;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #767676;
+    text-align: center;
+    align-content: center;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.category #block {
+    cursor: pointer;
+}
+
+.category #block.active {
+    background-color: #009788;
+    color: white;
+}
+
+.stroe {
+    width: 100px;
+    height: 100px;
+    border: solid 1px;
+    border-color: #E8ECEF;
+    background-color: black;
+}
+
+.storeIfo {
+    display: inline-block;
+    
 }

@@ -5,8 +5,8 @@ import FoodMain from "./Food/foodMain";
 
 function App() {
   return (
-    <Rule />
-    // <FoodMain />
+    // <Rule />
+    <FoodMain />
   );
 }
 
