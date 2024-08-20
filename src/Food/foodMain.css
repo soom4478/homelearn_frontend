@@ -1,20 +1,54 @@
-nav{
+/* foodMain.css */
+nav {
     width: 100%;
     height: 100%;
     background-color: #1B7065;
     margin: 0;
     padding: 0;
+    overflow: auto; /* 스크롤바를 추가 */
 }
 
-#name {
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px; /* 위치 조정 */
+}
+
+.dropdown select {
+    width: auto;
     color: white;
     margin-top: 35px;
     margin-left: 24px;
-    font-size: 20px;
     margin-bottom: 13px;
+    font-size: 20px;
+    color: white;
+    background-color: #1B7065;
+    border: none;
+    outline: none; /* 주황색 선 제거 */
+    appearance: none; /* 기본 드롭다운 화살표 제거 */
+    -webkit-appearance: none; /* 기본 드롭다운 화살표 제거 (웹킷 브라우저용) */
+    -moz-appearance: none; /* 기본 드롭다운 화살표 제거 (모질라 브라우저용) */
+    display: inline-block; /* 인라인 블록으로 설정 */
+    vertical-align: middle; /* 수직 정렬 */
+    padding-right: 30px; /* 화살표 공간 확보 */
 }
 
-.serch {
+.dropdown option {
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    padding: 5px;
+}
+
+.arrow-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+    pointer-events: none; /* 화살표 클릭 불가능하게 설정 */
+}
+  
+
+.search {
     background-color: white;
     color: #AEAEB2;
     width: 85%;
@@ -23,20 +57,32 @@ nav{
     padding-left: 15px;
     margin-left: 5%;
     text-align: left;
+    font-weight: bold;
     align-content: center;
     margin-top: 0;
+    display: flex; /* flexbox 사용 */
+    align-items: center; /* 상하 가운데 정렬 */
+}
+
+.search input {
+    outline: none; /* 주황색 선 제거 */
+}
+
+#search_icon {
+    margin: auto;
 }
 
 #input {
-    width: 200px;
+    width: 250px;
     font-size: 16px;
+    border: none;
 }
 
 .container2 {
     background-color: white;
     border-top-left-radius: 20px; 
     border-top-right-radius: 20px;
-    height: 80%;
+    height: auto;
     width: 100%;
     margin-top: 3%;
     display: block;
@@ -44,6 +90,7 @@ nav{
     padding-left: 0;
     align-content: flex-start;
     text-align: left;
+    padding-bottom: 80px; /* 네비게이션바 높이만큼 padding-bottom 추가 */
 }
 
 .display {
@@ -55,11 +102,19 @@ nav{
     align-content: center;
     margin: 0 auto;
     text-align: left;
+    display: flex;
+}
+
+#beer_img {
+    width: 65px;
+    height: 62.72px;
+    margin: auto;
 }
 
 .text {
     margin-left: 5%;
     width: 200px;
+    margin: auto;
 }
 
 #beer1 {
@@ -75,9 +130,16 @@ nav{
 }
 
 #text2 {
-    margin-top: 5%;
+    margin-bottom: 15px;
+    margin-top: 30px;
     margin-left: 24px;
-    font-size: 15px;
+}
+
+#text2 p {
+    margin: 0;
+    font-size: 18px;
+    width: auto;
+    font-weight: bold;
 }
 
 .category {
@@ -113,9 +175,48 @@ nav{
     height: 132px;
     border: solid 1px;
     border-color: #E8ECEF;
+    display: flex;
 }
 
 .storeIfo {
+    align-content: flex-start;
+    width: auto;
+    margin-right: 24px;
+}
+
+#store_name {
+    font-size: 16px;
+    width: 199px;
+    height: 40px;
+    margin: 5px 0;
+    align-content: flex-end;
+}
+
+#img1 {
+    margin: auto 10px auto 24px;
+    width: 307px;
+    height: 108px;
+}
+
+#star_point {
     display: inline-block;
-    
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: #767676;
+}
+
+.order, .popurler {
+    display: flex;
+    margin-top: 5px;
+}
+
+#info_text, #populer_menu, #today_order {
+    font-size: 14;
+    color: #767676;
+    width: auto;
+    display: inline-block;
+}
+
+#populer_menu, #today_order {
+    margin-left: auto;
 }
