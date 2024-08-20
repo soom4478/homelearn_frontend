@@ -1,12 +1,11 @@
-import React from "react";
-import "./App.css";
-import Rule from "./Rule/rule";
-import FoodMain from "./Food/foodMain";
+import React from 'react';
+import Homeground from './Homeground/Samsung';  // Homeground 컴포넌트를 import
 
-function App() {
+function App() {  
   return (
-    // <Rule />
-    <FoodMain />
+    <div className="App">
+      <Homeground />  {/* Homeground 컴포넌트를 사용 */}
+    </div>
   );
 }
 
