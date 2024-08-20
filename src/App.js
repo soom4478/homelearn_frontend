@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import Homeground from './Homeground/Samsung';  // Homeground 컴포넌트를 import
-=======
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
@@ -10,15 +6,9 @@ import FoodMain from "./Food/foodMain";
 import FoodDetail from "./Food/foodDetail";
 import BottomNav from "./Nav/bottomNav";
 import { StoreProvider } from "./Food/StoreContext";
->>>>>>> e331f587900f8967bcc57f576ab8c6288e7bab8e
 
-function App() {  
+function App() {
   return (
-<<<<<<< HEAD
-    <div className="App">
-      <Homeground />  {/* Homeground 컴포넌트를 사용 */}
-    </div>
-=======
     <StoreProvider>
       <Router>
         <div>
@@ -35,7 +25,6 @@ function App() {
         </div>
       </Router>
     </StoreProvider>
->>>>>>> e331f587900f8967bcc57f576ab8c6288e7bab8e
   );
 }
 
