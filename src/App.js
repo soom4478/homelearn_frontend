@@ -3,23 +3,28 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import "./App.css";
 import Rule from "./Rule/rule";
 import FoodMain from "./Food/foodMain";
+import FoodDetail from "./Food/foodDetail";
 import BottomNav from "./Nav/bottomNav";
+import { StoreProvider } from "./Food/StoreContext";
 
 function App() {
   return (
-    <Router>
-      <div>
-        <BottomNav />
-        <Routes>
-          <Route path="/" element={<div>홈</div>} />
-          <Route path="/team" element={<div>구단 페이지</div>} />
-          <Route path="/food" element={<FoodMain />} />
-          <Route path="/community" element={<div>커뮤니티 페이지</div>} />
-          <Route path="/my" element={<div>마이 페이지</div>} />
-          <Route path="*" element={<Navigate to="/" />} /> {/* 기본 경로 설정 */}
-        </Routes>
-      </div>
-    </Router>
+    <StoreProvider>
+      <Router>
+        <div>
+          <BottomNav />
+          <Routes>
+            <Route path="/" element={<div>홈</div>} />
+            <Route path="/team" element={<div>구단 페이지</div>} />
+            <Route path="/food" element={<FoodMain />} />
+            <Route path="/food/:storeId" element={<FoodDetail />} />
+            <Route path="/community" element={<div>커뮤니티 페이지</div>} />
+            <Route path="/my" element={<div>마이 페이지</div>} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </div>
+      </Router>
+    </StoreProvider>
   );
 }
 

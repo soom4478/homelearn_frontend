@@ -1,21 +1,23 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { useStore } from "./StoreContext";
 import "./foodMain.css";
 import arrowIcon from "../image/open2_1.png";
 import search_icon from "../image/search_icon.png";
 import search_icon2 from "../image/search_icon2.png";
 import beer from "../image/beer.png";
-import img1 from "../image/foodImg.png";
-import img2 from "../image/star.png";
-import img3 from "../image/foodImg2.png";
+import star from "../image/star.png";
 
 const FoodMain = () => {
+  const { stores } = useStore();
   const [activeBlock, setActiveBlock] = useState("전체");
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
-  const [searchIcon, setSearchIcon] = useState(search_icon); // search_icon 상태 추가
+  const [searchIcon, setSearchIcon] = useState(search_icon);
   const selectRef = useRef(null);
   const [selectWidth, setSelectWidth] = useState(0);
   const [containerHeight, setContainerHeight] = useState("500px");
+  const navigate = useNavigate();
 
   const handleClick = (category) => {
     setActiveBlock(category);
@@ -26,14 +28,13 @@ const FoodMain = () => {
   };
 
   const handleSearchClick = () => {
-    setSearchIcon(search_icon2); // search_icon2로 변경
+    setSearchIcon(search_icon2);
     setTimeout(() => {
-      setSearchIcon(search_icon); // 1초 후에 다시 search_icon으로 변경
+      setSearchIcon(search_icon);
     }, 100);
 
     const searchValue = searchTerm;
     console.log("Search Term:", searchValue);
-    // 여기서 searchValue를 원하는 대로 사용할 수 있습니다.
   };
 
   const handleSelectChange = (event) => {
@@ -46,30 +47,6 @@ const FoodMain = () => {
     }
   }, [selectedOption]);
 
-  const stores = [
-    {
-      name: "만두전문점 한만두",
-      rating: 4.8,
-      popularMenu: "짬뽕만두",
-      todayOrder: 14,
-      imgSrc: img1,
-    },
-    {
-      name: "해피치즈스마일 대구삼성라이온즈파크점",
-      rating: 4.8,
-      popularMenu: "해피크림 SET",
-      todayOrder: 10,
-      imgSrc: img3,
-    },
-    {
-      name: "치킨전문점 한치킨",
-      rating: 4.5,
-      popularMenu: "양념치킨",
-      todayOrder: 20,
-      imgSrc: img1,
-    },
-  ];
-
   useEffect(() => {
     if (stores.length > 1) {
       setContainerHeight("auto");
@@ -77,6 +54,10 @@ const FoodMain = () => {
       setContainerHeight("500px");
     }
   }, [stores.length]);
+
+  const handleStoreClick = (storeId) => {
+    navigate(`/food/${storeId}`);
+  };
 
   return (
     <nav>
@@ -95,7 +76,7 @@ const FoodMain = () => {
           src={arrowIcon}
           alt="arrow_icon"
           className="arrow-icon"
-          style={{ left: `${selectWidth + 10}px` }} // 화살표 위치 조정
+          style={{ left: `${selectWidth + 10}px` }}
         />
       </div>
       <div className="search">
@@ -137,11 +118,11 @@ const FoodMain = () => {
           ))}
         </div>
         {stores.map((store, index) => (
-          <div className="store" key={index}>
-            <img id="img1" src={store.imgSrc} alt="img1" /> {/* 이미지 파일을 src 속성에 추가 */}
+          <div className="store" key={index} onClick={() => handleStoreClick(store.id)}>
+            <img id="img1" src={store.imgSrc} alt="img1" />
             <div className="storeIfo">
               <h3 id="store_name">{store.name}</h3>
-              <img id="img2" src={img2} alt="img2" />
+              <img id="star" src={star} alt="star" />
               <p id="star_point">{store.rating}</p>
               <div className="popurler">
                 <p id="info_text">인기메뉴</p>
