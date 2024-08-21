@@ -1,3 +1,9 @@
+.container {
+    height: auto;
+    overflow: auto;
+    padding-bottom: 100px; /* 하단 네비게이션바 높이만큼 여백 추가 */
+}
+
 .container3 {
     width: auto;
     height: 160px;
@@ -74,10 +80,29 @@
     color: #009788;
 }
 
-#scheduleText {
-    margin: 32px 0 15px 24px;
+#titleText {
+    margin: 32px 0 0 24px;
     font-size: 18px;
     font-weight: bold;
+}
+
+.nav1 {
+    width: 100%;
+    height: 100%; /* nav의 고정 높이 설정 */
+    background-color: #FFFFFF;
+    overflow-x: auto; /* 가로 스크롤 활성화 */
+    white-space: nowrap; /* 줄바꿈 방지 */
+    border: 0;
+    margin-top: 15px;
+}
+
+.schedule {
+    width: auto; /* 예시로 긴 너비 설정 */
+    height: 250px;
+    display: flex;
+    overflow-x: auto; /* 가로 스크롤 활성화 */
+    white-space: nowrap; /* 줄바꿈 방지 */
+    margin-right: 24px;
 }
 
 .scheduleCon {
@@ -94,6 +119,7 @@
     background-color: grey;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    display: flex;
 }
 
 .scheduleCon2 {
@@ -103,7 +129,7 @@
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     display: inline-block;
-    position: relative; /* 추가 */
+    position: relative;
 }
 
 #title, #time, #ground {
@@ -121,6 +147,7 @@
     margin-left: 20px;
     margin-top: 13px;
     font-size: 16px;
+    float: left;
 }
 
 #title1, #title2, #title3 {
@@ -144,6 +171,10 @@
     color: #767676;
     margin-left: 20px;
     margin-top: 5px;
+    display: block;
+    width: auto;
+    text-align: start;
+    float: inline-start;
 }
 
 #reservation {
@@ -174,7 +205,90 @@
         background-color: #009788;
     }
 }
+
 #buttonText {
     font-size: 14px;
     color: white;
+}
+
+.container5, .container6 {
+    width: 327px;
+    height: 99px;
+    border-radius: 20px;
+    color: white;
+    font-size: 18px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center; /* 상하 중앙 정렬 */
+    justify-content: space-between; /* 좌우 공간 분배 */
+}
+
+.container5 {
+    background-color: #6563F1;
+    margin-top: 40px;
+}
+
+.container6 {
+    background-color: #FF60BF;
+    margin-top: 20px;
+}
+
+#rinkText {
+    display: inline-block;
+    margin-left: 24px;
+}
+
+#icon1 {
+    display: inline-block;
+    margin-right: 29px;
+}
+
+#explan {
+    margin-left: 24px;
+}
+
+.nav2 {
+    width: 100%;
+    height: 100%; /* nav의 고정 높이 설정 */
+    background-color: #FFFFFF;
+    overflow-x: auto; /* 가로 스크롤 활성화 */
+    white-space: nowrap; /* 줄바꿈 방지 */
+    border: 0;
+    margin-top: 15px;
+}
+
+.con1 {
+    width: auto; /* 예시로 긴 너비 설정 */
+    height: 250px;
+    display: flex;
+    overflow-x: auto; /* 가로 스크롤 활성화 */
+    white-space: nowrap; /* 줄바꿈 방지 */
+    margin-right: 24px;
+}
+
+.con2 {
+    width: 311px;
+    height: 128px;
+    margin-left: 24px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.conTop {
+    width: 100%;
+    height: 48px;
+    background-color: #E8ECEF;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+}
+
+.conBottom {
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: inline-block;
+    position: relative;
 }

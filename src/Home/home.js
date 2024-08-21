@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "./home.css";
+import { schedules } from "./scheduleImfo";
+import star from "../image/star_icon.png"
+import pizza from "../image/pizza_icon.png"
 
 const Home = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -8,9 +11,9 @@ const Home = () => {
     setIsClicked(true);
     setTimeout(() => {
       setIsClicked(false);
-    }, 100); // 3초 후에 원래 색으로 돌아옴
+    }, 100);
   };
-  
+
   const days = [
     { day: "05", label: "월" },
     { day: "06", label: "화" },
@@ -39,28 +42,64 @@ const Home = () => {
         </div>
       </div>
       <div>
-        <p id="scheduleText">경기일정</p>
-        <div className="scheduleCon">
-          <div className="scheduleCon1"></div>
-          <div className="scheduleCon2">
-            <div className="scheduleImfo">
-              <div id="title">
-                <p id="title1">LG트윈즈</p>
-                <p id="title2">VS</p>
-                <p id="title3">두산베어스</p>
+        <p id="titleText">경기일정</p>
+        <nav className="nav1">
+          <div className="schedule">
+            {schedules.map((schedule, index) => (
+              <div className="scheduleCon" key={index}>
+                <div className="scheduleCon1"></div>
+                <div className="scheduleCon2">
+                  <div className="scheduleImfo">
+                    <div id="title">
+                      <p id="title1">{schedule.team1}</p>
+                      <p id="title2">VS</p>
+                      <p id="title3">{schedule.team2}</p>
+                    </div>
+                    <p id="time">{schedule.time}</p>
+                    <p id="ground">{schedule.ground}</p>
+                    <button
+                      id="reservation"
+                      className={isClicked ? "clicked" : ""}
+                      onClick={handleButtonClick}
+                    >
+                      <p id="buttonText">바로예매</p>
+                    </button>
+                  </div>
+                </div>
               </div>
-              <p id="time">18:30</p>
-              <p id="ground">잠실종합운동장</p>
-              <button
-                id="reservation"
-                className={isClicked ? "clicked" : ""}
-                onClick={handleButtonClick}
-              >
-                <p id="buttonText">바로예매</p>
-              </button>
-            </div>
+            ))}
           </div>
+        </nav>
+
+        <div className="container5">
+          <div id="rinkText">통합예매 바로가기</div>
+          <img id="icon1" src={star} alt="star" />
         </div>
+        <div className="container6">
+          <div id="rinkText">지금 있는 구장에서<br/>먹거리 주문하기</div>
+          <img id="icon1" src={pizza} alt="pizza" />
+        </div>
+      </div>
+
+      <div>
+        <p id="titleText">야구 백과사전</p>
+        <p id="explan">어려운 야구 용어 한눈에 정리!</p>
+        <nav className="nav2">
+          <div className="con1">
+            {schedules.map((schedule, index) => (
+              <div className="con2" key={index}>
+                <div className="conTop">
+                  <p id="dicseption">홈런이란?</p>
+                </div>
+                <div className="conBottom">
+                  <div className="conImfo">
+                    <p>외야의 담장을 넘어가 타자를 포함한 모든 주자들을 홈으로 불러들이는 것</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </nav>
       </div>
     </div>
   );
