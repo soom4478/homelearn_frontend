@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
-import Rule from "./Rule/rule";
+import Home from "./Home/home";
+// import Rule from "./Rule/rule";
 import FoodMain from "./Food/foodMain";
 import FoodDetail from "./Food/foodDetail";
 import BottomNav from "./Nav/bottomNav";
@@ -14,7 +15,7 @@ function App() {
         <div>
           <BottomNav />
           <Routes>
-            <Route path="/" element={<div>홈</div>} />
+            <Route path="/" element={<Home />} />
             <Route path="/team" element={<div>구단 페이지</div>} />
             <Route path="/food" element={<FoodMain />} />
             <Route path="/food/:storeId" element={<FoodDetail />} />

@@ -118,13 +118,13 @@ nav {
 }
 
 #beer1 {
-    margin-bottom: 4px;
     width: 100%;
     font-size: 14px;
+    margin: 0;
 }
 
 #beer2 {
-    margin-top: 4px;
+    margin-top: 8px;
     font-size: 18px;
     margin-bottom: 0;
 }
@@ -215,6 +215,7 @@ nav {
     color: #767676;
     width: auto;
     display: inline-block;
+    margin: 0;
 }
 
 #populer_menu, #today_order {
