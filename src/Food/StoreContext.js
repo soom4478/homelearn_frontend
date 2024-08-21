@@ -30,7 +30,7 @@ export const StoreProvider = ({ children }) => {
       popularMenu: "양념치킨",
       todayOrder: 20,
       imgSrc: "https://thenaum.cdn-nhncommerce.com/data/goods/20/08/35/1000005511/1000005511_detail_017.jpg",
-    },
+    }
   ]);
 
   return (

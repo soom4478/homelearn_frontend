@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./home.css";
 
 const Home = () => {
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleButtonClick = () => {
+    setIsClicked(true);
+    setTimeout(() => {
+      setIsClicked(false);
+    }, 100); // 3초 후에 원래 색으로 돌아옴
+  };
+  
   const days = [
     { day: "05", label: "월" },
     { day: "06", label: "화" },
@@ -12,7 +21,7 @@ const Home = () => {
     { day: "11", label: "일" },
   ];
 
-  const selectedIndex = 0; // 인덱스 설정
+  const selectedIndex = 4; // 인덱스 설정
 
   return (
     <div className="container">
@@ -35,10 +44,20 @@ const Home = () => {
           <div className="scheduleCon1"></div>
           <div className="scheduleCon2">
             <div className="scheduleImfo">
-              <p id="title">LE트윈즈 VS 두산베어스</p>
+              <div id="title">
+                <p id="title1">LG트윈즈</p>
+                <p id="title2">VS</p>
+                <p id="title3">두산베어스</p>
+              </div>
               <p id="time">18:30</p>
               <p id="ground">잠실종합운동장</p>
-              <button id="reservation">바로예매</button>
+              <button
+                id="reservation"
+                className={isClicked ? "clicked" : ""}
+                onClick={handleButtonClick}
+              >
+                <p id="buttonText">바로예매</p>
+              </button>
             </div>
           </div>
         </div>

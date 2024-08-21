@@ -66,6 +66,8 @@
     color: white;
     margin: 0;
     width: auto;
+    height: auto;
+    text-align: center;
 }
 
 #day.selected, #day2.selected {
@@ -83,7 +85,7 @@
     height: 230px;
     margin-left: 24px;
     border-radius: 10px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.15);
 }
 
 .scheduleCon1 {
@@ -101,10 +103,78 @@
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     display: inline-block;
+    position: relative; /* 추가 */
 }
 
 #title, #time, #ground {
     margin: auto 0;
     width: auto;
+    display: inline-block;
 }
 
+#time, #reservation {
+    display: inline-block;
+}
+
+#title {
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 13px;
+    font-size: 16px;
+}
+
+#title1, #title2, #title3 {
+    display: inline-block;
+}
+
+#title2 {
+    margin: 0 3px;
+}
+
+#time {
+    font-size: 14px;
+    color: #767676;
+    float: right;
+    margin-top: 13px;
+    margin-right: 20px;
+}
+
+#ground {
+    font-size: 14px;
+    color: #767676;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+#reservation {
+    position: absolute; /* 추가 */
+    right: 20px; /* 오른쪽으로 이동 */
+    bottom: 12px; /* 아래쪽으로 이동 */
+    margin-bottom: 2px;
+    width: 77px;
+    height: 29px;
+    border-radius: 10px;
+    border: none;
+    background-color: #7ED8CF;
+    cursor: pointer;
+}
+
+#reservation.clicked {
+    background-color: #38AE9F;
+}
+
+@keyframes changeColor {
+    0% {
+        background-color: #009788;
+    }
+    50% {
+        background-color: #005f4b;
+    }
+    100% {
+        background-color: #009788;
+    }
+}
+#buttonText {
+    font-size: 14px;
+    color: white;
+}

@@ -16,7 +16,6 @@ const FoodMain = () => {
   const [searchIcon, setSearchIcon] = useState(search_icon);
   const selectRef = useRef(null);
   const [selectWidth, setSelectWidth] = useState(0);
-  const [containerHeight, setContainerHeight] = useState("500px");
   const navigate = useNavigate();
 
   const handleClick = (category) => {
@@ -46,14 +45,6 @@ const FoodMain = () => {
       setSelectWidth(selectRef.current.offsetWidth);
     }
   }, [selectedOption]);
-
-  useEffect(() => {
-    if (stores.length > 1) {
-      setContainerHeight("auto");
-    } else {
-      setContainerHeight("500px");
-    }
-  }, [stores.length]);
 
   const handleStoreClick = (storeId) => {
     navigate(`/food/${storeId}`);
@@ -94,7 +85,7 @@ const FoodMain = () => {
           onClick={handleSearchClick}
         />
       </div>
-      <div className="container2" style={{ height: containerHeight }}>
+      <div className="container2">
         <div className="display">
           <div className="text">
             <p id="beer1">대구 삼성라이온즈 파크에서</p>
