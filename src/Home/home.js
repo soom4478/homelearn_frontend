@@ -1,17 +1,22 @@
 import React, { useState } from "react";
 import "./home.css";
 import { schedules } from "./scheduleImfo";
-import star from "../image/star_icon.png"
-import pizza from "../image/pizza_icon.png"
+import star from "../image/star_icon.png";
+import pizza from "../image/pizza_icon.png";
 
 const Home = () => {
   const [isClicked, setIsClicked] = useState(false);
+  const [selectedDayIndex, setSelectedDayIndex] = useState(null); // 클릭된 index를 상태로 관리
 
   const handleButtonClick = () => {
     setIsClicked(true);
     setTimeout(() => {
       setIsClicked(false);
     }, 100);
+  };
+
+  const handleDayClick = (index) => {
+    setSelectedDayIndex(index); // 클릭된 index를 상태로 설정
   };
 
   const days = [
@@ -24,18 +29,20 @@ const Home = () => {
     { day: "11", label: "일" },
   ];
 
-  const selectedIndex = 4; // 인덱스 설정
-
   return (
     <div className="container">
       <div className="container3">
         <p id="today">2024 8월</p>
         <div className="container4">
           {days.map((item, index) => (
-            <div className="dayCon1" key={index}>
-              <div className={`dayCon2 ${selectedIndex === index ? "selected" : ""}`}>
-                <p id="day" className={selectedIndex === index ? "selected" : ""}>{item.day}</p>
-                <p id="day2" className={selectedIndex === index ? "selected" : ""}>{item.label}</p>
+            <div
+              className={`dayCon1 ${selectedDayIndex === index ? "day-selected" : ""}`} // 조건부 스타일 적용
+              key={index}
+              onClick={() => handleDayClick(index)} // 클릭 이벤트 핸들러 추가
+            >
+              <div className={`dayCon2 ${selectedDayIndex === index ? "dayCon2-selected" : ""}`}>
+                <p id="day">{item.day}</p>
+                <p id="day2">{item.label}</p>
               </div>
             </div>
           ))}
@@ -76,30 +83,61 @@ const Home = () => {
           <img id="icon1" src={star} alt="star" />
         </div>
         <div className="container6">
-          <div id="rinkText">지금 있는 구장에서<br/>먹거리 주문하기</div>
+          <div id="rinkText">지금 있는 구장에서<br />먹거리 주문하기</div>
           <img id="icon1" src={pizza} alt="pizza" />
         </div>
       </div>
 
       <div>
-        <p id="titleText">야구 백과사전</p>
+        <p id="titleText1">야구 백과사전</p>
         <p id="explan">어려운 야구 용어 한눈에 정리!</p>
         <nav className="nav2">
           <div className="con1">
             {schedules.map((schedule, index) => (
               <div className="con2" key={index}>
-                <div className="conTop">
-                  <p id="dicseption">홈런이란?</p>
+                <div className="conTop1">
+                  <p id="dicseption1">홈런이란?</p>
                 </div>
-                <div className="conBottom">
-                  <div className="conImfo">
-                    <p>외야의 담장을 넘어가 타자를 포함한 모든 주자들을 홈으로 불러들이는 것</p>
+                <div className="conBottom1">
+                  <div className="conImfo1">
+                    <p></p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </nav>
+      </div>
+
+      <div>
+        <p id="titleText2">경기 규칙 설명</p>
+        <nav className="nav2">
+          <div className="con3">
+            {schedules.map((schedule, index) => (
+              <div className="con4" key={index}>
+                <div className="conTop2">
+                  <p id="dicseption2">야구에서 득점 인정은?</p>
+                </div>
+                <div className="conBottom2">
+                  <div className="conImfo2">
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </nav>
+      </div>
+
+      <div className="comuCon1">
+        <div className="comuCon2">
+          <p id="titleText3">커뮤니티 인기글</p>
+          <div className="comuCon3">
+            <div className="comuCon4"></div>
+            <div className="comuCon4"></div>
+            <div className="comuCon4"></div>
+          </div>
+        </div>
       </div>
     </div>
   );
