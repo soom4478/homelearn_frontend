@@ -6,6 +6,7 @@ import Home from "./Home/home";
 import FoodMain from "./Food/foodMain";
 import FoodDetail from "./Food/foodDetail";
 import BottomNav from "./Nav/bottomNav";
+import Calender from "./Calender/calender";
 import { StoreProvider } from "./Food/StoreContext";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <BottomNav />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/calender" element={<Calender />} />
             <Route path="/team" element={<div>구단 페이지</div>} />
             <Route path="/food" element={<FoodMain />} />
             <Route path="/food/:storeId" element={<FoodDetail />} />

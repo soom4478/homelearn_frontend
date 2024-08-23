@@ -1,12 +1,17 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./home.css";
 import { schedules } from "./scheduleImfo";
 import star from "../image/star_icon.png";
 import pizza from "../image/pizza_icon.png";
+import calenderI from "../image/calendar.png";
+import bell from "../image/bell.png";
 
 const Home = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [selectedDayIndex, setSelectedDayIndex] = useState(null); // 클릭된 index를 상태로 관리
+  const [selectedDay, setSelectedDay] = useState(null); // 선택된 day를 상태로 관리
+  const navigate = useNavigate(); // useNavigate 훅 사용
 
   const handleButtonClick = () => {
     setIsClicked(true);
@@ -15,8 +20,13 @@ const Home = () => {
     }, 100);
   };
 
-  const handleDayClick = (index) => {
+  const handleDayClick = (index, day) => {
     setSelectedDayIndex(index); // 클릭된 index를 상태로 설정
+    setSelectedDay(day); // 클릭된 day를 상태로 설정
+  };
+
+  const handleCalenderClick = () => {
+    navigate("/calender"); // 페이지 이동
   };
 
   const days = [
@@ -29,16 +39,22 @@ const Home = () => {
     { day: "11", label: "일" },
   ];
 
+  const filteredSchedules = selectedDay
+    ? schedules.filter((schedule) => schedule.day_num === selectedDay)
+    : schedules;
+
   return (
     <div className="container">
       <div className="container3">
+        <img id="calenderI" src={calenderI} alt="calenderI" onClick={handleCalenderClick} /> {/* 클릭 이벤트 핸들러 추가 */}
+        <img id="bell" src={bell} alt="bell" />
         <p id="today">2024 8월</p>
         <div className="container4">
           {days.map((item, index) => (
             <div
               className={`dayCon1 ${selectedDayIndex === index ? "day-selected" : ""}`} // 조건부 스타일 적용
               key={index}
-              onClick={() => handleDayClick(index)} // 클릭 이벤트 핸들러 추가
+              onClick={() => handleDayClick(index, item.day)} // 클릭 이벤트 핸들러 추가
             >
               <div className={`dayCon2 ${selectedDayIndex === index ? "dayCon2-selected" : ""}`}>
                 <p id="day">{item.day}</p>
@@ -52,7 +68,7 @@ const Home = () => {
         <p id="titleText">경기일정</p>
         <nav className="nav1">
           <div className="schedule">
-            {schedules.map((schedule, index) => (
+            {filteredSchedules.map((schedule, index) => (
               <div className="scheduleCon" key={index}>
                 <div className="scheduleCon1"></div>
                 <div className="scheduleCon2">
@@ -100,7 +116,7 @@ const Home = () => {
                 </div>
                 <div className="conBottom1">
                   <div className="conImfo1">
-                    <p></p>
+                    <p id="ImfoText1">외야의 담장을 넘어가 타자를 포함한 모든 주자들을 홈으로 불러들이는 것</p>
                   </div>
                 </div>
               </div>
@@ -120,7 +136,14 @@ const Home = () => {
                 </div>
                 <div className="conBottom2">
                   <div className="conImfo2">
-                    <p></p>
+                    <div className="explainCon">
+                    <p id="ImfoT1">안타</p>
+                    <p id="ImfoT2">타자가 공을 성공적으로 치고 진루하여 1루 {">"} 2루 {">"} 3루를 지나 홈으로 들어오면 1점 득점</p>
+                    </div>
+                    <div className="explainCon">
+                      <p id="ImfoT1">홈런</p>
+                      <p id="ImfoT2">타자가 공을 쳐서 담장을 넘어가면 그라운드 내 모든 주자가 한꺼번에 홈으로 들어오며 득점</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -133,9 +156,21 @@ const Home = () => {
         <div className="comuCon2">
           <p id="titleText3">커뮤니티 인기글</p>
           <div className="comuCon3">
-            <div className="comuCon4"></div>
-            <div className="comuCon4"></div>
-            <div className="comuCon4"></div>
+            <div className="comuCon4">
+              <p id="comuT">WAR이 뭔가요?</p>
+              <p id="comuI">설명을 들어도 모르겠는데 자세히 알려주세요</p>
+              <p id="comuB">3분전</p>
+            </div>
+            <div className="comuCon4">
+              <p id="comuT">이번 시즌 대박</p>
+              <p id="comuI">사실 잘 모르겠어요 이번 시즌 다들 어때요</p>
+              <p id="comuB">5분전</p>
+            </div>
+            <div className="comuCon4">
+              <p id="comuT">대구 직관 같이 가실 분?</p>
+              <p id="comuI">제가 떡볶이 사드려요</p>
+              <p id="comuB">7분전</p>
+            </div>
           </div>
         </div>
       </div>
