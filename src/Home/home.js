@@ -1,17 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./home.css";
 import { schedules } from "./scheduleImfo";
+import { dicseptionImfo } from "./dicseptionImfo";
+import { explanImfo } from "./explanImfo";
+import { comuImfo } from "./comuImfo";
 import star from "../image/star_icon.png";
 import pizza from "../image/pizza_icon.png";
 import calenderI from "../image/calendar.png";
 import bell from "../image/bell.png";
+import nextRink_icon from "../image/nextRink_icon.png";
 
 const Home = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [selectedDayIndex, setSelectedDayIndex] = useState(null); // 클릭된 index를 상태로 관리
   const [selectedDay, setSelectedDay] = useState(null); // 선택된 day를 상태로 관리
+  const [currentDate, setCurrentDate] = useState(""); // 현재 날짜를 상태로 관리
   const navigate = useNavigate(); // useNavigate 훅 사용
+
+  useEffect(() => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = (today.getMonth() + 1).toString().padStart(2, "0");
+    setCurrentDate(`${year}.${month}`);
+
+    const daysOfWeek = ["일", "월", "화", "수", "목", "금", "토"];
+    const startDate = new Date(today);
+    startDate.setDate(today.getDate() - today.getDay());
+
+    const days = [];
+    for (let i = 0; i < 7; i++) {
+      const date = new Date(startDate);
+      date.setDate(startDate.getDate() + i);
+      const day = date.getDate().toString().padStart(2, "0");
+      const label = daysOfWeek[date.getDay()];
+      days.push({ day, label });
+    }
+
+    const todayIndex = days.findIndex(day => day.day === today.getDate().toString().padStart(2, "0"));
+    setSelectedDayIndex(todayIndex);
+    setSelectedDay(today.getDate().toString().padStart(2, "0"));
+  }, []);
 
   const handleButtonClick = () => {
     setIsClicked(true);
@@ -29,15 +58,35 @@ const Home = () => {
     navigate("/calender"); // 페이지 이동
   };
 
-  const days = [
-    { day: "05", label: "월" },
-    { day: "06", label: "화" },
-    { day: "07", label: "수" },
-    { day: "08", label: "목" },
-    { day: "09", label: "금" },
-    { day: "10", label: "토" },
-    { day: "11", label: "일" },
-  ];
+  const handlenext2Click = () => {
+    navigate("/rule"); // 페이지 이동
+  };
+
+  const handlenext1Click = () => {
+    navigate("/term"); // 페이지 이동
+  };
+
+  const getDaysOfWeek = () => {
+    const daysOfWeek = ["일", "월", "화", "수", "목", "금", "토"];
+    const today = new Date();
+    const days = [];
+
+    // Find the previous Sunday
+    const startDate = new Date(today);
+    startDate.setDate(today.getDate() - today.getDay());
+
+    for (let i = 0; i < 7; i++) {
+      const date = new Date(startDate);
+      date.setDate(startDate.getDate() + i);
+      const day = date.getDate().toString().padStart(2, "0");
+      const label = daysOfWeek[date.getDay()];
+      days.push({ day, label });
+    }
+
+    return days;
+  };
+
+  const days = getDaysOfWeek();
 
   const filteredSchedules = selectedDay
     ? schedules.filter((schedule) => schedule.day_num === selectedDay)
@@ -48,7 +97,7 @@ const Home = () => {
       <div className="container3">
         <img id="calenderI" src={calenderI} alt="calenderI" onClick={handleCalenderClick} /> {/* 클릭 이벤트 핸들러 추가 */}
         <img id="bell" src={bell} alt="bell" />
-        <p id="today">2024 8월</p>
+        <p id="today">{currentDate}</p> {/* 현재 날짜 표시 */}
         <div className="container4">
           {days.map((item, index) => (
             <div
@@ -73,10 +122,10 @@ const Home = () => {
                 <div className="scheduleCon1"></div>
                 <div className="scheduleCon2">
                   <div className="scheduleImfo">
-                    <div id="title">
-                      <p id="title1">{schedule.team1}</p>
-                      <p id="title2">VS</p>
-                      <p id="title3">{schedule.team2}</p>
+                    <div id="schedule_title">
+                      <p id="title_team1">{schedule.team1}</p>
+                      <p id="title_vs">VS</p>
+                      <p id="title_team2">{schedule.team2}</p>
                     </div>
                     <p id="time">{schedule.time}</p>
                     <p id="ground">{schedule.ground}</p>
@@ -103,77 +152,80 @@ const Home = () => {
           <img id="icon1" src={pizza} alt="pizza" />
         </div>
       </div>
-
       <div>
-        <p id="titleText1">야구 백과사전</p>
-        <p id="explan">어려운 야구 용어 한눈에 정리!</p>
-        <nav className="nav2">
-          <div className="con1">
-            {schedules.map((schedule, index) => (
-              <div className="con2" key={index}>
-                <div className="conTop1">
-                  <p id="dicseption1">홈런이란?</p>
-                </div>
-                <div className="conBottom1">
-                  <div className="conImfo1">
-                    <p id="ImfoText1">외야의 담장을 넘어가 타자를 포함한 모든 주자들을 홈으로 불러들이는 것</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+        
+      <div className="flex-container">
+    <p id="titleText1">야구 백과사전</p>
+    <img id="nextrink1" src={nextRink_icon} alt="next" className="align-bottom" onClick={handlenext1Click}/>
+  </div>
+  <p id="explan">어려운 야구 용어 한눈에 정리!</p>
+  <nav className="nav2">
+    <div className="con1">
+      {dicseptionImfo.map((item, index) => (
+        <div className="con2" key={index}>
+          <div className="conTop1">
+            <p id="dicseption1">{item.dic_title}</p>
           </div>
-        </nav>
-      </div>
-
-      <div>
-        <p id="titleText2">경기 규칙 설명</p>
-        <nav className="nav2">
-          <div className="con3">
-            {schedules.map((schedule, index) => (
-              <div className="con4" key={index}>
-                <div className="conTop2">
-                  <p id="dicseption2">야구에서 득점 인정은?</p>
-                </div>
-                <div className="conBottom2">
-                  <div className="conImfo2">
-                    <div className="explainCon">
-                    <p id="ImfoT1">안타</p>
-                    <p id="ImfoT2">타자가 공을 성공적으로 치고 진루하여 1루 {">"} 2루 {">"} 3루를 지나 홈으로 들어오면 1점 득점</p>
-                    </div>
-                    <div className="explainCon">
-                      <p id="ImfoT1">홈런</p>
-                      <p id="ImfoT2">타자가 공을 쳐서 담장을 넘어가면 그라운드 내 모든 주자가 한꺼번에 홈으로 들어오며 득점</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </nav>
-      </div>
-
-      <div className="comuCon1">
-        <div className="comuCon2">
-          <p id="titleText3">커뮤니티 인기글</p>
-          <div className="comuCon3">
-            <div className="comuCon4">
-              <p id="comuT">WAR이 뭔가요?</p>
-              <p id="comuI">설명을 들어도 모르겠는데 자세히 알려주세요</p>
-              <p id="comuB">3분전</p>
-            </div>
-            <div className="comuCon4">
-              <p id="comuT">이번 시즌 대박</p>
-              <p id="comuI">사실 잘 모르겠어요 이번 시즌 다들 어때요</p>
-              <p id="comuB">5분전</p>
-            </div>
-            <div className="comuCon4">
-              <p id="comuT">대구 직관 같이 가실 분?</p>
-              <p id="comuI">제가 떡볶이 사드려요</p>
-              <p id="comuB">7분전</p>
+          <div className="conBottom1">
+            <div className="conImfo1">
+              <p id="ImfoText1">{item.dic_text}</p>
             </div>
           </div>
         </div>
-      </div>
+      ))}
+    </div>
+  </nav>
+</div>
+
+<div>
+  <div className="flex-container">
+    <p id="titleText2">경기 규칙 설명</p>
+    <img id="nextrink2" src={nextRink_icon} alt="next" className="align-bottom" onClick={handlenext2Click} />
+  </div>
+  <nav className="nav2">
+    <div className="con3">
+      {explanImfo.map((item, index) => (
+        <div className="con4" key={index}>
+          <div className="conTop2">
+            <p id="dicseption2">{item.explan_title}</p>
+          </div>
+          <div className="conBottom2">
+            <div className="conImfo2">
+              <div className="explainCon">
+                <p id="ImfoT1">{item.explanT1}</p>
+                <p id="ImfoT2">{item.explanT2}</p>
+              </div>
+              <div className="explainCon">
+                <p id="ImfoT1">{item.explanT3}</p>
+                <p id="ImfoT2">{item.explanT4}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </nav>
+</div>
+
+<div className="comuCon1">
+  <div className="comuCon2">
+    <div className="flex-container">
+      <p id="titleText3">커뮤니티 인기글</p>
+      <img id="nextrink3" src={nextRink_icon} alt="next" className="align-bottom" />
+    </div>
+    <div className="comuCon3">
+      {comuImfo.map((item, index) => (
+        <div className="comuCon4" key={index}>
+          <p id="comuT">{item.comu_title}</p>
+          <p id="comuI">{item.comu_text}</p>
+          <p id="comuB">{item.comu_time}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+      
     </div>
   );
 };

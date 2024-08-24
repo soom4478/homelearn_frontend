@@ -95,7 +95,7 @@ nav {
     padding-left: 0;
     align-content: flex-start;
     text-align: left;
-    padding-bottom: 80px; /* 네비게이션바 높이만큼 padding-bottom 추가 */
+    padding-bottom: 83px; /* 네비게이션바 높이만큼 padding-bottom 추가 */
 }
 
 .display {

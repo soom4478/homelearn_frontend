@@ -1,0 +1,33 @@
+.termDeCon1{
+    margin-top: 68px;
+}
+
+#return2 {
+    margin-left: 20px;
+}
+
+.termDeCon2 {
+    width: 85%;
+    margin: 0 auto;
+}
+
+#termD1 {
+    margin-top: 25px;
+    color: #006359;
+    font-size: 24px;
+}
+
+#termD2 {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.vedioCon {
+    background-color: #D9D9D9;
+    height: 449px;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 25px;
+    text-align: center;
+    align-content: center;
+}

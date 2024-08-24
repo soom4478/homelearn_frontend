@@ -1,48 +1,37 @@
-import React, { useState } from "react";
-import { Dropdown1, Dropdown2, Dropdown3, Dropdown4 } from "./dropdown"; // Dropdown 컴포넌트를 가져옵니다.
+import React from "react";
 import "./rule.css";
+import { useNavigate } from 'react-router-dom';
+import returnIcon from "../image/return.png";
+import nextarrow from "../image/nextArrow.png";
+import { ruleImfo } from "./ruleImfo";
 
 const Rule = () => {
-  const [activeDropdown, setActiveDropdown] = useState(null);
+  const navigate = useNavigate(); // useNavigate 훅 사용
 
-  const handleClickDropdown = (index) => {
-    setActiveDropdown(activeDropdown === index ? null : index);
+  const handleReturnClick = () => {
+    navigate(-1); // 뒤로 이동
   };
 
-  const handleBlurContainer = () => {
-    setTimeout(() => {
-      setActiveDropdown(null);
-    }, 200);
-  };
+  // ruleImfo 배열의 길이에 따라 padding-bottom 설정
+  const ruleConPaddingBottom = ruleImfo.length >= 7 ? '83px' : 'initial';
 
   return (
-    <div>
-      <div className="top-name">
-        <h3>경기 규칙 설명</h3>
+    <div className="ruleCon1" style={{ paddingBottom: ruleConPaddingBottom }}>
+      <div className='calender-con'>
+        <img id="return" src={returnIcon} alt="return" onClick={handleReturnClick} /> {/* 클릭 이벤트 핸들러 추가 */}
+        <p id='calender-title'>경기 규칙 설명</p>
       </div>
-      <div className="container" onBlur={handleBlurContainer}>
-        <label onClick={() => handleClickDropdown(1)}>
-          <div className="drop" >
-            <div className="text">
-              <p>이것부터 알고 가자!</p>
-              <h4>야구 기초 알아보기</h4>
+
+      <div>
+        {ruleImfo.map((rule, index) => (
+          <div className="ruleCon2" key={index}>
+            <div className="ruleText">
+              <p id="ruleT1">{rule.rule1}</p>
+              <p id="ruleT2">{rule.rule2}</p>
             </div>
-            <div className="button">{activeDropdown === 1 ? "<" : ">"}</div>
+            <img id="nextarrow" src={nextarrow} alt="nextarrow"/>
           </div>
-        </label>
-        {activeDropdown === 1 && <Dropdown1 />}
-        <label onClick={() => handleClickDropdown(2)}>
-          <div className="drop">선수 포지션 알아보기 {activeDropdown === 2 ? "<" : ">"}</div>
-        </label>
-        {activeDropdown === 2 && <Dropdown2 />}
-        <label onClick={() => handleClickDropdown(3)}>
-          <div className="drop">그라운드 알아보기 {activeDropdown === 3 ? "<" : ">"}</div>
-        </label>
-        {activeDropdown === 3 && <Dropdown3 />}
-        <label onClick={() => handleClickDropdown(4)}>
-          <div className="drop">야구에서 득점 인정 {activeDropdown === 4 ? "<" : ">"}</div>
-        </label>
-        {activeDropdown === 4 && <Dropdown4 />}
+        ))}
       </div>
     </div>
   );

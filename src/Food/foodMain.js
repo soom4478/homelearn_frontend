@@ -70,6 +70,7 @@ const FoodMain = () => {
           style={{ left: `${selectWidth + 10}px` }}
         />
       </div>
+      
       <div className="search">
         <input
           type="text"
@@ -85,6 +86,7 @@ const FoodMain = () => {
           onClick={handleSearchClick}
         />
       </div>
+
       <div className="container2">
         <div className="display">
           <div className="text">
@@ -96,6 +98,7 @@ const FoodMain = () => {
         <div id="text2">
           <p>인기매장 픽업 주문하기</p>
         </div>
+
         <div className="category">
           {["전체", "분식", "치킨", "만두"].map((category) => (
             <div
@@ -108,6 +111,7 @@ const FoodMain = () => {
             </div>
           ))}
         </div>
+
         {stores.map((store, index) => (
           <div className="store" key={index} onClick={() => handleStoreClick(store.id)}>
             <img id="img1" src={store.imgSrc} alt="img1" />

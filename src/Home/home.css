@@ -1,7 +1,6 @@
 .container {
     height: auto;
     overflow: auto;
-    padding-bottom: 100px; /* 하단 네비게이션바 높이만큼 여백 추가 */
 }
 
 .container3 {
@@ -90,6 +89,14 @@
     text-align: center;
 }
 
+.day {
+    font-size: 18px;
+}
+
+.day2 {
+    font-size: 14px;
+}
+
 .dayCon2-selected {
     background-color: white;
   }
@@ -102,21 +109,17 @@
 #titleText {
     margin: 32px 0 0 24px;
     font-size: 18px;
-    font-weight: bold;
 }
 
 #titleText1 {
     margin: 78px 0 0 24px;
     font-size: 18px;
-    font-weight: bold;
 }
 
 #titleText2 {
     margin: 60px 0 0 24px;
     font-size: 18px;
-    font-weight: bold;
 }
-
 .nav1 {
     width: 100%;
     height: 100%; /* nav의 고정 높이 설정 */
@@ -125,15 +128,16 @@
     white-space: nowrap; /* 줄바꿈 방지 */
     border: 0;
     margin-top: 15px;
+    padding-right: 24px; /* 오른쪽 여백 추가 */
     scrollbar-width: none;
+    box-sizing: border-box; /* 패딩과 보더를 포함한 너비 설정 */
 }
 
 .schedule {
     width: auto; /* 예시로 긴 너비 설정 */
     height: 250px;
-    display: flex;
+    display: inline-flex;
     white-space: nowrap; /* 줄바꿈 방지 */
-    margin-right: 24px;
 }
 
 .scheduleCon {
@@ -141,11 +145,11 @@
     height: 230px;
     margin-left: 24px;
     border-radius: 10px;
-    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 20px 0px rgba(1, 0, 0, 0.15);
 }
 
 .scheduleCon1 {
-    width: 100%;
+    width: 301px;
     height: 132px;
     background-color: grey;
     border-top-left-radius: 10px;
@@ -163,7 +167,7 @@
     position: relative;
 }
 
-#title, #time, #ground {
+#titl, #time, #ground {
     margin: auto 0;
     width: auto;
     display: inline-block;
@@ -173,19 +177,18 @@
     display: inline-block;
 }
 
-#title {
-    font-weight: bold;
+#schedule_title {
     margin-left: 20px;
     margin-top: 13px;
     font-size: 16px;
     float: left;
 }
 
-#title1, #title2, #title3 {
+#title_team1, #title_team2, #title_vs {
     display: inline-block;
 }
 
-#title2 {
+#title_vs {
     margin: 0 3px;
 }
 
@@ -205,7 +208,8 @@
     display: block;
     width: auto;
     text-align: start;
-    float: inline-start;
+    position: absolute;
+    bottom: 46px;
 }
 
 #reservation {
@@ -218,7 +222,6 @@
     border-radius: 10px;
     border: none;
     background-color: #7ED8CF;
-    cursor: pointer;
 }
 
 #reservation.clicked {
@@ -240,6 +243,7 @@
 #buttonText {
     font-size: 14px;
     color: white;
+    margin: 3px;
 }
 
 .container5, .container6 {
@@ -276,6 +280,7 @@
 
 #explan {
     margin-left: 24px;
+    width: 80%;
 }
 
 .nav2 {
@@ -326,7 +331,7 @@
 }
 
 .conImfo1 {
-    width: 274px;
+    width: 311px;
     height: 34px; /* 높이 설정 */
     overflow: visible; /* 내용이 넘칠 때 보이도록 설정 */
     white-space: normal; /* 줄바꿈 허용 */
@@ -335,7 +340,7 @@
 
 #ImfoText1 {
     text-align: left;
-    width: 100%;
+    width: 274.31px;
     height: auto;
     font-size: 14px; /* 글자 크기 조정 */
     line-height: 1.2; /* 줄 간격 조정 */
@@ -349,13 +354,15 @@
     white-space: nowrap; /* 줄바꿈 방지 */
     border: 0;
     margin-top: 15px;
+    padding-right: 24px; /* 오른쪽 여백 추가 */
     scrollbar-width: none;
+    box-sizing: border-box; /* 패딩과 보더를 포함한 너비 설정 */
 }
 
 .con3 {
-    width: auto;
+    width: 311px;
     height: 321px;
-    display: flex;
+    display: inline-flex;
     white-space: nowrap; /* 줄바꿈 방지 */
     margin-right: 24px;
 }
@@ -369,7 +376,7 @@
 }
 
 .conTop2 {
-    width: 100%;
+    width: 311px;
     height: 60px;
     background-color: #E8ECEF;
     border-top-left-radius: 10px;
@@ -378,7 +385,7 @@
 }
 
 .conBottom2 {
-    width: 100%;
+    width: 311px;
     height: 230px;
     background-color: white;
     border-bottom-left-radius: 10px;
@@ -406,9 +413,8 @@
 }
 
 #ImfoT1 {
-    width: 100%;
+    width: auto;
     font-size: 16px;
-    font-weight: bold;
     height: 19px;
     margin-bottom: 8px;
 }
@@ -421,21 +427,19 @@
 #dicseption1 {
     font-size: 18px;
     margin-left: 14px;
-    font-weight: bold;
     align-content: center;
 }
 
 #dicseption2 {
     font-size: 18px;
     margin-left: 20px;
-    font-weight: bold;
     align-content: center;
 }
 
 .comuCon1 {
     text-align: center;
     margin-top: 29px;
-    margin-bottom: 90px;
+    margin-bottom: 173px;
 }
 
 .comuCon2 {
@@ -448,15 +452,15 @@
 
 #titleText3 {
     font-size: 18px;
-    font-weight: bold;
     float: left;
     margin: 20px 0 0 14px;
 }
 
 .comuCon3 {
-    margin-top: 62px;
+    margin-top: 21px;
     height: 105px;
     align-content: center;
+    background-color: #FFFFFF;
 }
 
 .comuCon4 {
@@ -474,9 +478,12 @@
 #comuT {
     margin-left: 20px;
     font-size: 14px;
-    font-weight: bold;
     margin-bottom: 5px;
     margin: 20px auto 5px 20px;
+    width: 259px;
+    overflow: hidden; /* 내용이 넘칠 때 숨기기 */
+    white-space: nowrap; /* 줄바꿈 방지 */
+    text-overflow: ellipsis; /* 넘치는 텍스트에 '...' 표시 */
 }
 
 #comuI {
@@ -498,4 +505,22 @@
     margin-top: 10px;
     position: absolute;
     bottom: 0px;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 필요에 따라 추가 */
+}
+
+.align-bottom {
+  align-self: flex-end;
+}
+
+#nextrink1, #nextrink2 {
+    margin-right: 24px;
+}
+
+#nextrink3 {
+    margin-right: 15px;
 }

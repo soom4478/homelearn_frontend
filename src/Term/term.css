@@ -1,0 +1,102 @@
+.calender-con2 {
+    height: 100px;
+    border-bottom: solid 1px #E8ECEF;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative; /* 상대 위치 설정 */
+}
+
+.termCon1 {
+    overflow: auto;
+    padding-bottom: 83px;
+}
+
+.termCon2 {
+    width: 335px;
+    height: 40px;
+    background-color: #E8ECEF;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    position: absolute; /* 절대 위치 설정 */
+    left: 50%; /* 가로 중앙 정렬 */
+    transform: translateX(-50%); /* 가로 중앙 정렬 보정 */
+    margin-top: 10px;
+}
+
+.termCate1 {
+    margin-top: 77px;
+    margin-left: 24px;
+}
+
+#input_term {
+    margin-left: 15px;
+    background-color: #E8ECEF;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    flex: 1;
+}
+
+#termSearchIcon {
+    margin-right: 15px;
+}
+
+.termCate2 {
+    height: 23px;
+    border-radius: 10px;
+    align-content: center; /* 수직 중앙 정렬 */
+    text-align: center;
+    width: auto; /* 동적 너비 설정 */
+    height: 23px;
+    font-size: 14px;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+#termT1, #termT2 {
+    display: inline-block;
+    align-content: center;
+}
+
+.termCon3 {
+    border-top: solid #E8ECEF 1px;
+    margin-top: 10px;
+}
+
+.termCon4 {
+    height: 67px;
+    align-content: center;
+    border-bottom: solid #E8ECEF 1px;
+}
+
+.termCon5 {
+    display: flex;
+    align-items: center;
+}
+
+.termText {
+    height: 30px;
+    align-content: center;
+    width: 70%;
+    margin-left: 24px;
+    display: inline-block;
+    flex-direction: column;
+    justify-content: center; /* 상하 중앙 정렬 */
+}
+
+#termT1 {
+    font-size: 20px;
+}
+
+#termT2 {
+    margin-left: 8px;
+    font-size: 18px;
+    color: #AEAEB2;
+}
+
+#nextarrow2 {
+    position: absolute;
+    right: 24px;
+}

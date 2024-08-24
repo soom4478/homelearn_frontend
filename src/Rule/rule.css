@@ -1,24 +1,31 @@
-.top-name {
-    border: solid 1px;
-    border-color: #E8ECEF;
-    margin-top: 3%;
-    text-align: center;
+.ruleCon1 {
+    padding-bottom: 83px; /* 네비게이션바 높이만큼 padding*/
+    overflow: hidden;
 }
-.drop{
-    border: solid 1px;
-    border-color: #E8ECEF;
-    padding: 3%;
+
+.ruleCon2 {
+    border-bottom: solid 1px #E8ECEF;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
 }
-.button {
-    width: 20%;
-    display: inline-block;
+
+.ruleText {
+    width: 70%;
+    margin-left: 32px;
 }
-p, h4 {
-    margin: 0px;
-    width: 40%;
+
+#ruleT1 {
+    font-size: 13px;
+    color: #009788;
 }
-h4 {
-    font-size: 20px;
+
+#ruleT2 {
+    font-size: 18px;
 }
-p {
+
+#nextarrow {
+    position: absolute;
+    right: 32px;
 }

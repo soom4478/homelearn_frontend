@@ -1,5 +1,5 @@
 /* nav태그 아래의 자식들을 수평정렬하기 위한 설정 */
-nav {
+.wrapper {
   overflow: hidden;
   border: solid 1px;
   border-color: #DEE1E6;
@@ -7,7 +7,7 @@ nav {
   z-index: 2;
 }
 /* nav태그 아래의 div태그들을 수평정렬 및 세로길이 설정 */
-nav > div {
+.wrapper > div {
   /* 수평정렬, 5개의 button을 각각 20% width만큼 할당 */
   text-align: center;
   float: left;
