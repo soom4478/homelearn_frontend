@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./bottomNav.css";
 import icon1 from "../image/Nav/home1.png";
 import icon2 from "../image/Nav/home2.png";
@@ -14,17 +14,38 @@ import icon10 from "../image/Nav/my2.png";
 
 const BottomNav = () => {
   const [activeButton, setActiveButton] = useState(0); // 초기값을 0으로 설정
-  const [homeIcon, setHomeIcon] = useState(icon2); // 초기값을 icon2로 설정
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    switch (location.pathname) {
+      case "/":
+        setActiveButton(0);
+        break;
+      case "/team":
+        setActiveButton(1);
+        break;
+      case "/food":
+        setActiveButton(2);
+        break;
+      case "/community":
+        setActiveButton(3);
+        break;
+      case "/my":
+        setActiveButton(4);
+        break;
+      default:
+        setActiveButton(0);
+    }
+  }, [location.pathname]);
 
   const handleClick = (index, path) => {
     setActiveButton(index);
-    setHomeIcon(index === 0 ? icon2 : icon1);
     navigate(path);
   };
 
   const navItems = [
-    { text: "홈", path: "/", icon: homeIcon },
+    { text: "홈", path: "/", icon: activeButton === 0 ? icon2 : icon1 },
     { text: "구단", path: "/team", icon: activeButton === 1 ? icon4 : icon3 },
     { text: "먹거리", path: "/food", icon: activeButton === 2 ? icon6 : icon5 },
     { text: "커뮤니티", path: "/community", icon: activeButton === 3 ? icon8 : icon7 },

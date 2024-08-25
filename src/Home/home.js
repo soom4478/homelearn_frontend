@@ -60,12 +60,20 @@ const Home = () => {
     navigate("/calender"); // 페이지 이동
   };
 
-  const handlenext2Click = () => {
-    navigate("/rule"); // 페이지 이동
+  const handlefoodClick = () => {
+    navigate("/food"); // 페이지 이동
   };
 
   const handlenext1Click = () => {
     navigate("/term"); // 페이지 이동
+  };
+
+  const handlenext2Click = () => {
+    navigate("/rule"); // 페이지 이동
+  };
+
+  const handlenext3Click = () => {
+    navigate("/community"); // 페이지 이동
   };
 
   // comuImfo 배열을 comu_heart 값에 따라 내림차순으로 정렬
@@ -152,7 +160,7 @@ const Home = () => {
           <div id="rinkText">통합예매 바로가기</div>
           <img id="icon1" src={star} alt="star" />
         </div>
-        <div className="container6">
+        <div className="container6" onClick={handlefoodClick}>
           <div id="rinkText">지금 있는 구장에서<br />먹거리 주문하기</div>
           <img id="icon1" src={pizza} alt="pizza" />
         </div>
@@ -216,7 +224,7 @@ const Home = () => {
             <div className="comuCon2">
                 <div className="flex-container">
                     <p id="titleText3">커뮤니티 인기글</p>
-                    <img id="nextrink3" src={nextRink_icon} alt="next" className="align-bottom" />
+                    <img id="nextrink3" src={nextRink_icon} alt="next" className="align-bottom" onClick={handlenext3Click} />
                 </div>
                 <div className="comuCon3">
                     {sortedComuImfo.slice(0, 3).map((item, index) => (

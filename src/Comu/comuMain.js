@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { comuImfo } from '../Home/comuImfo';
+import { comuImfo } from './comuImfo';
 import "./comuMain.css";
 import heartIcon from "../image/heartIcon.png";
 import commentIcon from "../image/commentIcon.png";
