@@ -328,10 +328,11 @@
     position: relative;
     z-index: 1;
     align-content: center;
+    margin-right: 24px;
 }
 
 .conImfo1 {
-    width: 311px;
+    width: 274.31px;
     height: 34px; /* 높이 설정 */
     overflow: visible; /* 내용이 넘칠 때 보이도록 설정 */
     white-space: normal; /* 줄바꿈 허용 */
@@ -396,11 +397,12 @@
     flex-direction: column; /* Flexbox 방향을 세로로 설정 */
     justify-content: center; /* 상하 중앙 정렬 */
     align-content: center;
+    margin-right: 24px;
 }
 
 .conImfo2 {
     display: inline-block;
-    width: 258.82px;
+    width: 226.47px;
     height: 70px; /* 높이 설정 */
     overflow: visible; /* 내용이 넘칠 때 보이도록 설정 */
     white-space: normal; /* 줄바꿈 허용 */
@@ -523,4 +525,23 @@
 
 #nextrink3 {
     margin-right: 15px;
+}
+
+.comuCon5 {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.comuHcon, .comuCcon {
+    height: 16px;
+    display: inline-block;
+    margin-left: 6px;
+}
+
+#comuH, #comuHtext, #comuC, #comuCtext {
+    display: inline-block;
+    font-size: 13px;
+    color: #AEAEB2;
+    padding-right: 4px;
 }

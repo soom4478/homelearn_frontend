@@ -10,6 +10,8 @@ import pizza from "../image/pizza_icon.png";
 import calenderI from "../image/calendar.png";
 import bell from "../image/bell.png";
 import nextRink_icon from "../image/nextRink_icon.png";
+import heartIcon from "../image/heartIcon.png";
+import commentIcon from "../image/commentIcon.png";
 
 const Home = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -65,6 +67,9 @@ const Home = () => {
   const handlenext1Click = () => {
     navigate("/term"); // 페이지 이동
   };
+
+  // comuImfo 배열을 comu_heart 값에 따라 내림차순으로 정렬
+  const sortedComuImfo = comuImfo.sort((a, b) => b.comu_heart - a.comu_heart);
 
   const getDaysOfWeek = () => {
     const daysOfWeek = ["일", "월", "화", "수", "목", "금", "토"];
@@ -177,53 +182,63 @@ const Home = () => {
   </nav>
 </div>
 
-<div>
-  <div className="flex-container">
-    <p id="titleText2">경기 규칙 설명</p>
-    <img id="nextrink2" src={nextRink_icon} alt="next" className="align-bottom" onClick={handlenext2Click} />
-  </div>
-  <nav className="nav2">
-    <div className="con3">
-      {explanImfo.map((item, index) => (
-        <div className="con4" key={index}>
-          <div className="conTop2">
-            <p id="dicseption2">{item.explan_title}</p>
-          </div>
-          <div className="conBottom2">
-            <div className="conImfo2">
-              <div className="explainCon">
-                <p id="ImfoT1">{item.explanT1}</p>
-                <p id="ImfoT2">{item.explanT2}</p>
-              </div>
-              <div className="explainCon">
-                <p id="ImfoT1">{item.explanT3}</p>
-                <p id="ImfoT2">{item.explanT4}</p>
-              </div>
-            </div>
-          </div>
+      <div>
+        <div className="flex-container">
+          <p id="titleText2">경기 규칙 설명</p>
+          <img id="nextrink2" src={nextRink_icon} alt="next" className="align-bottom" onClick={handlenext2Click} />
         </div>
-      ))}
-    </div>
-  </nav>
-</div>
+        <nav className="nav2">
+          <div className="con3">
+            {explanImfo.map((item, index) => (
+              <div className="con4" key={index}>
+                <div className="conTop2">
+                  <p id="dicseption2">{item.explan_title}</p>
+                </div>
+                <div className="conBottom2">
+                  <div className="conImfo2">
+                    <div className="explainCon">
+                      <p id="ImfoT1">{item.explanT1}</p>
+                      <p id="ImfoT2">{item.explanT2}</p>
+                    </div>
+                    <div className="explainCon">
+                      <p id="ImfoT1">{item.explanT3}</p>
+                      <p id="ImfoT2">{item.explanT4}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </nav>
+      </div>
 
-<div className="comuCon1">
-  <div className="comuCon2">
-    <div className="flex-container">
-      <p id="titleText3">커뮤니티 인기글</p>
-      <img id="nextrink3" src={nextRink_icon} alt="next" className="align-bottom" />
-    </div>
-    <div className="comuCon3">
-      {comuImfo.map((item, index) => (
-        <div className="comuCon4" key={index}>
-          <p id="comuT">{item.comu_title}</p>
-          <p id="comuI">{item.comu_text}</p>
-          <p id="comuB">{item.comu_time}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
+      <div className="comuCon1">
+            <div className="comuCon2">
+                <div className="flex-container">
+                    <p id="titleText3">커뮤니티 인기글</p>
+                    <img id="nextrink3" src={nextRink_icon} alt="next" className="align-bottom" />
+                </div>
+                <div className="comuCon3">
+                    {sortedComuImfo.slice(0, 3).map((item, index) => (
+                        <div className="comuCon4" key={index}>
+                            <p id="comuT">{item.comu_title}</p>
+                            <p id="comuI">{item.comu_text}</p>
+                            <p id="comuB">{item.comu_time}</p>
+                            <div className="comuCon5">
+                              <div className="comuHcon">
+                                <img id="comuH" src={heartIcon} alt="heartIcon" />
+                                <p id="comuHtext">{item.comu_heart}</p>
+                              </div>
+                              <div className="comuCcon">
+                                <img id="comuC" src={commentIcon} alt="commentIcon" />
+                                <p id="comuCtext">{item.comu_commen}</p>
+                              </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+      </div>
 
       
     </div>

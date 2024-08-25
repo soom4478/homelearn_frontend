@@ -1,15 +1,29 @@
-.comuMcon1 {
+html, body {
     height: 100%;
-    padding-bottom: 200px;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.comuMcon1 {
+    flex: 1;
     overflow: auto;
+    background-color: #F2F3F5;
 }
 
 .nav-bar {
-    margin-top: 62px;
+    height: 106px;
     text-align: center;
     display: flex;
-    justify-content: center; /* 요소들을 가운데 정렬 */
-    gap: 80px; /* 두 개의 div 사이에 20px 간격을 설정 */
+    justify-content: center;
+    align-items: flex-end;
+    gap: 80px;
+    background-color: white;
 }
 
 .nav-item {
@@ -29,7 +43,7 @@
 }
 
 .nav-item p {
-    display: inline-block; /* 글자 너비에 맞게 조정 */
+    display: inline-block;
     margin: 0;
     color: #AEAEB2;
 }
@@ -87,20 +101,20 @@
     font-size: 30px;
 }
 
-.comuMcon3{
-    background-color: #F2F3F5;
+.comuMcon3 {
     padding-top: 21px;
-    height: 500px;
+    height: auto; /* 높이를 auto로 설정 */
+    padding-bottom: 93px;
 }
 
 .comuCon3_2 {
-    height: 105px;
+    height: auto; /* 높이를 auto로 설정 */
     align-content: center;
     text-align: center;
 }
 
 .comuCon4_2 {
-    width: 345px;
+    width: 340px;
     height: 105px;
     background-color: white;
     border-color: #DEE1E6;
@@ -113,4 +127,3 @@
     border: none;
     box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.04);
 }
-

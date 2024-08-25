@@ -16,7 +16,6 @@ function App() {
   return (
     <StoreProvider>
       <Router>
-        <div>
           <BottomNav />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -31,7 +30,6 @@ function App() {
             <Route path="/my" element={<div>마이</div>} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
-        </div>
       </Router>
     </StoreProvider>
   );

@@ -2,6 +2,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useStore } from "./StoreContext";
+import "./foodDetail.css";
 
 const FoodDetail = () => {
   const { storeId } = useParams();
@@ -16,7 +17,7 @@ const FoodDetail = () => {
   return (
     <div>
       <h1>{store.name}</h1>
-      <img src={store.imgSrc} alt={store.name} />
+      <img id="storeImg" src={store.imgSrc} alt={store.name} />
       <p>Rating: {store.rating}</p>
       <p>Popular Menu: {store.popularMenu}</p>
       <p>Today's Orders: {store.todayOrder}</p>
