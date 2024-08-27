@@ -1,0 +1,280 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; 
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import { styled } from '@mui/material/styles';
+
+import playerIcon from '/Users/USERONE/dev/homelearn/src/image/player.png';
+import homegroundIcon from '/Users/USERONE/dev/homelearn/src/image/homeground.png';
+import cheersongIcon from '/Users/USERONE/dev/homelearn/src/image/cheersong.png';
+import shopIcon from '/Users/USERONE/dev/homelearn/src/image/shop.png';
+import mascotImage from '/Users/USERONE/dev/homelearn/src/image/mascot.png'; 
+
+
+const RoundedButton = styled(Button)(({ theme, isSelected }) => ({
+  borderRadius: '15px',
+  padding: '10px',
+  width: '327px',
+  height: '86px',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  textTransform: 'none',
+  backgroundColor: isSelected ? '#DEE1E6' : '#ffffff',
+  boxShadow: isSelected ? 'none' : theme.shadows[1],
+  transform: isSelected ? 'translateY(2px)' : 'none',
+  transition: 'transform 0.1s ease-in-out, background-color 0.3s ease',
+  '& img': {
+    width: '24px',
+    height: '24px',
+    marginBottom: '8px',
+  },
+  '& .MuiTypography-root': {
+    color: 'black',
+  },
+  '&:hover': {
+    backgroundColor: '#ffffff',
+  },
+  '&:active': {
+    backgroundColor: '#DEE1E6',
+    boxShadow: 'none',
+    transform: 'translateY(2px)',
+  },
+}));
+
+const Samsung = () => {
+  const [selectedButton, setSelectedButton] = useState(null);
+  const navigate = useNavigate(); 
+
+  const handleButtonClick = (button) => {
+    setSelectedButton(button);
+    if (button === 'player') {
+      navigate('/player');  // 선수 페이지로 이동합니다.
+    } else if (button === 'cheersong') {
+      navigate('/cheersong'); // 응원가 페이지로 이동합니다.
+    } else if (button === 'homeground') {
+      navigate('/Homeground'); // 구장 페이지로 이동합니다.
+    }
+    setTimeout(() => {
+      setSelectedButton(null);
+    }, 100);
+  };
+
+  const handleShopClick = () => {
+    window.location.href = 'https://samsunglionsmall.com';
+  };
+  
+  return (
+    <Box
+      sx={{
+        padding: 2,
+        bgcolor: '#F2F3F5',
+        borderRadius: 2,
+        display: 'flex',
+        flexDirection: 'column',
+        width: '327px',
+        height: 'auto',
+        position: 'relative',
+      }}
+    >
+      <Typography
+        variant="subtitle2"
+        sx={{
+          fontSize: '13px',
+          color: 'black',
+          position: 'absolute',
+          top: '29px',
+          left: '20px',
+          bgcolor: '#F2F3F5',
+          padding: '0 4px',
+        }}
+      >
+        기본 정보
+      </Typography>
+      <Box
+        sx={{
+          padding: '20px',
+          bgcolor: '#ffffff',
+          borderRadius: '15px',
+          boxShadow: 1,
+          position: 'relative',
+          mt: '44px',
+        }}
+      >
+        <Box sx={{ mb: 3 }}>
+          <Typography
+            variant="body1"
+            sx={{
+              fontSize: '13px',
+              color: '#767676',
+              fontWeight: 'bold',
+              mb: 1,
+            }}
+          >
+            창단일
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontSize: '15px',
+              color: 'black',
+            }}
+          >
+            1982.03.02
+          </Typography>
+        </Box>
+        <Box sx={{ mb: 3 }}>
+          <Typography
+            variant="body1"
+            sx={{
+              fontSize: '13px',
+              color: '#767676',
+              fontWeight: 'bold',
+              mb: 1,
+            }}
+          >
+            연고지
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontSize: '15px',
+              color: 'black',
+            }}
+          >
+            대구광역시
+          </Typography>
+        </Box>
+        <Box>
+          <Typography
+            variant="body1"
+            sx={{
+              fontSize: '13px',
+              color: '#767676',
+              fontWeight: 'bold',
+              mb: 1,
+            }}
+          >
+            홈구장
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontSize: '15px',
+              color: 'black',
+            }}
+          >
+            대구 삼성 라이온즈파크
+          </Typography>
+        </Box>
+      </Box>
+      <Box
+        sx={{
+          mt: '25px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-start', 
+          justifyContent: 'center',
+          position: 'relative',
+        }}
+      >
+        <ButtonGroup
+          variant="contained"
+          aria-label="Basic button group"
+          sx={{
+            width: '327px',
+            '& .MuiButtonGroup-grouped': {
+              border: 'none',
+              marginLeft: '0',
+            },
+          }}
+        >
+          <RoundedButton
+            isSelected={selectedButton === 'player'}
+            onClick={() => handleButtonClick('player')}
+          >
+            <img src={playerIcon} alt="player" />
+            <Typography>선수</Typography>
+          </RoundedButton>
+          <RoundedButton
+            isSelected={selectedButton === 'homeground'}
+            onClick={() => handleButtonClick('homeground')}
+          >
+            <img src={homegroundIcon} alt="homeground" />
+            <Typography>홈구장</Typography>
+          </RoundedButton>
+          <RoundedButton
+            isSelected={selectedButton === 'cheersong'}
+            onClick={() => handleButtonClick('cheersong')}
+          >
+            <img src={cheersongIcon} alt="cheersong" />
+            <Typography>응원가</Typography>
+          </RoundedButton>
+          <RoundedButton
+            isSelected={selectedButton === 'shop'}
+            onClick={handleShopClick}
+          >
+            <img src={shopIcon} alt="shop" />
+            <Typography>굿즈샵</Typography>
+          </RoundedButton>
+        </ButtonGroup>
+
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            mt: '25px',
+          }}
+        >
+          <Typography
+            variant="body1"
+            sx={{
+              fontSize: '13px',
+              color: 'black',
+              marginRight: '6px',
+            }}
+          >
+            마스코트
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontSize: '15px',
+              color: '#767676',
+              mb: '10px', 
+            }}
+          >
+            블레오, 레니, 라온, 핑크레오
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            width: '327px',
+            height: '155px',
+            borderRadius: '15px',
+            bgcolor: '#ffffff',
+            boxShadow: 1,
+            position: 'relative',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            overflow: 'hidden',
+          }}
+        >
+          <Box  
+            sx={{
+              width: '259px',
+              height: '122px',
+              backgroundImage: `url(${mascotImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+        </Box>
+      </Box>
+    </Box>
+  );
+};
+export default Samsung;

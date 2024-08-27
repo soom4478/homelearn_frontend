@@ -1,24 +1,20 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import PageMain from './MyPage/PageMain';
+import Profile from './MyPage/Profile';
+import MyPosts from './MyPage/MyPosts';
+import MyComments from './MyPage/MyComments';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          homelearn
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+        <Routes>
+          <Route path="/" element={<PageMain />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/myposts" element={<MyPosts />} />
+          <Route path="/mycomments" element={<MyComments />} />
+        </Routes>
+    </Router>
   );
 }
 
