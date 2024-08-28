@@ -14,20 +14,30 @@ import Kia from './Maininfo/Kia';
 import Kt from './Maininfo/Kt';
 import Nc from './Maininfo/Nc';
 import Kiwoom from './Maininfo/Kiwoom';
-import '../image/Samsunglogo.svg'
+
+import Samsunglogo from '../image/Samsunglogo.svg';
+import Hanwhalogo from '../image/Hanwhalogo.svg';
+import Doosanlogo from '../image/Doosanlogo.svg';
+import Lglogo from '../image/LGlogo.svg';
+import Lottelogo from '../image/Lottelogo.svg';
+import Ssglogo from '../image/SSGlogo.svg';
+import Kialogo from '../image/KIAlogo.svg';
+import Ktlogo from '../image/KTlogo.svg';
+import Nclogo from '../image/NClogo.svg';
+import Kiwoomlogo from '../image/Kiwoomlogo.svg';
 
 // 팀 로고랑 데이터
 const teams = [
-  { name: '삼성 라이온즈', logo: '../image/Samsunglogo.svg' },
-  { name: '한화 이글스', logo: '../image/Hanwhalogo.svg' },
-  { name: '두산 베어스', logo: '../image/Doosanlogo.svg' },
-  { name: 'LG 트윈스', logo: '../image/LGlogo.svg' },
-  { name: '롯데 자이언츠', logo: '../image/Lottelogo.svg' },
-  { name: 'SSG 랜더스', logo: '../image/SSGlogo.svg' },
-  { name: '기아 타이거즈', logo: '../image/KIAlogo.svg' },
-  { name: 'KT wiz', logo: '../image/KTlogo.svg' },
-  { name: 'NC 다이노스', logo: '../image/NClogo.svg' },
-  { name: '키움 히어로즈', logo: '../image/Kiwoomlogo.svg' }
+  { name: '삼성 라이온즈', logo: Samsunglogo },
+  { name: '한화 이글스', logo: Hanwhalogo },
+  { name: '두산 베어스', logo: Doosanlogo },
+  { name: 'LG 트윈스', logo: Lglogo },
+  { name: '롯데 자이언츠', logo: Lottelogo },
+  { name: 'SSG 랜더스', logo: Ssglogo },
+  { name: '기아 타이거즈', logo: Kialogo },
+  { name: 'KT wiz', logo: Ktlogo },
+  { name: 'NC 다이노스', logo: Nclogo },
+  { name: '키움 히어로즈', logo: Kiwoomlogo }
 ];
 
 // css
@@ -39,7 +49,8 @@ const StyledTab = styled(Tab)(({ theme, selected }) => ({
   flexDirection: 'column',
   alignItems: 'center',
   padding: '0',
-  margin: '0',
+  marginBottom: '18px',
+  fontFamily:'Pretendard-SemiBold',
   '& img': {
     width: '62px',
     height: '62px',
@@ -59,7 +70,6 @@ const StyledTab = styled(Tab)(({ theme, selected }) => ({
     letterSpacing: '-0.025em',
     padding: '0',
     color: selected ? 'black' : '#7ED8CF', 
-    fontWeight: selected ? 'bold' : 'normal', 
   },
 }));
 
@@ -85,6 +95,7 @@ const CustomTabs = styled(Tabs)(({ theme }) => ({
   },
   '& .MuiTabs-indicator': {
     backgroundColor: '#7ED8CF',
+    border: '2px',
     height: '2px',
     width: '68px',
     bottom: '0px',
@@ -121,6 +132,7 @@ export default function TeamMain() {
           top: '50px',
           left: '34px',
           fontSize: '20px',
+          fontFamily: 'Pretendard-SemiBold',
         }}
       >
         10개 구단 정보

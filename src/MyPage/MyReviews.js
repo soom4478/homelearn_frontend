@@ -38,7 +38,7 @@ const MyReviews = () => {
   return (
     <div className="main-container">
       <div className="header3">
-        <button className="back-button3" onClick={() => navigate(-1)}>
+        <button className="back-button3" onClick={() => navigate(-1)} style={{marginBottom: '12px'}}>
           <ArrowBackIcon />
         </button>
         <div className="title3">나의 리뷰</div>
@@ -50,8 +50,8 @@ const MyReviews = () => {
               <img src={storeIcon} alt="가게 아이콘" className="store-icon" />
               <div className="review-info">
                 <div className="stadium-store">
-                  <span>{review.homeground}</span><br />
-                  <span>{review.store}</span>
+                  <span style={{fontFamily: 'Pretendard-SemiBold',}}>{review.homeground}</span><br />
+                  <span style={{fontFamily: 'Pretendard-Medium',}}>{review.store}</span>
                 </div>
                 <img 
                   src={buttonImage} 

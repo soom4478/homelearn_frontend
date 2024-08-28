@@ -80,13 +80,15 @@ const labelStyle = {
   display: 'flex',
   alignItems: 'center',
   fontSize: '16px',
+  fontFamily: 'Pretendard-Medium',
 };
 
 const titleStyle = {
   display: 'flex',
-  alignItems: 'center',
-  paddingLeft: '80px',
-  fontSize:'20px',
+  paddingTop: '10px',
+  paddingBottom: '10px',
+  fontFamily: 'Pretendard-SemiBold',
+  fontSize: '20px',
 };
 
 const switchItemStyle = {
@@ -98,23 +100,24 @@ const switchItemStyle = {
 };
 
 const headerStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    paddingTop: '8px',
-    paddingBottom: '8px',
-    borderBottom: '1px solid #E0E0E0',
-  };
+  display: 'flex',
+  paddingTop: '8px',
+  paddingBottom: '8px',
+  borderBottom: '1px solid #E0E0E0',
+  justifyContent: 'center',
+  alignItems: 'center',
+};
 
 export default function CustomizedSwitches() {
   const navigate = useNavigate();
   return (
     <div>
-      <div className="header4" style={headerStyle}>
-        <button className="back-button3" onClick={() => navigate(-1)}>
+      <div style={headerStyle}>
+        <button className="back-button2" onClick={() => navigate(-1)} style={{ border: 'none', background: 'none', top: '32px', }}>
           <ArrowBackIcon />
         </button>
-        <div className="title4" style={titleStyle}>알림 설정</div>    
-      </div>
+        <div style={titleStyle}>알림 설정</div> 
+      </div>   
       <FormGroup style={switchContainerStyle}>
         <div style={switchItemStyle}>
           <div style={labelStyle}>게시글 댓글</div>

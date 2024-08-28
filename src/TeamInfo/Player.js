@@ -1,22 +1,44 @@
 import React, { useState } from 'react';
-import './Player.css'
-import SearchIcon from '@mui/icons-material/Search';  
+import './Player.css'; 
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';  
 import Jawook from '../image/Jawook.png'; 
 import Jaehyun from '../image/Jaehyun.png'; 
-import StarRateRoundedIcon from '@mui/icons-material/StarRateRounded'; // 채워진 별
-import StarBorderRoundedIcon from '@mui/icons-material/StarBorderRounded'; // 빈 별
+import StarRateRoundedIcon from '@mui/icons-material/StarRateRounded'; 
+import StarBorderRoundedIcon from '@mui/icons-material/StarBorderRounded'; 
 
-// 선수 리스트
 const players = [
-  { id: 5, name: '구자욱', role: '주장', position: '좌익수', number: '5', image: Jawook },
-  { id: 7, name: '이재현', role: 0, position: '유격수', number: '7', image: Jaehyun },
+  { 
+    id: 5, 
+    name: '구자욱', 
+    role: '주장', 
+    position: '좌익수', 
+    number: '5', 
+    image: Jawook,
+    birthDate: '1993-02-12', 
+    debut: '2012년 삼성', 
+    height: '189cm', 
+    weight: '75kg', 
+    instagram: 'koojawook'
+  },
+  { 
+    id: 7, 
+    name: '이재현', 
+    role: 0, 
+    position: '유격수', 
+    number: '7', 
+    image: Jaehyun,
+    birthDate: '2003-02-04', 
+    debut: '2022년 삼성', 
+    height: '180cm', 
+    weight: '82kg', 
+    instagram: 'lee.j.hyeon7_'
+  },
 ];
 
 const Player = () => {
   const [selectedPlayer, setSelectedPlayer] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
-  const [favoredPlayers, setFavoredPlayers] = useState(new Set()); // 즐겨찾기한 선수의 id(등번호)를 저장
+  const [favoredPlayers, setFavoredPlayers] = useState(new Set());
 
   const handlePlayerClick = (player) => {
     setSelectedPlayer(player);
@@ -38,13 +60,11 @@ const Player = () => {
     });
   };
 
-  // 필터링?...하고 정리
   const filteredPlayers = players
     .filter(player =>
       player.name.toLowerCase().includes(searchTerm.toLowerCase())
     )
     .sort((a, b) => {
-      // 즐겨찾기한 선수가 맨 위로 오도록 정렬
       const isAFavored = favoredPlayers.has(a.id);
       const isBFavored = favoredPlayers.has(b.id);
 
@@ -59,7 +79,7 @@ const Player = () => {
         <button className="back-button" onClick={() => window.history.back()}>
           <ArrowBackIcon />
         </button>
-        <div className="title">삼성 라이온즈 선수단</div>
+        <div className="title">삼성 라이온즈 선수</div>
         <div className="line"></div>
       </div>
 
@@ -71,7 +91,6 @@ const Player = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <SearchIcon className="search-icon" />
       </div>
 
       <div className="player-count">
@@ -95,7 +114,7 @@ const Player = () => {
                 <div
                   className="favorite-icon"
                   onClick={(e) => {
-                    e.stopPropagation(); // 별 클릭했을 때 팝업이 켜지지 않게 해줌
+                    e.stopPropagation();
                     toggleFavorite(player.id);
                   }}
                 >
@@ -117,8 +136,33 @@ const Player = () => {
         <div id="playerModal" className="modal">
           <div className="modal-content">
             <span className="close" onClick={closeModal}>&times;</span>
-            <h2>{selectedPlayer.name}</h2>
-            <p>{selectedPlayer.name} 잘생겻다~!</p>   
+            <div className="modal-header">
+              <img src={selectedPlayer.image} alt={selectedPlayer.name} className="modal-image" />
+              <div className="modal-info">
+                <h2 className="modal-name">{selectedPlayer.name}</h2>
+                <a href="#" className="cheer-link">응원가 바로가기 &gt;</a>
+                <div className="modal-number"><span style={{fontFamily: 'Pretendard-SemiBold'}}>등번호</span>
+                <span style={{ marginLeft: '30px', fontFamily:'Pretendard-Medium', color:'#767676'  }}>No.{selectedPlayer.number}</span></div>
+                <div className="modal-position"><span style={{fontFamily: 'Pretendard-SemiBold'}}>포지션</span>
+                <span style={{ marginLeft: '30px', fontFamily:'Pretendard-Medium', color:'#767676'  }}>{selectedPlayer.position}</span></div>
+              </div>
+            </div>
+            <div className="modal-details">
+              <div className="modal-detail-item"><span style={{fontFamily: 'Pretendard-SemiBold'}}>생년월일</span>
+              <span style={{ marginLeft: '36px', fontFamily:'Pretendard-Medium', color:'#767676' }}>{selectedPlayer.birthDate}</span></div>
+              <div className='line4'></div>
+              <div className="modal-detail-item"><span style={{fontFamily: 'Pretendard-SemiBold'}}>입단</span>
+              <span style={{ marginLeft: '63px', fontFamily:'Pretendard-Medium', color:'#767676'  }}>{selectedPlayer.debut}</span></div>
+              <div className='line4'></div>
+              <div className="modal-detail-item"><span style={{fontFamily: 'Pretendard-SemiBold'}}>신장</span>
+              <span style={{ marginLeft: '63px', fontFamily:'Pretendard-Medium', color:'#767676'  }}>{selectedPlayer.height}</span></div>
+              <div className='line4'></div>
+              <div className="modal-detail-item"><span style={{fontFamily: 'Pretendard-SemiBold'}}>체중</span>
+              <span style={{ marginLeft: '63px', fontFamily:'Pretendard-Medium', color:'#767676'  }}>{selectedPlayer.weight}</span></div>
+              <div className='line4'></div>
+              <div className="modal-detail-item"><span style={{fontFamily: 'Pretendard-SemiBold'}}>인스타그램</span>
+              <span style={{ marginLeft: '18px', fontFamily:'Pretendard-Medium', color:'#767676'  }}> <a href={`https://www.instagram.com/${selectedPlayer.instagram}`} target="_blank" rel="noopener noreferrer">@{selectedPlayer.instagram}</a></span></div>
+            </div>
           </div>
         </div>
       )}

@@ -25,6 +25,7 @@
   font-size: 18px; 
   font-weight: bold;
   margin-top: 60px;
+  font-family: Pretendard-SemiBold;
 }
 
 .confirm-button {
@@ -38,6 +39,7 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-family: Pretendard-Regular;
 }
 
 .profile-body {
@@ -84,6 +86,7 @@
   font-size: 14px;
   text-align: center;
   width: 150px;
+  font-family: Pretendard-Regular;
 }
 
 .image-action-button:hover {
@@ -114,12 +117,14 @@
   font-size: 16px;
   margin-bottom: 10px;
   padding-left: 10px;
+  font-family: Pretendard-Medium;
 }
 
 .team2 {
   font-size: 14px;
   display: block;
   margin-bottom: 8px;
+  font-family: Pretendard-SemiBold;
 } 
 
 .picture {
@@ -132,3 +137,15 @@
   left: 60px;  
 }
 
+.name2{
+  font-family: Pretendard-SemiBold;
+  font-size: 14px;
+}
+
+.team-select-label{
+  font-family: Pretendard-Medium;
+}
+
+.team-select{
+  font-family: Pretendard-Medium;
+}

@@ -9,13 +9,13 @@ import playerIcon from '/Users/USERONE/dev/homelearn/src/image/player.png';
 import homegroundIcon from '/Users/USERONE/dev/homelearn/src/image/homeground.png';
 import cheersongIcon from '/Users/USERONE/dev/homelearn/src/image/cheersong.png';
 import shopIcon from '/Users/USERONE/dev/homelearn/src/image/shop.png';
-import mascotImage from '/Users/USERONE/dev/homelearn/src/image/mascot_Kia.png'; // 추가된 이미지 경로
+import mascotImage from '/Users/USERONE/dev/homelearn/src/image/mascot_Kia.png';
 
 const RoundedButton = styled(Button)(({ theme, isSelected }) => ({
   borderRadius: '15px',
   padding: '10px',
-  width: '327px',
-  height: '86px',
+  width: '100%',
+  height: '100%',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -49,7 +49,7 @@ const Kia = () => {
     setSelectedButton(button);
     setTimeout(() => {
       setSelectedButton(null);
-    }, 100);
+    }, 300);
   };
 
   const handleShopClick = () => {
@@ -59,14 +59,15 @@ const Kia = () => {
   return (
     <Box
       sx={{
-        padding: 2,
         bgcolor: '#F2F3F5',
         borderRadius: 2,
         display: 'flex',
         flexDirection: 'column',
-        width: '327px',
-        height: 'auto',
-        position: 'relative',
+        maxWidth: 'calc(100% - 48px)', 
+        margin: '0 auto', 
+        minHeight: '100vh', 
+        boxSizing: 'border-box', 
+        overflow: 'auto', 
       }}
     >
       <Typography
@@ -75,10 +76,11 @@ const Kia = () => {
           fontSize: '13px',
           color: 'black',
           position: 'absolute',
-          top: '29px',
-          left: '20px', // 왼쪽으로 10px 이동
+          top: '15px',
+          left: '34px',
           bgcolor: '#F2F3F5',
           padding: '0 4px',
+          fontFamily: 'Pretendard-SemiBold',
         }}
       >
         기본 정보
@@ -99,8 +101,8 @@ const Kia = () => {
             sx={{
               fontSize: '13px',
               color: '#767676',
-              fontWeight: 'bold',
               mb: 1,
+              fontFamily: 'Pretendard-SemiBold',
             }}
           >
             창단일
@@ -110,6 +112,7 @@ const Kia = () => {
             sx={{
               fontSize: '15px',
               color: 'black',
+              fontFamily: 'Pretendard-SemiBold',
             }}
           >
             2001.08.01
@@ -121,8 +124,8 @@ const Kia = () => {
             sx={{
               fontSize: '13px',
               color: '#767676',
-              fontWeight: 'bold',
               mb: 1,
+              fontFamily: 'Pretendard-SemiBold',
             }}
           >
             연고지
@@ -132,6 +135,7 @@ const Kia = () => {
             sx={{
               fontSize: '15px',
               color: 'black',
+              fontFamily: 'Pretendard-SemiBold',
             }}
           >
             광주광역시
@@ -143,8 +147,8 @@ const Kia = () => {
             sx={{
               fontSize: '13px',
               color: '#767676',
-              fontWeight: 'bold',
               mb: 1,
+              fontFamily: 'Pretendard-SemiBold',
             }}
           >
             홈구장
@@ -154,6 +158,7 @@ const Kia = () => {
             sx={{
               fontSize: '15px',
               color: 'black',
+              fontFamily: 'Pretendard-SemiBold',
             }}
           >
             기아 챔피언스 필드
@@ -165,7 +170,7 @@ const Kia = () => {
           mt: '25px',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'flex-start', // 왼쪽으로 정렬
+          alignItems: 'flex-start', 
           justifyContent: 'center',
           position: 'relative',
         }}
@@ -174,7 +179,7 @@ const Kia = () => {
           variant="contained"
           aria-label="Basic button group"
           sx={{
-            width: '327px',
+            width: '100%',
             '& .MuiButtonGroup-grouped': {
               border: 'none',
               marginLeft: '0',
@@ -186,36 +191,43 @@ const Kia = () => {
             onClick={() => handleButtonClick('player')}
           >
             <img src={playerIcon} alt="player" />
-            <Typography>선수</Typography>
+            <Typography sx={{
+              fontFamily: 'Pretendard-Medium',
+            }}>선수</Typography>
           </RoundedButton>
           <RoundedButton
             isSelected={selectedButton === 'homeground'}
             onClick={() => handleButtonClick('homeground')}
           >
             <img src={homegroundIcon} alt="homeground" />
-            <Typography>홈구장</Typography>
+            <Typography sx={{
+              fontFamily: 'Pretendard-Medium',
+            }}>홈구장</Typography>
           </RoundedButton>
           <RoundedButton
             isSelected={selectedButton === 'cheersong'}
             onClick={() => handleButtonClick('cheersong')}
           >
             <img src={cheersongIcon} alt="cheersong" />
-            <Typography>응원가</Typography>
+            <Typography sx={{
+              fontFamily: 'Pretendard-Medium',
+            }}>응원가</Typography>
           </RoundedButton>
           <RoundedButton
             isSelected={selectedButton === 'shop'}
             onClick={handleShopClick}
           >
             <img src={shopIcon} alt="shop" />
-            <Typography>굿즈샵</Typography>
+            <Typography sx={{
+              fontFamily: 'Pretendard-Medium',
+            }}>굿즈샵</Typography>
           </RoundedButton>
         </ButtonGroup>
-
         <Box
           sx={{
             display: 'flex',
             alignItems: 'center',
-            mt: '25px', // 버튼 그룹과 간격 25px
+            mt: '25px',
           }}
         >
           <Typography
@@ -224,6 +236,8 @@ const Kia = () => {
               fontSize: '13px',
               color: 'black',
               marginRight: '6px',
+              fontFamily: 'Pretendard-SemiBold',
+              marginBottom: '10px',
             }}
           >
             마스코트
@@ -234,6 +248,7 @@ const Kia = () => {
               fontSize: '15px',
               color: '#767676',
               mb: '10px', 
+              fontFamily: 'Pretendard-SemiBold',
             }}
           >
             호걸이, 하랑이, 호연이
@@ -241,29 +256,26 @@ const Kia = () => {
         </Box>
         <Box
           sx={{
-            width: 'auto', 
-            height: 'auto', 
-            bgcolor: '#ffffff',
+            width: '100%',
+            height: 'auto',
             borderRadius: '15px',
+            bgcolor: '#ffffff',
             boxShadow: 1,
             position: 'relative',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             overflow: 'hidden',
-            padding: '16.53px', 
-            boxSizing: 'border-box',
-            '& img': {
-              objectFit: 'contain', 
-            },
           }}
         >
           <img
             src={mascotImage}
             alt="mascot"
             style={{
-              maxWidth: 'calc(100% - 68px)',
-              maxHeight: 'calc(100% - 33.06px)', 
+              width: 'calc(100% - 20px)', 
+              height: 'auto',
+              borderRadius: '15px',
+              margin: '10px',
             }}
           />
         </Box>

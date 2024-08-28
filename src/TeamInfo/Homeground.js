@@ -62,7 +62,7 @@ const Homeground = () => {
           <p className="main-text">달구벌시즌권전용주차장</p>
           <p className="parking-text">
             <span className="label">운영시간</span> 
-            <span className="time">09시 ~ 경기 종료 후 2시간</span>
+            <span className="time">09시 ~ 경기 종료 후 2시간</span><br></br>
             <span className="label">주차비용</span> 
             <span className="time">2000원/일</span>
           </p>
@@ -71,7 +71,7 @@ const Homeground = () => {
           <p className="main-text">전설로주차장</p>
           <p className="parking-text">
             <span className="label">운영시간</span> 
-            <span className="time">09시 ~ 경기 종료 후 2시간</span>
+            <span className="time">09시 ~ 경기 종료 후 2시간</span><br></br>
             <span className="label">주차비용</span> 
             <span className="time">2000원/일</span>
           </p>

@@ -114,7 +114,8 @@ function Profile() {
         </div>
 
         <div className="input-group">
-          <label htmlFor="name-input">이름</label>
+          <div className="name2">이름</div>
+          <label htmlFor="name-input"></label>
           <input
             type="text"
             id="name-input"
@@ -127,8 +128,8 @@ function Profile() {
 
         <div className="input-group">
           <div className="team2">MY 팀</div>
-          <FormControl fullWidth sx={{ minWidth: 120 }}>
-            <InputLabel id="team-select-label"></InputLabel>
+          <FormControl fullWidth sx={{ minWidth: 120, fontFamily:'Pretendard-Medium' }}>
+            <InputLabel id="team-select-label" sx={{fontFamily: 'Pretendard-Medium',}}></InputLabel>
             <Select
               labelId="team-select-label"
               id="team-select"
@@ -139,11 +140,12 @@ function Profile() {
                 backgroundColor: '#E8ECEF', 
                 color: '#333', 
                 border: '0px solid #E8ECEF',
+                fontfamily: 'Pretendard-Medium',
                 '& .MuiSelect-icon': {
                   color: 'white',
                 },
                 '&:focus': {
-                  border: '1px solid #E8ECEF', 
+                  border: '1px solid #E8ECEF',
                 }
               }}
             >

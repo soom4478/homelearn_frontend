@@ -38,7 +38,7 @@
     margin-top: -20px;
     margin-bottom: 4px;
     font-size: 18px;
-    font-weight: bold;
+    font-family: Pretendard-SemiBold;
 }
 
 .team {
@@ -58,6 +58,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    font-family: Pretendard-SemiBold;
 }
 
 .team-logo {
@@ -77,6 +78,7 @@
     text-align: left;
     width: 100%;
     padding-left: 90px;
+    font-family: Pretendard-SemiBold;
 }
 
 .editProfile {
@@ -89,8 +91,9 @@
     cursor: pointer;
     display: block;
     margin: 0 auto 20px;
-    width: 310px;
+    width: 100%;
     height: 50px;
+    font-family: Pretendard-Medium;
 }
 
 .account {
@@ -105,12 +108,14 @@
     font-size: 14px;
     height: 400px;
     overflow-y: auto;
+    font-family: Pretendard-SemiBold;
 }
 
 .Activities {
     margin-top: 15px;
     font-size: 16px;
     margin-bottom: 2px;
+    font-family: Pretendard-SemiBold;
 }
 
 .Account2 {
@@ -133,6 +138,7 @@
     width: 100%;
     box-sizing: border-box;
     border-radius: 10px;
+    font-family: Pretendard-Medium;
 }
 
 .text-button .Arrow {
@@ -147,4 +153,5 @@
 
 .withdraw {
     color: rgba(227, 2, 64, 1);
+    font-family: Pretendard-Medium;
 }

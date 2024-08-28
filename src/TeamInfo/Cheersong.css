@@ -61,6 +61,7 @@ body {
     font-size: 16px; 
     outline: none; 
     position: relative; 
+    font-family: Pretendard-SemiBold;
 }
 
 .search-input::placeholder {
@@ -100,6 +101,7 @@ body {
     padding: 3px 10px; 
     box-sizing: border-box;  
     white-space: nowrap; 
+    font-family: Pretendard-Regular;
 }
 
 .tab-active {
@@ -124,6 +126,7 @@ body {
     box-sizing: border-box;
     overflow: hidden;
     border-bottom: 1px solid #ddd;
+    font-family: Pretendard-SemiBold;
 }
 
 .button:last-child {

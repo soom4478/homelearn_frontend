@@ -80,6 +80,7 @@
     display: flex;
     justify-content: space-between;  
     margin-top: 0px;  
+    font-family: Pretendard-SemiBold;
 }
 
 .content-text {
@@ -89,6 +90,7 @@
     margin-right: 50px;  
     margin-top: 0px;
     margin-bottom: 0px;
+    font-family: Pretendard-SemiBold;
 }
 
 .content-text2 {
@@ -98,6 +100,7 @@
     margin-left: 50px; 
     margin-top: 0px;
     margin-bottom: 0px;
+    font-family: Pretendard-SemiBold;
 }
 
   .stadium-map {
@@ -112,7 +115,7 @@
     margin-left: 15px;
   }
   
-  .parking-box {
+  .parking-box {                
     margin-top: 0px;
     padding: 30px;
     padding-left: 20px;
@@ -126,11 +129,13 @@
     color: black;
     font-weight: bold;
     margin-bottom: 16px;
+    font-family: Pretendard-SemiBold;
   }
   
   .parking-text {
     font-size: 13px;
     color: #797979;
+    font-family: Pretendard-SemiBold;
   }
   
   .order-box {
@@ -146,10 +151,11 @@
     border: 1px solid #E8ECEF;
     box-shadow: 0px 4px 6px #E8ECEF;
     height: 99px;
-    width: 300px;
     display: flex; /* Flexbox 사용 */
     justify-content: space-between; /* 텍스트와 이미지를 양쪽에 배치 */
     align-items: center; /* Y축 정렬 */
+    width: calc(100% - 48px);  
+    font-family: Pretendard-SemiBold;
 }
 
 .order-box:active {
@@ -179,12 +185,15 @@
   .main-text{
     font-size: 16px;
     color: black;
+    font-family: Pretendard-SemiBold;
   }
 
   .map-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    justify-content: flex-end;
+    font-family: Pretendard-SemiBold;
   } 
 
   .view-details-button {
@@ -193,14 +202,18 @@
     background: none;
     border: none;
     cursor: pointer;
-    margin-left: 250px;
+    margin-right: 24px;
+    font-family: Pretendard-SemiBold;
   }
 
   .label {
     margin-right: 10px;
+    font-family: Pretendard-SemiBold;
   }
   
   .time {
     margin-left: 10px;
     margin-right: 80px;
-  }
+    font-family: Pretendard-SemiBold;
+}
+
