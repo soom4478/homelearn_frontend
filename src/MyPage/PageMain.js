@@ -8,19 +8,24 @@ import { getTeamInfo } from './teamUtils';
 function PageMain() {
   const navigate = useNavigate();
 
-  // 프로필 편집 버튼 클릭 시 호출되는 함수
   const handleEditProfileClick = () => {
     navigate('/profile');
   };
 
-  // 게시글 버튼 클릭 시 호출되는 함수
   const handlePostsClick = () => {
     navigate('/myposts');
   };
 
-  // 댓글 버튼 클릭 시 호출되는 함수 (수정된 부분)
   const handleCommentsClick = () => {
-    navigate('/mycomments');  // '/mycomments' 라우트로 이동
+    navigate('/mycomments');
+  };
+
+  const handleReviewClick = () => {
+    navigate('/myreviews');
+  };
+
+  const handleNotificationSettingsClick = () => {
+    navigate('/settings');
   };
 
   const profileImage = localStorage.getItem('profileImage') || Profile;
@@ -56,13 +61,13 @@ function PageMain() {
           <img src={Arrow} alt="Arrow" className="Arrow" />
         </button>
         <div className="line3"></div>
-        <button className="text-button">
+        <button className="text-button" onClick={handleReviewClick}>
           리뷰
           <img src={Arrow} alt="Arrow" className="Arrow" />
         </button>
         <div className="line3"></div>
         <div className="Account2">계정 관리</div>
-        <button className="text-button">
+        <button className="text-button" onClick={handleNotificationSettingsClick}>
           알림 설정
           <img src={Arrow} alt="Arrow" className="Arrow" />
         </button>
