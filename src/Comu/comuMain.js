@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { comuImfo } from './comuImfo';
 import "./comuMain.css";
 import heartIcon from "../image/heartIcon.png";
@@ -6,11 +7,16 @@ import commentIcon from "../image/commentIcon.png";
 
 const ComuMain = () => {
     const [selectedIndex, setSelectedIndex] = useState('전체'); // 초기값을 "전체"로 설정
+    const navigate = useNavigate();
 
     const navItems = ['전체', '삼성 라이온즈'];
   
     const handleItemClick = (item) => {
       setSelectedIndex(item);
+    };
+
+    const handleComuClick = (item) => {
+      navigate('/community:detail', { state: { item } });
     };
 
     return (
@@ -35,10 +41,10 @@ const ComuMain = () => {
             </div>
             <div className='comuMcon3'>
                 {comuImfo
-                    .filter(item => selectedIndex === '전체' || item.id === selectedIndex)
+                    .filter(item => item.club === selectedIndex)
                     .map((item, index) => (
                         <div className="comuCon3_2" key={index}>
-                            <div className="comuCon4_2">
+                            <div className="comuCon4_2" onClick={() => handleComuClick(item)}>
                                 <p id="comuT">{item.comu_title}</p>
                                 <p id="comuI">{item.comu_text}</p>
                                 <p id="comuB">{item.comu_time}</p>

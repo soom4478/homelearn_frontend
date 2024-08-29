@@ -10,6 +10,7 @@ import Calender from "./Calender/calender";
 import Term from "./Term/term";
 import TermDetail from './Term/termDetail';
 import ComuMain from './Comu/comuMain';
+import ComuDetail from './Comu/comuDetail';
 import { StoreProvider } from "./Food/StoreContext";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route path="/food" element={<FoodMain />} />
             <Route path="/food/:storeId" element={<FoodDetail />} />
             <Route path="/community" element={<ComuMain />} />
+            <Route path="/community:detail" element={<ComuDetail />} />
             <Route path="/my" element={<div>마이</div>} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>

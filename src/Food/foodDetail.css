@@ -1,3 +1,192 @@
+.foodDcon2 {
+    padding-top: 28px;
+}
+
+.foodDcon6 {
+    margin-top: -4px;
+    height: 100%;
+}
+
+.foodDcon4 {
+    border-bottom: solid 1px #E8ECEF;
+    height: 140px;
+    align-content: center;
+}
+
+.foodDcon3 {
+    width: 100%;
+    height: 50px;
+    border-bottom: solid 1px #E8ECEF;
+}
+
+.foodDcon5 {
+    width: 85%;
+    height: 94px;
+    border-radius: 15px;
+    border: solid 1px #E8ECEF;
+    margin: 0 auto;
+    align-content: center;
+    position: relative;
+}
+
 #storeImg {
     width: 100%;
+    height: 256px;
+}
+
+#foodDetail-title {
+    font-size: 20px;
+    font-weight: bold;
+    width: 235px;
+    height: 24px;
+    margin-bottom: 11px;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; /* 넘치는 텍스트를 ...으로 표시 */
+}
+
+.starDcon {
+    width: 49px;
+    display: inline-block;
+    margin-left: 24px;
+    margin-top: 14px;
+}
+
+.star_point {
+    margin-left: 8px;
+    position: relative;
+    top: -2px;
+}
+
+.location {
+    height: 17px;
+    display: inline-block;
+    margin-left: 11px;
+}
+
+#map {
+    margin-right: 8px;
+}
+
+#locationT {
+    color: #009788;
+    font-size: 14px;
+    display: inline-block;
+    position: relative;
+    top: -2px;
+}
+
+#reviewN {
+    color: #767676;
+    font-size: 14px;text-align: end;
+    padding-right: 24px;
+    margin-bottom: 8px;
+}
+
+.populerReviewImg {
+    width: 70px;
+    height: 70px;
+    background-color: #767676;
+    border-radius: 5px;
+    display: inline-block;
+    margin-left: 12px;
+}
+
+.foodDcon7 {
+    display: inline-block;
+    position: absolute;
+    right: 24px;
+    top: 27px;
+    width: 61%;
+}
+
+#reviewText {
+    color: #767676;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cate1, .cate2, .cate3, .cate4, .cate5 {
+    background-color: #DEE1E6;
+    font-size: 14px;
+    color: #767676;
+    border-radius: 10px;
+    height: 23px;
+    text-align: center;
+    align-content: center;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.cate2 {
+    width: 49px;
+}
+
+.cate3 {
+    width: 41px;
+}
+
+.cate1, .cate4, .cate5 {
+    width: 45px;
+}
+
+.foodDcate {
+    height: 23px;
+    padding: 15px 0 10px 24px;
+}
+
+.cateActive {
+  background-color: #009788;
+  color: white;
+}
+
+.foodDcon8 {
+    height: 32px;
+    border-bottom: solid 1px #E8ECEF;
+}
+
+#cateText {
+    font-size: 14px;
+    margin-left: 24px;
+    margin-top: 11px;
+}
+
+.foodDcon9 {
+    height: 97px;
+    border-bottom: solid 1px #E8ECEF;
+    align-content: center;
+    position: relative;
+}
+
+#DtailT {
+    color: #767676;
+    font-size: 14px;
+    margin-left: 24px;
+    margin-bottom: 8px;
+}
+
+#nameT {
+    font-size: 16px;
+    width: 50%;
+    display: inline-block;
+    margin-left: 24px;
+}
+
+#priceT {
+    color: #006359;
+    font-size: 16px;
+    position: absolute;
+    right: 24px;
+    bottom: 27px;
+}
+
+.noneCon {
+    height: 6px;
+    background-color: #E8ECEF;
 }

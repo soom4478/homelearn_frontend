@@ -204,9 +204,17 @@ const Home = () => {
                 </div>
                 <div className="conBottom2">
                   <div className="conImfo2">
+                    <div className="numCircle">
+                      <p className="number">1</p>
+                    </div>
                     <div className="explainCon">
                       <p id="ImfoT1">{item.explanT1}</p>
                       <p id="ImfoT2">{item.explanT2}</p>
+                    </div>
+                  </div>
+                  <div className="conImfo3">
+                    <div className="numCircle">
+                      <p className="number">2</p>
                     </div>
                     <div className="explainCon">
                       <p id="ImfoT1">{item.explanT3}</p>

@@ -400,30 +400,51 @@
     margin-right: 24px;
 }
 
-.conImfo2 {
-    display: inline-block;
-    width: 226.47px;
+.conImfo2, .conImfo3 {
+    width: 300px;
     height: 70px; /* 높이 설정 */
     overflow: visible; /* 내용이 넘칠 때 보이도록 설정 */
     white-space: normal; /* 줄바꿈 허용 */
-    margin-left: 20px;
+    margin-left: 25px;
     text-align: left;
+}
+
+.conImfo2 {
+    margin-bottom: 30px;
+}
+
+.numCircle {
+    display: inline-flex;
+    width: 19px;
+    height: 19px;
+    background-color: #009788;
+    border-radius: 50px;
+    align-items: center;
+    position: absolute;
+}
+
+.number {
+    margin: 0 auto;
+    color: white;
+    font-size: 14px;
 }
 
 .explainCon {
     margin-bottom: 26px;
+    margin-left: 28px;
+    display: inline-block;
 }
 
 #ImfoT1 {
     width: auto;
     font-size: 16px;
     height: 19px;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
 #ImfoT2 {
     font-size: 14px;
-    width: 226.47px;
+    width: 220px;
 }
 
 #dicseption1 {
