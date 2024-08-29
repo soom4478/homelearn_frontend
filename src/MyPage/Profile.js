@@ -131,34 +131,34 @@ function Profile() {
           <FormControl fullWidth sx={{ minWidth: 120, fontFamily:'Pretendard-Medium' }}>
             <InputLabel id="team-select-label" sx={{fontFamily: 'Pretendard-Medium',}}></InputLabel>
             <Select
-              labelId="team-select-label"
-              id="team-select"
-              value={team}
-              label=""
-              onChange={(event) => setTeam(event.target.value)}
-              sx={{ 
-                backgroundColor: '#E8ECEF', 
-                color: '#333', 
-                border: '0px solid #E8ECEF',
-                fontfamily: 'Pretendard-Medium',
-                '& .MuiSelect-icon': {
-                  color: 'white',
-                },
-                '&:focus': {
-                  border: '1px solid #E8ECEF',
-                }
-              }}
+            labelId="team-select-label"
+            id="team-select"
+            value={team}
+            label=""
+            onChange={(event) => setTeam(event.target.value)}
+            sx={{ 
+              backgroundColor: '#E8ECEF', 
+              color: '#333', 
+              border: '0px solid #E8ECEF',
+              fontFamily: 'Pretendard-Medium',
+              '& .MuiSelect-icon': {
+                color: 'white',
+              },
+              '&:focus': {
+                border: '1px solid #E8ECEF',
+              }
+            }}
             >
-              <MenuItem value="KIA 타이거즈">KIA 타이거즈</MenuItem>
-              <MenuItem value="두산 베어스">두산 베어스</MenuItem>
-              <MenuItem value="롯데 자이언츠">롯데 자이언츠</MenuItem>
-              <MenuItem value="삼성 라이온즈">삼성 라이온즈</MenuItem>
-              <MenuItem value="SSG 랜더스">SSG 랜더스</MenuItem>
-              <MenuItem value="LG 트윈스">LG 트윈스</MenuItem>
-              <MenuItem value="키움 히어로즈">키움 히어로즈</MenuItem>
-              <MenuItem value="KT wiz">KT wiz</MenuItem>
-              <MenuItem value="한화 이글스">한화 이글스</MenuItem>
-            </Select>
+            <MenuItem value="KIA 타이거즈" sx={{ fontFamily: 'Pretendard-Medium' }}>KIA 타이거즈</MenuItem>
+            <MenuItem value="두산 베어스" sx={{ fontFamily: 'Pretendard-Medium' }}>두산 베어스</MenuItem>
+            <MenuItem value="롯데 자이언츠" sx={{ fontFamily: 'Pretendard-Medium' }}>롯데 자이언츠</MenuItem>
+            <MenuItem value="삼성 라이온즈" sx={{ fontFamily: 'Pretendard-Medium' }}>삼성 라이온즈</MenuItem>
+            <MenuItem value="SSG 랜더스" sx={{ fontFamily: 'Pretendard-Medium' }}>SSG 랜더스</MenuItem>
+            <MenuItem value="LG 트윈스" sx={{ fontFamily: 'Pretendard-Medium' }}>LG 트윈스</MenuItem>
+            <MenuItem value="키움 히어로즈" sx={{ fontFamily: 'Pretendard-Medium' }}>키움 히어로즈</MenuItem>
+            <MenuItem value="KT wiz" sx={{ fontFamily: 'Pretendard-Medium' }}>KT wiz</MenuItem>
+            <MenuItem value="한화 이글스" sx={{ fontFamily: 'Pretendard-Medium' }}>한화 이글스</MenuItem>
+          </Select>
           </FormControl>
         </div>
       </div>
