@@ -11,6 +11,7 @@ import Term from "./Term/term";
 import TermDetail from './Term/termDetail';
 import ComuMain from './Comu/comuMain';
 import ComuDetail from './Comu/comuDetail';
+import Review from './Food/review';
 import { StoreProvider } from "./Food/StoreContext";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route path="/nextpage" element={<TermDetail />} />
             <Route path="/food" element={<FoodMain />} />
             <Route path="/food/:storeId" element={<FoodDetail />} />
+            <Route path="/review" element={<Review />} />
             <Route path="/community" element={<ComuMain />} />
             <Route path="/community:detail" element={<ComuDetail />} />
             <Route path="/my" element={<div>마이</div>} />

@@ -16,6 +16,10 @@ const FoodDetail = () => {
   const [activeCategory, setActiveCategory] = useState('cate1');
   const [store, setStore] = useState(null);
 
+  const handleReviewClick = () => {
+    navigate(`/review`);
+  };
+
   useEffect(() => {
     const foundStore = stores.find((store) => store.id === parseInt(storeId));
     setStore(foundStore);
@@ -59,7 +63,7 @@ const FoodDetail = () => {
           </div>
         </div>
         <div className="foodDcon4">
-          <p id="reviewN">리뷰 104개 {">"}</p>
+          <p id="reviewN" onClick={handleReviewClick}>리뷰 104개 {">"}</p>
           <div className="foodDcon5">
             <div className="populerReviewImg"></div>
             <div className="foodDcon7">

@@ -3,8 +3,8 @@ import { useLocation } from 'react-router-dom';
 import "./comuDetail.css";
 import returnIcon from "../image/return.png";
 import { useNavigate } from 'react-router-dom';
-import heartIcon from "../image/heartIcon.png";
-import commentIcon from "../image/commentIcon.png";
+import heartIcon1 from "../image/heart_empty.png";
+import comuIcon from "../image/comuIcon.png";
 
 const ComuDetail = () => {
     const navigate = useNavigate();
@@ -33,13 +33,25 @@ const ComuDetail = () => {
                     </div>
                 </div>
                 <p id='utext'>{item.comu_text}</p>
-                <div className="comuHcon">
-                    <img id="comuH" src={heartIcon} alt="heartIcon" />
-                    <p id="comuHtext">{item.comu_heart}</p>
+                <div className='comuDcon4'>
+                    <div className="comuHcon">
+                        <img id="comuH" src={heartIcon1} alt="heartIcon" />
+                        <p id="comuHtext_2">{item.comu_heart}</p>
+                    </div>
+                    <div className="comuCcon">
+                        <img id="comuC" src={comuIcon} alt="commentIcon" />
+                        <p id="comuCtext_2">{item.comu_commen}</p>
+                    </div>
                 </div>
-                <div className="comuCcon">
-                    <img id="comuC" src={commentIcon} alt="commentIcon" />
-                    <p id="comuCtext">{item.comu_commen}</p>
+            </div>
+            <div className='comuDcon5'>
+                <div className='comuDcon6'>
+                    <div className='comuDcon7'></div>
+                    <div className='comuProfile2'></div>
+                    <div className='comuUser'>
+                        <p id='uname'>{item.uname}</p>
+                        <p id='utime'>{item.time}</p>
+                    </div>
                 </div>
             </div>
         </div>
