@@ -19,7 +19,5 @@ const App = () => {
         <Route path="/map-detail" element={<MapDetail />} />
       </Routes>
     </Router>
-  );
-};
 
 export default App;
