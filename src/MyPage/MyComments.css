@@ -1,0 +1,107 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #E8ECEF;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: white;
+  height: 52px;
+}
+
+.back-button {
+  position: absolute;
+  left: 18px;
+  top: 30px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #AEAEB2;
+}
+
+.title {
+  font-size: 20px;
+  font-family: Pretendard-SemiBold;
+}
+
+.tab-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-top: 27px;
+  margin-left: 24px;
+}
+
+.tab {
+  width: auto;
+  height: 23px;
+  background-color: #DEE1E6;
+  color: #767676;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 3px 10px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  font-family: Pretendard-Regular;
+}
+
+.tab-active {
+  background-color: #009788;
+  color: white;
+}
+
+.comments-container {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.comment {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+}
+
+.comment-title {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: rgba(118, 118, 118, 1);
+  font-family: Pretendard-SemiBold;
+}
+
+.comment-meta {
+  font-size: 13px;
+  color: #AEAEB2;
+  display: flex;
+  gap: 109.4px;
+  margin-bottom: 10px;
+  font-family: Pretendard-SemiBold;
+}
+
+.comment-author{
+  margin-right: 10px;
+}
+
+ .comment-date {
+  margin-right: 10px;
+}
+
+.comment-content {
+  font-size: 14px;
+  border-radius: 5px;
+  color: black;
+  background-color: rgba(242, 243, 245, 1);
+  padding: 10px 15px;
+  font-family: Pretendard-Medium;
+}

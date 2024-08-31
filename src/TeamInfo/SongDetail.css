@@ -1,0 +1,84 @@
+.song-detail-container {
+    background-color: #006DD2;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .arrow-button {
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 26px;
+    left: 20px;
+  }
+  
+  .title-text {
+    position: absolute;
+    top: 70px;
+    left: 34px;
+    font-size: 28pt;
+    color: #fff;
+    font-family: Pretendard-ExtraBold;
+  }
+  
+  .link-text {
+    position: absolute;
+    top: 138px;
+    left: 34px;
+    font-size: 16pt;
+    color: #fff;
+    font-family: Pretendard-Bold;
+    text-decoration: none;
+  }
+  
+  .link-text:hover {
+    text-decoration: underline;
+  }
+  
+  .like-container {
+    position: absolute;
+    top: 138px;
+    right: 41px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .like-icon {
+    font-size: 16pt;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 8px;
+  }
+  
+  .like-count {
+    font-size: 16pt;
+    color: #fff;
+    font-family: Pretendard-SemiBold;
+  }
+  
+  .bottom-box {
+    position: absolute;
+    top: 178px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-top: 40px; 
+    box-sizing: border-box; 
+  }
+  
+  .lyrics {
+    text-align: center;
+    font-family: Pretendard-Regular;
+    color: #000; 
+    font-size: 18px;
+    line-height: 1.5; 
+  }
+  

@@ -41,4 +41,44 @@ p {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+
+@font-face {
+  font-family: 'Pretendard-Bold'; /* 사용할 폰트의 이름을 정의 */
+  src: url('./fonts/Pretendard-Bold.otf'); /* 폰트 파일의 위치 */
+}
+@font-face {
+  font-family: 'Pretendard-Medium'; /* 사용할 폰트의 이름을 정의 */
+  src: url('./fonts/Pretendard-Medium.otf'); /* 폰트 파일의 위치 */
+}
+@font-face {
+  font-family: 'Pretendard-SemiBold'; /* 사용할 폰트의 이름을 정의 */
+  src: url('./fonts/Pretendard-SemiBold.otf'); /* 폰트 파일의 위치 */
+}
+@font-face {
+  font-family: 'Pretendard-Regular'; /* 사용할 폰트의 이름을 정의 */
+  src: url('./fonts/Pretendard-Regular.otf'); /* 폰트 파일의 위치 */
+}
+@font-face {
+  font-family: 'Pretendard-Black'; /* 사용할 폰트의 이름을 정의 */
+  src: url('./fonts/Pretendard-Black.otf'); /* 폰트 파일의 위치 */
+}
+
+@font-face {
+  font-family: 'Pretendard-ExtraBold'; /* 사용할 폰트의 이름을 정의 */
+  src: url('./fonts/Pretendard-ExtraBold.otf'); /* 폰트 파일의 위치 */
+}
+
+@font-face {
+  font-family: 'Pretendard-ExtraLight'; /* 사용할 폰트의 이름을 정의 */
+  src: url('./fonts/Pretendard-ExtraLight.otf'); /* 폰트 파일의 위치 */
+}
+
+@font-face {
+  font-family: 'Pretendard-Light'; /* 사용할 폰트의 이름을 정의 */
+  src: url('./fonts/Pretendard-Light.otf'); /* 폰트 파일의 위치 */
+}
+
+@font-face {
+  font-family: 'Pretendard-Thin'; /* 사용할 폰트의 이름을 정의 */
+  src: url('./fonts/Pretendard-Thin.otf'); /* 폰트 파일의 위치 */
 }

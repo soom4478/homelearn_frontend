@@ -1,0 +1,46 @@
+/* TeamMain.css */
+.tab {
+    min-width: auto;
+    width: 82px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .tab img {
+    width: 62px;
+    height: 62px;
+    border-radius: 15px;
+    border: 2px solid var(--border-color, #DEE1E6);
+    object-fit: contain;
+    margin-bottom: 8px; 
+  }
+  
+  .tab-wrapper {
+    font-size: 13px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    margin-bottom: 9px;
+    letter-spacing: -0.025em;
+    padding: 0;
+    color: var(--text-color, #7ED8CF);
+    font-weight: var(--font-weight, normal);
+  }
+  
+  .tabs-container {
+    gap: 3px;
+  }
+  
+  .tabs-indicator {
+    background-color: #7ED8CF;
+    height: 2px;
+    width: 68px;
+    bottom: 0px;
+  }
+  

@@ -1,0 +1,115 @@
+.app-container2 {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #E8ECEF;
+}
+
+.header2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: white;
+  height: 52px;
+}
+
+.back-button2 {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #AEAEB2;
+}
+
+.title2 {
+  font-size: 20px;
+  font-family: Pretendard-SemiBold;
+}
+
+.tab-container2 {
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-top: 27px;
+  margin-left: 24px;
+}
+
+.tab2 {
+  width: auto;
+  height: 23px;
+  background-color: #DEE1E6;
+  color: #767676;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 3px 10px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  font-family: Pretendard-Regular;
+}
+
+.tab-active2 {
+  background-color: #009788;
+  color: white;
+}
+
+.comments-container2 {
+  flex: 1;
+  padding: 15px 10px;
+  overflow-y: auto;
+}
+
+.comment2 {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.comment-title2 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: black;
+  font-family: Pretendard-SemiBold;
+}
+
+.comment-content2 {
+  font-size: 14px;
+  color: rgba(118, 118, 118, 1);
+  margin-bottom: 5px;
+  font-family: Pretendard-Medium;
+}
+
+.comment-footer2 {
+  display: flex;
+  justify-content: space-between;  
+  align-items: center; 
+  font-family: Pretendard-SemiBold;
+}
+
+.comment-date2 {
+  font-size: 13px;
+  margin-top: 5px;
+  color: rgba(174, 174, 178, 1);
+  font-family: Pretendard-SemiBold;
+}
+
+.comment-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* 아이콘들 사이의 간격 */
+}
+
+
+.icon-count {
+  font-size: 13px; /* 카운트의 폰트 크기 */
+}

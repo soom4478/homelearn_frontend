@@ -13,8 +13,21 @@ import ComuMain from './Comu/comuMain';
 import ComuDetail from './Comu/comuDetail';
 import Review from './Food/review';
 import { StoreProvider } from "./Food/StoreContext";
+import TeamMain from './TeamInfo/TeamMain';
+import Player from './TeamInfo/Player';
+import Cheersong from './TeamInfo/Cheersong'; 
+import SongDetail from './TeamInfo/SongDetail'; 
+import Homeground from './TeamInfo/Homeground';
+import MapDetail from './TeamInfo/MapDetail';
+import PageMain from './MyPage/PageMain';
+import Profile from './MyPage/Profile';
+import MyPosts from './MyPage/MyPosts';
+import MyComments from './MyPage/MyComments';
+import MyReviews from './MyPage/MyReviews'
+import Settings from './MyPage/Settings';
 
-function App() {
+
+const App = () => {
   return (
     <StoreProvider>
       <Router>
@@ -24,17 +37,27 @@ function App() {
             <Route path="/calender" element={<Calender />} />
             <Route path="/rule" element={<Rule />} />
             <Route path="/term" element={<Term />} />
-            <Route path="/team" element={<div>구단 페이지</div>} />
+            <Route path="/team" element={<div>TeamMain</div>} />
             <Route path="/nextpage" element={<TermDetail />} />
             <Route path="/food" element={<FoodMain />} />
             <Route path="/food/:storeId" element={<FoodDetail />} />
             <Route path="/review" element={<Review />} />
             <Route path="/community" element={<ComuMain />} />
             <Route path="/community:detail" element={<ComuDetail />} />
-            <Route path="/my" element={<div>마이</div>} />
+            <Route path="/my" element={<div>PageMain</div>} />
             <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
+          <Route path="/player" element={<Player />} />
+          <Route path="/cheersong" element={<Cheersong />} />
+          <Route path="/songdetail/:id" element={<SongDetail />} />
+          <Route path="/Homeground" element={<Homeground />} />
+          <Route path="/map-detail" element={<MapDetail />} />
+            <Route path="/profile" element={<Profile />} />
+          <Route path="/myposts" element={<MyPosts />} />
+          <Route path="/mycomments" element={<MyComments />} />
+          <Route path="/myreviews" element={<MyReviews />} />
+          <Route path="/settings" element={<Settings />} />
       </Router>
+        </Router>
     </StoreProvider>
   );
 }
