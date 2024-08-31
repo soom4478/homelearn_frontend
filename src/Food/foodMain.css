@@ -1,0 +1,237 @@
+#root {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    width: 100%;
+    height: auto;
+    background-color: #1B7065;
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* 스크롤바를 추가 */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px; /* 위치 조정 */
+}
+
+.dropdown select {
+    width: auto;
+    color: white;
+    margin-top: 35px;
+    margin-left: 24px;
+    margin-bottom: 13px;
+    font-size: 20px;
+    color: white;
+    background-color: #1B7065;
+    border: none;
+    outline: none; /* 주황색 선 제거 */
+    appearance: none; /* 기본 드롭다운 화살표 제거 */
+    -webkit-appearance: none; /* 기본 드롭다운 화살표 제거 (웹킷 브라우저용) */
+    -moz-appearance: none; /* 기본 드롭다운 화살표 제거 (모질라 브라우저용) */
+    display: inline-block; /* 인라인 블록으로 설정 */
+    vertical-align: middle; /* 수직 정렬 */
+    padding-right: 30px; /* 화살표 공간 확보 */
+}
+
+.dropdown option {
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    padding: 5px;
+}
+
+.arrow-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+    pointer-events: none; /* 화살표 클릭 불가능하게 설정 */
+}
+
+.search {
+    background-color: white;
+    color: #AEAEB2;
+    width: 85%;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 15px;
+    margin-left: 5%;
+    text-align: left;
+    font-weight: bold;
+    align-content: center;
+    margin-top: 0;
+    display: flex; /* flexbox 사용 */
+    align-items: center; /* 상하 가운데 정렬 */
+    position: relative; /* 추가 */
+}
+
+.search input {
+    outline: none; /* 주황색 선 제거 */
+}
+
+#search_icon {
+    position: absolute; /* 추가 */
+    right: 10px; /* 오른쪽으로 이동 */
+}
+
+#input {
+    width: 250px;
+    font-size: 16px;
+    border: none;
+}
+
+.container2 {
+    background-color: white;
+    border-top-left-radius: 20px; 
+    border-top-right-radius: 20px;
+    height: auto;
+    width: 100%;
+    margin-top: 3%;
+    display: block;
+    padding-top: 5%;
+    padding-left: 0;
+    align-content: flex-start;
+    text-align: left;
+    padding-bottom: 93px; /* 네비게이션바 높이만큼 padding-bottom 추가 */
+    overflow-x: hidden;
+    border: none;
+}
+
+.display {
+    border: solid 1.5px;
+    border-color: #7ED8CF;
+    border-radius: 20px;
+    width: 85%;
+    height: 99px;
+    align-content: center;
+    margin: 0 auto;
+    text-align: left;
+    display: flex;
+}
+
+#beer_img {
+    width: 65px;
+    height: 62.72px;
+    margin: auto;
+}
+
+.text {
+    margin-left: 5%;
+    width: 200px;
+    margin: auto;
+}
+
+#beer1 {
+    width: 100%;
+    font-size: 14px;
+    margin: 0;
+}
+
+#beer2 {
+    margin-top: 8px;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+#text2 {
+    margin-bottom: 15px;
+    margin-top: 30px;
+    margin-left: 24px;
+}
+
+#text2 p {
+    margin: 0;
+    font-size: 18px;
+    width: auto;
+    font-weight: bold;
+}
+
+.category {
+    margin-left: 24px;
+}
+
+#block {
+    width: 45px;
+    height: 23px;
+    background-color: #DEE1E6;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #767676;
+    text-align: center;
+    align-content: center;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.category #block {
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.category #block.active {
+    background-color: #009788;
+    color: white;
+}
+
+.store {
+    width: 100%;
+    height: 132px;
+    border: solid 1px;
+    border-color: #E8ECEF;
+    display: flex;
+    position: relative;
+}
+
+.storeIfo {
+    position: absolute;
+    right: 6px;
+    top: 3px;
+    margin-right: 24px;
+    width: 53%;
+}
+
+#store_name {
+    font-size: 16px;
+    width: 199px;
+    height: 40px;
+    margin: 5px 0 0 0;
+    align-content: flex-end;
+}
+
+#img1 {
+    margin: auto 10px auto 24px;
+    width: 107px;
+    height: 108px;
+    border-radius: 15px;
+}
+
+#star_point {
+    display: inline-block;
+    margin-top: 3px;
+    margin-bottom: 0;
+    color: #767676;
+}
+
+.order, .popurler {
+    display: flex;
+    margin-top: 5px;
+}
+
+#info_text, #populer_menu, #today_order {
+    font-size: 14;
+    color: #767676;
+    width: auto;
+    display: inline-block;
+    margin: 0;
+}
+
+#populer_menu, #today_order {
+    margin-left: auto;
+}

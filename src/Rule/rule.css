@@ -1,0 +1,31 @@
+.ruleCon1 {
+    padding-bottom: 83px; /* 네비게이션바 높이만큼 padding*/
+    overflow: hidden;
+}
+
+.ruleCon2 {
+    border-bottom: solid 1px #E8ECEF;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+
+.ruleText {
+    width: 70%;
+    margin-left: 32px;
+}
+
+#ruleT1 {
+    font-size: 13px;
+    color: #009788;
+}
+
+#ruleT2 {
+    font-size: 18px;
+}
+
+#nextarrow {
+    position: absolute;
+    right: 32px;
+}

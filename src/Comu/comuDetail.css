@@ -1,0 +1,99 @@
+.comuDcon2 {
+    height: 70%;
+    background-color: white;
+    border-bottom: solid 1px #E8ECEF;
+    position: relative;
+}
+
+.comuDcon3 {
+    margin-left: 24px;
+    margin-top: 31px;
+    display: flex;
+}
+
+#comuUser {
+    display: inline-block;
+    position: relative;
+    align-content: center;
+}
+
+#uname, #utime {
+    width: 100px;
+}
+
+#uname {
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-top: 3px;
+}
+
+#utime {
+    font-size: 13px;
+    color: #767676;
+}
+
+#utext {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.comuProfile {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgba(28, 130, 96, 0.682);
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.comuDcon4 {
+    position: absolute;
+    bottom: 15px;
+    right: 24px;
+}
+
+#comuHtext_2, #comuCtext_2 {
+    display: inline-block;
+    font-size: 14px;
+    color: #AEAEB2;
+    transform: translateY(-3px);
+}
+
+#comuHtext_2 {
+    margin: 3px;
+}
+
+#comuCtext_2 {
+    margin-left: 3px;
+}
+
+.comuDcon5 {
+    background-color: #F2F3F5;
+    position: relative;
+    height: 220%;
+    display: flex;
+    justify-content: center; /* 수평 가운데 정렬 */
+}
+
+.comuDcon6 {
+    display: flex;
+    margin-top: 14px;
+    position: absolute;
+    background-color: white;
+    width: 345px;
+    border-radius: 15px;
+    padding-top: 18px;
+    padding-bottom: 16px;
+}
+
+.comuProfile2 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(28, 130, 96, 0.682);
+    display: inline-block;
+    margin-right: 15px;
+    margin-left: 10px;
+}

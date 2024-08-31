@@ -1,16 +1,46 @@
+@font-face {
+  font-family: 'Pretendard-Bold'; /* 사용할 폰트의 이름을 정의 */
+  src: url('./fonts/Pretendard-Bold.otf'); /* 폰트 파일의 위치 */
+}
+@font-face {
+  font-family: 'Pretendard-Medium'; /* 사용할 폰트의 이름을 정의 */
+  src: url('./fonts/Pretendard-Medium.otf'); /* 폰트 파일의 위치 */
+}
+@font-face {
+  font-family: 'Pretendard-SemiBold'; /* 사용할 폰트의 이름을 정의 */
+  src: url('./fonts/Pretendard-SemiBold.otf'); /* 폰트 파일의 위치 */
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Pretendard-SemiBold";
+}
+
+body {
+  min-height: 100vh;
+  @supports (-webkit-touch-callout: none) {
+    min-height: -webkit-fill-available;
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
 
 @font-face {
   font-family: 'Pretendard-Bold'; /* 사용할 폰트의 이름을 정의 */
@@ -52,4 +82,3 @@ code {
   font-family: 'Pretendard-Thin'; /* 사용할 폰트의 이름을 정의 */
   src: url('./fonts/Pretendard-Thin.otf'); /* 폰트 파일의 위치 */
 }
-

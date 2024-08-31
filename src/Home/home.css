@@ -1,0 +1,568 @@
+.container {
+    height: auto;
+    overflow: auto;
+}
+
+.container3 {
+    width: 100%;
+    height: 160px;
+    background-color: #006359;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* 아래쪽으로 정렬 */
+    position: relative; /* 추가 */
+    display: inline-block;
+    align-content: end;
+}
+
+#calenderI, #bell {
+    width: 24px;
+    display: inline-block;
+    position: absolute;
+    top: 19px;
+    right: 0;
+}
+
+#calenderI {
+    margin-right: 62px;
+}
+
+#bell {
+    margin-right: 25px;
+}
+
+.container4 {
+    position: relative; /* 추가 */
+    border-top-left-radius: 20px; 
+    border-top-right-radius: 20px;
+    height: 74px;
+    width: 100%;
+    display: block;
+    margin: 0;
+    align-content: center;
+    text-align: center;
+    z-index: 1;
+}
+
+.container4::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.2; /* 배경에만 투명도 적용 */
+    border-top-left-radius: 20px; 
+    border-top-right-radius: 20px;
+    z-index: -1; /* 배경이 텍스트 뒤에 위치하도록 설정 */
+}
+
+#today {
+    color: white;
+    font-size: 19px;
+    width: 50%;
+    margin: 0 0 12px 24px;
+}
+
+.dayCon1 {
+    width: 13%;
+    height: 55px;
+    display: inline-block;
+    z-index: 2;
+    position: relative; /* 추가 */
+    text-align: center;
+}
+
+.dayCon2 {
+    width: 42px;
+    height: 55px;
+    border-radius: 10px;
+    align-content: center;
+}
+
+#day, #day2 {
+    color: white;
+    margin: 0;
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+.day {
+    font-size: 18px;
+}
+
+.day2 {
+    font-size: 14px;
+}
+
+.dayCon2-selected {
+    background-color: white;
+  }
+  
+.dayCon2-selected #day,
+.dayCon2-selected #day2 {
+    color: #009788; /* day와 day2의 글씨 색을 빨간색으로 변경 */
+}
+
+#titleText {
+    margin: 32px 0 0 24px;
+    font-size: 18px;
+}
+
+#titleText1 {
+    margin: 78px 0 0 24px;
+    font-size: 18px;
+}
+
+#titleText2 {
+    margin: 60px 0 0 24px;
+    font-size: 18px;
+}
+.nav1 {
+    width: 100%;
+    height: 100%; /* nav의 고정 높이 설정 */
+    background-color: #FFFFFF;
+    overflow-x: auto; /* 가로 스크롤 활성화 */
+    white-space: nowrap; /* 줄바꿈 방지 */
+    border: 0;
+    margin-top: 15px;
+    padding-right: 24px; /* 오른쪽 여백 추가 */
+    scrollbar-width: none;
+    box-sizing: border-box; /* 패딩과 보더를 포함한 너비 설정 */
+}
+
+.schedule {
+    width: auto; /* 예시로 긴 너비 설정 */
+    height: 250px;
+    display: inline-flex;
+    white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+.scheduleCon {
+    width: 301px;
+    height: 230px;
+    margin-left: 24px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px 0px rgba(1, 0, 0, 0.15);
+}
+
+.scheduleCon1 {
+    width: 301px;
+    height: 132px;
+    background-color: grey;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+}
+
+.scheduleCon2 {
+    width: 100%;
+    height: 98px;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: inline-block;
+    position: relative;
+}
+
+#titl, #time, #ground {
+    margin: auto 0;
+    width: auto;
+    display: inline-block;
+}
+
+#time, #reservation {
+    display: inline-block;
+}
+
+#schedule_title {
+    margin-left: 20px;
+    margin-top: 13px;
+    font-size: 16px;
+    float: left;
+}
+
+#title_team1, #title_team2, #title_vs {
+    display: inline-block;
+}
+
+#title_vs {
+    margin: 0 3px;
+}
+
+#time {
+    font-size: 14px;
+    color: #767676;
+    float: right;
+    margin-top: 13px;
+    margin-right: 20px;
+}
+
+#ground {
+    font-size: 14px;
+    color: #767676;
+    margin-left: 20px;
+    margin-top: 5px;
+    display: block;
+    width: auto;
+    text-align: start;
+    position: absolute;
+    bottom: 46px;
+}
+
+#reservation {
+    position: absolute; /* 추가 */
+    right: 20px; /* 오른쪽으로 이동 */
+    bottom: 12px; /* 아래쪽으로 이동 */
+    margin-bottom: 2px;
+    width: 77px;
+    height: 29px;
+    border-radius: 10px;
+    border: none;
+    background-color: #7ED8CF;
+}
+
+#reservation.clicked {
+    background-color: #38AE9F;
+}
+
+@keyframes changeColor {
+    0% {
+        background-color: #009788;
+    }
+    50% {
+        background-color: #005f4b;
+    }
+    100% {
+        background-color: #009788;
+    }
+}
+
+#buttonText {
+    font-size: 14px;
+    color: white;
+    margin: 3px;
+}
+
+.container5, .container6 {
+    width: 327px;
+    height: 99px;
+    border-radius: 20px;
+    color: white;
+    font-size: 18px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center; /* 상하 중앙 정렬 */
+    justify-content: space-between; /* 좌우 공간 분배 */
+}
+
+.container5 {
+    background-color: #6563F1;
+    margin-top: 40px;
+}
+
+.container6 {
+    background-color: #FF60BF;
+    margin-top: 20px;
+}
+
+#rinkText {
+    display: inline-block;
+    margin-left: 24px;
+}
+
+#icon1 {
+    display: inline-block;
+    margin-right: 29px;
+}
+
+#explan {
+    margin-left: 24px;
+    width: 80%;
+}
+
+.nav2 {
+    width: 100%;
+    height: 100%; /* nav의 고정 높이 설정 */
+    background-color: #FFFFFF;
+    overflow-x: auto; /* 가로 스크롤 활성화 */
+    white-space: nowrap; /* 줄바꿈 방지 */
+    border: 0;
+    scrollbar-width: none;
+}
+
+.con1 {
+    width: auto; /* 예시로 긴 너비 설정 */
+    height: 165px;
+    display: flex;
+    white-space: nowrap; /* 줄바꿈 방지 */
+    margin-right: 24px;
+}
+
+.con2 {
+    width: 311px;
+    height: 128px;
+    margin-left: 24px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.08);
+}
+
+.conTop1 {
+    width: 100%;
+    height: 48px;
+    background-color: #E8ECEF;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+}
+
+.conBottom1 {
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    align-content: center;
+    margin-right: 24px;
+}
+
+.conImfo1 {
+    width: 274.31px;
+    height: 34px; /* 높이 설정 */
+    overflow: visible; /* 내용이 넘칠 때 보이도록 설정 */
+    white-space: normal; /* 줄바꿈 허용 */
+    margin-left: 13px;
+}
+
+#ImfoText1 {
+    text-align: left;
+    width: 274.31px;
+    height: auto;
+    font-size: 14px; /* 글자 크기 조정 */
+    line-height: 1.2; /* 줄 간격 조정 */
+}
+
+.nav2 {
+    width: 100%;
+    height: 100%; /* nav의 고정 높이 설정 */
+    background-color: #FFFFFF;
+    overflow-x: auto; /* 가로 스크롤 활성화 */
+    white-space: nowrap; /* 줄바꿈 방지 */
+    border: 0;
+    margin-top: 15px;
+    padding-right: 24px; /* 오른쪽 여백 추가 */
+    scrollbar-width: none;
+    box-sizing: border-box; /* 패딩과 보더를 포함한 너비 설정 */
+}
+
+.con3 {
+    width: 311px;
+    height: 321px;
+    display: inline-flex;
+    white-space: nowrap; /* 줄바꿈 방지 */
+    margin-right: 24px;
+}
+
+.con4 {
+    width: 311px;
+    height: 290px;
+    margin-left: 24px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.08);
+}
+
+.conTop2 {
+    width: 311px;
+    height: 60px;
+    background-color: #E8ECEF;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+}
+
+.conBottom2 {
+    width: 311px;
+    height: 230px;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    flex-direction: column; /* Flexbox 방향을 세로로 설정 */
+    justify-content: center; /* 상하 중앙 정렬 */
+    align-content: center;
+    margin-right: 24px;
+}
+
+.conImfo2, .conImfo3 {
+    width: 300px;
+    height: 70px; /* 높이 설정 */
+    overflow: visible; /* 내용이 넘칠 때 보이도록 설정 */
+    white-space: normal; /* 줄바꿈 허용 */
+    margin-left: 25px;
+    text-align: left;
+}
+
+.conImfo2 {
+    margin-bottom: 30px;
+}
+
+.numCircle {
+    display: inline-flex;
+    width: 19px;
+    height: 19px;
+    background-color: #009788;
+    border-radius: 50px;
+    align-items: center;
+    position: absolute;
+}
+
+.number {
+    margin: 0 auto;
+    color: white;
+    font-size: 14px;
+}
+
+.explainCon {
+    margin-bottom: 26px;
+    margin-left: 28px;
+    display: inline-block;
+}
+
+#ImfoT1 {
+    width: auto;
+    font-size: 16px;
+    height: 19px;
+    margin-bottom: 5px;
+}
+
+#ImfoT2 {
+    font-size: 14px;
+    width: 220px;
+}
+
+#dicseption1 {
+    font-size: 18px;
+    margin-left: 14px;
+    align-content: center;
+}
+
+#dicseption2 {
+    font-size: 18px;
+    margin-left: 20px;
+    align-content: center;
+}
+
+.comuCon1 {
+    text-align: center;
+    margin-top: 29px;
+    margin-bottom: 173px;
+}
+
+.comuCon2 {
+    width: 327px;
+    height: 417px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.08);
+    display: inline-block;
+}
+
+#titleText3 {
+    font-size: 18px;
+    float: left;
+    margin: 20px 0 0 14px;
+}
+
+.comuCon3 {
+    margin-top: 21px;
+    height: 105px;
+    align-content: center;
+    background-color: #FFFFFF;
+}
+
+.comuCon4 {
+    width: 299px;
+    height: 105px;
+    border: solid 1px;
+    border-color: #DEE1E6;
+    border-radius: 15px;
+    display: inline-block;
+    margin-bottom: 5px;
+    text-align: left;
+    position: relative;
+}
+
+#comuT {
+    margin-left: 20px;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin: 20px auto 5px 20px;
+    width: 259px;
+    overflow: hidden; /* 내용이 넘칠 때 숨기기 */
+    white-space: nowrap; /* 줄바꿈 방지 */
+    text-overflow: ellipsis; /* 넘치는 텍스트에 '...' 표시 */
+}
+
+#comuI {
+    margin-left: 20px;
+    font-size: 14px;
+    color: #767676;
+    width: 259px;
+    height: 17px;
+    overflow: hidden; /* 내용이 넘칠 때 숨기기 */
+    white-space: nowrap; /* 줄바꿈 방지 */
+    text-overflow: ellipsis; /* 넘치는 텍스트에 '...' 표시 */
+}
+
+#comuB {
+    margin-left: 20px;
+    font-size: 13px;
+    color: #AEAEB2;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 필요에 따라 추가 */
+}
+
+.align-bottom {
+  align-self: flex-end;
+}
+
+#nextrink1, #nextrink2 {
+    margin-right: 24px;
+}
+
+#nextrink3 {
+    margin-right: 15px;
+}
+
+.comuCon5 {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.comuHcon, .comuCcon {
+    height: 16px;
+    display: inline-block;
+    margin-left: 6px;
+}
+
+#comuH, #comuHtext, #comuC, #comuCtext {
+    display: inline-block;
+    font-size: 13px;
+    color: #AEAEB2;
+    padding-right: 4px;
+}

@@ -1,0 +1,116 @@
+.calender-con {
+  height: 68px;
+  border-bottom: solid 1px #E8ECEF;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+}
+
+#return {
+  margin-left: 24px;
+  position: absolute;
+  left: 0;
+  bottom: 11px; /* calender-title의 margin-bottom과 동일하게 설정 */
+}
+
+#calender-title {
+  font-size: 20px;
+  font-weight: bold;
+  height: 24px;
+  margin-bottom: 11px;
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.year-con {
+  background-color: #E8ECEF;
+  border-radius: 5px;
+  width: 63px;
+  height: 31px;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+  font-weight: bold;
+  align-content: center;
+  margin-right: 10px;
+}
+
+.month-drop {
+  border: none;
+  background-color: #E8ECEF;
+  border-radius: 5px;
+  width: 63px;
+  height: 31px;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+  font-weight: bold;
+}
+
+.calendar-container {
+  width: 100%;
+  height: 669px;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 30px 24px 31px;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  font-size: 14px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  font-size: 14px;
+  height: 100px;
+}
+
+.calendar-day, .calendar-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.calendar-cell {
+  background-color: #fff;
+  height: 80px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.calendar-day {
+  height: auto;
+}
+
+.calendar-cell:hover {
+  background-color: #E0FBF8;
+  border-radius: 5px;
+}
+
+/* 일요일 날짜를 빨간색으로 표시 */
+.calendar-grid .calendar-cell:nth-child(7n + 1) .calendar-day {
+  color: red;
+}
+
+/* 테두리선 제거 */
+.calendar-day, .calendar-cell {
+  border: none;
+}
