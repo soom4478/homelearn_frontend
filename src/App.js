@@ -1,22 +1,23 @@
 import React from 'react';
-import Tabs from './components/Tabs';
-import './App.css';  
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import TeamMain from './TeamInfo/TeamMain';
+import Player from './TeamInfo/Player';
+import Cheersong from './TeamInfo/Cheersong'; 
+import SongDetail from './TeamInfo/SongDetail'; 
+import Homeground from './TeamInfo/Homeground';
+import MapDetail from './TeamInfo/MapDetail';
 
-function App() {
-  const tabData = [
-    { title: '공격방법' },
-    { title: '판정' },
-    { title: '구역' },
-    { title: '포지션' },
-    { title: '응원' }
-  ];
-
+const App = () => {
   return (
-    <div className="App">
-      <h1 className="title">야구 백과사전</h1>
-      <Tabs tabs={tabData} />
-    </div>
-  );
-}
+    <Router>
+      <Routes>
+        <Route path="/" element={<TeamMain />} />
+        <Route path="/player" element={<Player />} />
+        <Route path="/cheersong" element={<Cheersong />} />
+        <Route path="/songdetail/:id" element={<SongDetail />} />
+        <Route path="/Homeground" element={<Homeground />} />
+        <Route path="/map-detail" element={<MapDetail />} />
+      </Routes>
+    </Router>
 
 export default App;

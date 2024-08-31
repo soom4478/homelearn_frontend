@@ -1,0 +1,157 @@
+.myPage {
+    background-color: #003366;
+    color: white;
+    padding: 25px;
+    font-family: Arial, sans-serif;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    color: black;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 21px;
+    position: relative;
+}
+
+.profile-image-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;  
+}
+
+.profile-img2 {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.name {
+    margin-top: -20px;
+    margin-bottom: 4px;
+    font-size: 18px;
+    font-family: Pretendard-SemiBold;
+}
+
+.team {
+    font-size: 14px;
+    color: #006DD2;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+.myTeam {
+    background-color: #ffffff;
+    color: #003366;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: Pretendard-SemiBold;
+}
+
+.team-logo {
+    position: absolute;
+    left: 10px;
+}
+
+.team-logo img {
+    width: 62px;
+    height: 47px;
+    margin-top: 7px;
+    margin-left: 10px;
+}
+
+.myTeam-teamName {
+    font-size: 16px;
+    text-align: left;
+    width: 100%;
+    padding-left: 90px;
+    font-family: Pretendard-SemiBold;
+}
+
+.editProfile {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto 20px;
+    width: 100%;
+    height: 50px;
+    font-family: Pretendard-Medium;
+}
+
+.account {
+    background-color: white;
+    padding: 25px;
+    border-radius: 20px 20px 0 0;
+    margin: -25px;
+    margin-bottom: -27px;
+    margin-top: 20px;
+    color: black;
+    border: white;
+    font-size: 14px;
+    height: 400px;
+    overflow-y: auto;
+    font-family: Pretendard-SemiBold;
+}
+
+.Activities {
+    margin-top: 15px;
+    font-size: 16px;
+    margin-bottom: 2px;
+    font-family: Pretendard-SemiBold;
+}
+
+.Account2 {
+    font-size: 16px;
+    margin-top: 35px;
+    margin-bottom: 2px;
+}
+
+.text-button {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-family: Pretendard-Medium;
+}
+
+.text-button .Arrow {
+    margin-left: 8px;
+}
+
+.line3 {
+    height: 1px;
+    background-color: rgba(222, 225, 230, 1);
+    margin: 0 0;
+}
+
+.withdraw {
+    color: rgba(227, 2, 64, 1);
+    font-family: Pretendard-Medium;
+}
