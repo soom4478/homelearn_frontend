@@ -41,6 +41,7 @@ p {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
 
 @font-face {
   font-family: 'Pretendard-Bold'; /* 사용할 폰트의 이름을 정의 */

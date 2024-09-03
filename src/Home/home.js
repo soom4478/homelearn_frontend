@@ -15,10 +15,10 @@ import commentIcon from "../image/commentIcon.png";
 
 const Home = () => {
   const [isClicked, setIsClicked] = useState(false);
-  const [selectedDayIndex, setSelectedDayIndex] = useState(null); // 클릭된 index를 상태로 관리
-  const [selectedDay, setSelectedDay] = useState(null); // 선택된 day를 상태로 관리
-  const [currentDate, setCurrentDate] = useState(""); // 현재 날짜를 상태로 관리
-  const navigate = useNavigate(); // useNavigate 훅 사용
+  const [selectedDayIndex, setSelectedDayIndex] = useState(null); 
+  const [selectedDay, setSelectedDay] = useState(null); 
+  const [currentDate, setCurrentDate] = useState(""); 
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const today = new Date();
@@ -52,31 +52,34 @@ const Home = () => {
   };
 
   const handleDayClick = (index, day) => {
-    setSelectedDayIndex(index); // 클릭된 index를 상태로 설정
-    setSelectedDay(day); // 클릭된 day를 상태로 설정
+    setSelectedDayIndex(index); 
+    setSelectedDay(day); 
   };
 
   const handleCalenderClick = () => {
-    navigate("/calender"); // 페이지 이동
+    navigate("/calender");
   };
 
-  const handlefoodClick = () => {
-    navigate("/food"); // 페이지 이동
+  const handleFoodClick = () => {
+    navigate("/food");
   };
 
-  const handlenext1Click = () => {
-    navigate("/term"); // 페이지 이동
+  const handleNext1Click = () => {
+    navigate("/term");
   };
 
-  const handlenext2Click = () => {
-    navigate("/rule"); // 페이지 이동
+  const handleNext2Click = () => {
+    navigate("/rule");
   };
 
-  const handlenext3Click = () => {
-    navigate("/community"); // 페이지 이동
+  const handleNext3Click = () => {
+    navigate("/community");
   };
 
-  // comuImfo 배열을 comu_heart 값에 따라 내림차순으로 정렬
+  const handleBellClick = () => {
+    navigate("/notifications"); // "종" 버튼 클릭 시 /notifications 페이지로 이동
+  };
+
   const sortedComuImfo = comuImfo.sort((a, b) => b.comu_heart - a.comu_heart);
 
   const getDaysOfWeek = () => {
@@ -84,7 +87,6 @@ const Home = () => {
     const today = new Date();
     const days = [];
 
-    // Find the previous Sunday
     const startDate = new Date(today);
     startDate.setDate(today.getDate() - today.getDay());
 
@@ -108,15 +110,15 @@ const Home = () => {
   return (
     <div className="container">
       <div className="container3">
-        <img id="calenderI" src={calenderI} alt="calenderI" onClick={handleCalenderClick} /> {/* 클릭 이벤트 핸들러 추가 */}
-        <img id="bell" src={bell} alt="bell" />
-        <p id="today">{currentDate}</p> {/* 현재 날짜 표시 */}
+        <img id="calenderI" src={calenderI} alt="calenderI" onClick={handleCalenderClick} />
+        <img id="bell" src={bell} alt="bell" onClick={handleBellClick} /> {/* 페이지 이동 핸들러 추가 */}
+        <p id="today">{currentDate}</p>
         <div className="container4">
           {days.map((item, index) => (
             <div
-              className={`dayCon1 ${selectedDayIndex === index ? "day-selected" : ""}`} // 조건부 스타일 적용
+              className={`dayCon1 ${selectedDayIndex === index ? "day-selected" : ""}`}
               key={index}
-              onClick={() => handleDayClick(index, item.day)} // 클릭 이벤트 핸들러 추가
+              onClick={() => handleDayClick(index, item.day)}
             >
               <div className={`dayCon2 ${selectedDayIndex === index ? "dayCon2-selected" : ""}`}>
                 <p id="day">{item.day}</p>
@@ -160,7 +162,7 @@ const Home = () => {
           <div id="rinkText">통합예매 바로가기</div>
           <img id="icon1" src={star} alt="star" />
         </div>
-        <div className="container6" onClick={handlefoodClick}>
+        <div className="container6" onClick={handleFoodClick}>
           <div id="rinkText">지금 있는 구장에서<br />먹거리 주문하기</div>
           <img id="icon1" src={pizza} alt="pizza" />
         </div>
@@ -169,7 +171,7 @@ const Home = () => {
         
       <div className="flex-container">
     <p id="titleText1">야구 백과사전</p>
-    <img id="nextrink1" src={nextRink_icon} alt="next" className="align-bottom" onClick={handlenext1Click}/>
+    <img id="nextrink1" src={nextRink_icon} alt="next" className="align-bottom" onClick={handleNext1Click}/>
   </div>
   <p id="explan">어려운 야구 용어 한눈에 정리!</p>
   <nav className="nav2">
@@ -193,7 +195,7 @@ const Home = () => {
       <div>
         <div className="flex-container">
           <p id="titleText2">경기 규칙 설명</p>
-          <img id="nextrink2" src={nextRink_icon} alt="next" className="align-bottom" onClick={handlenext2Click} />
+          <img id="nextrink2" src={nextRink_icon} alt="next" className="align-bottom" onClick={handleNext2Click} />
         </div>
         <nav className="nav2">
           <div className="con3">
@@ -232,7 +234,7 @@ const Home = () => {
             <div className="comuCon2">
                 <div className="flex-container">
                     <p id="titleText3">커뮤니티 인기글</p>
-                    <img id="nextrink3" src={nextRink_icon} alt="next" className="align-bottom" onClick={handlenext3Click} />
+                    <img id="nextrink3" src={nextRink_icon} alt="next" className="align-bottom" onClick={handleNext3Click} />
                 </div>
                 <div className="comuCon3">
                     {sortedComuImfo.slice(0, 3).map((item, index) => (
@@ -255,8 +257,6 @@ const Home = () => {
                 </div>
             </div>
       </div>
-
-      
     </div>
   );
 };
