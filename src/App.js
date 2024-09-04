@@ -31,22 +31,20 @@ const App = () => {
   return (
     <StoreProvider>
       <Router>
-        <BottomNav />
         <Routes>
-          <Route path="/" element={<Home />} />
+        <Route path="/" element={<><BottomNav /><Home /></>} />
           <Route path="/calender" element={<Calender />} />
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/rule" element={<Rule />} />
           <Route path="/term" element={<Term />} />
-          <Route path="/team" element={<TeamMain />} />
+          <Route path="/team" element={<><BottomNav /><TeamMain /></>} />
           <Route path="/nextpage" element={<TermDetail />} />
-          <Route path="/food" element={<FoodMain />} />
+          <Route path="/food" element={<><BottomNav /><FoodMain /></>} />
           <Route path="/food/:storeId" element={<FoodDetail />} />
           <Route path="/review" element={<Review />} />
-          <Route path="/community" element={<ComuMain />} />
+          <Route path="/community" element={<><BottomNav /><ComuMain /></>} />
           <Route path="/community/:detail" element={<ComuDetail />} />
-          <Route path="/my" element={<PageMain />} />
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="/my" element={<><BottomNav /><PageMain /></>} />
           <Route path="/player" element={<Player />} />
           <Route path="/cheersong" element={<Cheersong />} />
           <Route path="/songdetail/:id" element={<SongDetail />} />
@@ -57,6 +55,7 @@ const App = () => {
           <Route path="/mycomments" element={<MyComments />} />
           <Route path="/myreviews" element={<MyReviews />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>
     </StoreProvider>

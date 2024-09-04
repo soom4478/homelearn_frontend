@@ -5,11 +5,11 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import { styled } from '@mui/material/styles';
 
-import playerIcon from '/Users/USERONE/dev/homelearn/src/image/player.png';
-import homegroundIcon from '/Users/USERONE/dev/homelearn/src/image/homeground.png';
-import cheersongIcon from '/Users/USERONE/dev/homelearn/src/image/cheersong.png';
-import shopIcon from '/Users/USERONE/dev/homelearn/src/image/shop.png';
-import mascotImage from '/Users/USERONE/dev/homelearn/src/image/mascot_Lotte.png';
+import playerIcon from '../../image/player.png';
+import homegroundIcon from '../../image/homeground.png';
+import cheersongIcon from '../../image/cheersong.png';
+import shopIcon from '../../image/shop.png';
+import mascotImage from '../../image/mascot_Lotte.png';
 
 const RoundedButton = styled(Button)(({ theme, isSelected }) => ({
   borderRadius: '15px',
