@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './calendar.css';
 import returnIcon from "../image/return.png";
+import CalenderImfo from "./calenderImfo";
 // import CalenderDtail from "./calenderDetail";
 
 const daysOfWeek = ['일', '월', '화', '수', '목', '금', '토'];
@@ -69,18 +70,27 @@ const Calendar = () => {
       </div>
       <div className="calendar-grid">
         {calendar.map((week, weekIndex) => (
-          week.map((day, dayIndex) => (
-            <div key={`${weekIndex}-${dayIndex}`} className="calendar-cell">
-              <p className='calendar-day'>{day}</p>
-              <div className='playCon'>
-                <span id='playText'>경기</span>
-                <span id='playNum'>1</span>
+          week.map((day, dayIndex) => {
+            const playInfo = CalenderImfo.find(info => info.month === month + 1 && info.day === day && info.play);
+            const myInfo = CalenderImfo.find(info => info.month === month + 1 && info.day === day && info.my);
+            const playCount = CalenderImfo.filter(info => info.month === month + 1 && info.day === day && info.play).length;
+            return (
+              <div key={`${weekIndex}-${dayIndex}`} className="calendar-cell">
+                <p className='calendar-day'>{day}</p>
+                {playInfo && (
+                  <div className='playCon'>
+                    <span id='playText'>경기</span>
+                    <span id='playNum'>{playCount}</span>
+                  </div>
+                )}
+                {myInfo && (
+                  <div className='myCon'>
+                    <span id='myText'>{myInfo.detail}</span>
+                  </div>
+                )}
               </div>
-              <div className='myCon'>
-                <span id='myText'>직관가기!</span>
-              </div>
-            </div>
-          ))
+            );
+          })
         ))}
       </div>
     </div>

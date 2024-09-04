@@ -100,7 +100,8 @@
 
 .playCon, .myCon {
   width: 99%;
-  height: 17px;
+  height: auto;
+  padding: 1px 0;
   border-radius: 2px;
   text-align: center;
   color: white;
