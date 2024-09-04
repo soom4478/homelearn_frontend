@@ -1,13 +1,28 @@
+.comuDcon1 {
+    height: 100%;
+    background-color: #F2F3F5;
+}
+
+.comuTcon {
+    background-color: white;
+}
+
 .comuDcon2 {
-    height: 70%;
+    height: auto;
     background-color: white;
     border-bottom: solid 1px #E8ECEF;
     position: relative;
 }
 
+.comuDcon2::after {
+    content: "";
+    display: block;
+    height: 50px; /* 추가적인 높이 */
+}
+
 .comuDcon3 {
     margin-left: 24px;
-    margin-top: 31px;
+    padding-top: 31px;
     display: flex;
 }
 
@@ -32,8 +47,14 @@
     color: #767676;
 }
 
+#dotIcon1 {
+    position: absolute;
+    right: 24px;
+}
+
 #utext {
     width: 85%;
+    height: calc(auto + 100px);
     margin: 0 auto;
     margin-top: 20px;
     font-size: 14px;
@@ -43,6 +64,7 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
+    border: 1px #E8ECEF solid;
     background-color: rgba(28, 130, 96, 0.682);
     display: inline-block;
     margin-right: 15px;
@@ -72,20 +94,30 @@
 .comuDcon5 {
     background-color: #F2F3F5;
     position: relative;
-    height: 220%;
     display: flex;
-    justify-content: center; /* 수평 가운데 정렬 */
+    flex-direction: column;
+    align-items: center; /* 필요에 따라 조정 */
 }
 
-.comuDcon6 {
-    display: flex;
+.comuDcon8 {
     margin-top: 14px;
-    position: absolute;
+    width: 90%;
+    position: relative; /* absolute 대신 relative 사용 */
+    height: auto; /* 높이를 내용에 맞게 조정 */
+}
+
+
+.comuDcon6 {
     background-color: white;
     width: 345px;
     border-radius: 15px;
     padding-top: 18px;
-    padding-bottom: 16px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.cmtCon {
+    display: flex;
 }
 
 .comuProfile2 {
@@ -95,5 +127,17 @@
     background-color: rgba(28, 130, 96, 0.682);
     display: inline-block;
     margin-right: 15px;
-    margin-left: 10px;
+    margin-left: 20px;
+    border: 1px #E8ECEF solid;
+}
+
+#dotIcon2 {
+    position: absolute;
+    right: 20px;
+}
+
+#cmtText {
+    font-size: 14px;
+    width: 90%;
+    margin: 13px auto 0;
 }

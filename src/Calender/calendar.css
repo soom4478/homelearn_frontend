@@ -52,11 +52,10 @@
 }
 
 .calendar-container {
-  width: 100%;
+  width: 98%;
   height: 669px;
   max-width: 600px;
   margin: 0 auto;
-  border: 1px solid #ddd;
   border-radius: 8px;
 }
 
@@ -72,12 +71,13 @@
   grid-template-columns: repeat(7, 1fr);
   gap: 4px;
   font-size: 14px;
+  margin-bottom: 17px;
 }
 
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 4px;
+  gap: 2px;
   font-size: 14px;
   height: 100px;
 }
@@ -90,14 +90,37 @@
 }
 
 .calendar-cell {
+  
+  width: 99%;
   background-color: #fff;
   height: 80px;
-  display: flex;
+  display: inline-block;
   align-items: flex-start;
+}
+
+.playCon, .myCon {
+  width: 99%;
+  height: 17px;
+  border-radius: 2px;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  align-content: center;
+  margin-bottom: 3px;
+}
+
+.playCon {
+  background-color: #FF395A;
+}
+
+.myCon {
+  background-color: #009788;
 }
 
 .calendar-day {
   height: auto;
+  margin-bottom: 7px;
+  margin-top: 5px;
 }
 
 .calendar-cell:hover {

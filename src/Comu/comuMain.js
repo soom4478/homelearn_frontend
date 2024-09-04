@@ -16,7 +16,7 @@ const ComuMain = () => {
     };
 
     const handleComuClick = (item) => {
-      navigate('/community:detail', { state: { item } });
+      navigate(`/community/detail`, { state: { item } });
     };
 
     return (

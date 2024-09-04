@@ -108,7 +108,7 @@ const Home = () => {
     : schedules;
 
   return (
-    <div className="container">
+    <div className="Hcontainer">
       <div className="container3">
         <img id="calenderI" src={calenderI} alt="calenderI" onClick={handleCalenderClick} />
         <img id="bell" src={bell} alt="bell" onClick={handleBellClick} /> {/* 페이지 이동 핸들러 추가 */}
@@ -130,7 +130,7 @@ const Home = () => {
       </div>
       <div>
         <p id="titleText">경기일정</p>
-        <nav className="nav1">
+        <nav className="Hnav1">
           <div className="schedule">
             {filteredSchedules.map((schedule, index) => (
               <div className="scheduleCon" key={index}>

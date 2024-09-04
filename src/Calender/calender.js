@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './calendar.css';
 import returnIcon from "../image/return.png";
+// import CalenderDtail from "./calenderDetail";
 
 const daysOfWeek = ['일', '월', '화', '수', '목', '금', '토'];
 const months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
@@ -71,6 +72,13 @@ const Calendar = () => {
           week.map((day, dayIndex) => (
             <div key={`${weekIndex}-${dayIndex}`} className="calendar-cell">
               <p className='calendar-day'>{day}</p>
+              <div className='playCon'>
+                <span id='playText'>경기</span>
+                <span id='playNum'>1</span>
+              </div>
+              <div className='myCon'>
+                <span id='myText'>직관가기!</span>
+              </div>
             </div>
           ))
         ))}
