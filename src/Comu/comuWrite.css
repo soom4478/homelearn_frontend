@@ -1,0 +1,41 @@
+.comuWcon1 {
+    padding-top: 11px;
+}
+
+#complete {
+    position: absolute;
+    right: 24px;
+    bottom: 12px;
+    font-size: 14px;
+}
+
+.comuWcon1 {
+    padding-top: 11px;
+}
+
+#complete {
+    position: absolute;
+    right: 24px;
+    bottom: 12px;
+    font-size: 14px;
+}
+
+.comuWcon3 {
+    text-align: center;
+}
+
+.titleInput {
+    border: none;
+    border-bottom: 1px solid #DEE1E6;
+    height: 45px;
+    width: 90%;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.textInput {
+    width: 90%;
+    border: none;
+    margin-top: 21px;
+    font-size: 16px;
+}

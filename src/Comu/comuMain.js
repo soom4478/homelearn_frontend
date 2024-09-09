@@ -4,6 +4,7 @@ import { comuImfo } from './comuImfo';
 import "./comuMain.css";
 import heartIcon from "../image/heartIcon.png";
 import commentIcon from "../image/commentIcon.png";
+import comuBtn from "../image/comuBtn.png";
 
 const ComuMain = () => {
     const [selectedIndex, setSelectedIndex] = useState('전체'); // 초기값을 "전체"로 설정
@@ -13,6 +14,10 @@ const ComuMain = () => {
   
     const handleItemClick = (item) => {
       setSelectedIndex(item);
+    };
+
+    const handleWriteClick = () => {
+        navigate(`/community/write`);
     };
 
     const handleComuClick = (item) => {
@@ -62,6 +67,7 @@ const ComuMain = () => {
                         </div>
                     ))}
             </div>
+            <img id="comuBtn" src={comuBtn} alt="comuBtn" onClick={handleWriteClick} />
         </div>
     );
 };

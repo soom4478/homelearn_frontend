@@ -2,12 +2,75 @@
     height: 100%;
 }
 
-.reviewStar {
-    height: 93px;
-    border-bottom: solid 1px #DEE1E6;
+.reviewStarCon {
+    height: 94px;
+    width: 90%;
+    border-bottom: solid 1px #a1afc5;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.readStar {
-    height: 93px;
-    
+.reviewStar2 {
+    margin: 0 auto;
+}
+
+#starPointView {
+    text-align: center;
+    color: #AEAEB2;
+    font-size: 16px;
+}
+
+.reviewCon2 {
+    width: 90%;
+    margin: 21px auto 28px;
+    position: relative;
+}
+
+#reviewCount {
+    font-size: 16px;
+}
+
+.reviewDrop {
+    border: none;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: #E8ECEF;
+    width: 112px;
+    height: 27px;
+    position: absolute;
+    right: 0;
+}
+
+#seq {
+    color: #767676;
+}
+
+.reviewCon3 {
+    padding-bottom: 50px;
+}
+
+.reviewCon4 {
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #DEE1E6;
+    margin-bottom: 20px;
+}
+
+.reviewPropile {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #767676;
+    margin-right: 15px;
+}
+
+.reviewImg {
+    width: 130px;
+    height: 130px;
+    border-radius: 5px;
+    background-color: #AEAEB2;
+    margin: 15px 0 6px;
 }

@@ -17,7 +17,7 @@ const FoodDetail = () => {
   const [store, setStore] = useState(null);
 
   const handleReviewClick = () => {
-    navigate(`/review`);
+    navigate(`/review/${store.id}`, { state: { store } });
   };
 
   useEffect(() => {
@@ -37,10 +37,15 @@ const FoodDetail = () => {
     return <div>Store not found</div>;
   }
 
-  const b_menus = menuImfo.filter((item) => item.store_name === store.name && item.best); // store.name과 일치하고 best가 true인 모든 메뉴 찾기
-  const s_menus = menuImfo.filter((item) => item.store_name === store.name && item.set);
-  const o_menus = menuImfo.filter((item) => item.store_name === store.name && item.one);
-  const d_menus = menuImfo.filter((item) => item.store_name === store.name && item.drink);
+  if (!store) {
+  return <div>Store not found</div>;
+}
+
+
+  const b_menus = menuImfo.filter((item) => item.store_id === store.id && item.best); // store.name과 일치하고 best가 true인 모든 메뉴 찾기
+  const s_menus = menuImfo.filter((item) => item.store_id === store.id && item.set);
+  const o_menus = menuImfo.filter((item) => item.store_id === store.id && item.one);
+  const d_menus = menuImfo.filter((item) => item.store_id === store.id && item.drink);
 
   return (
     <div className="foodDcon1">
@@ -162,6 +167,7 @@ const FoodDetail = () => {
                 <p id="priceT">{menu.price}원</p>
               </div>
             ))}
+            <div className="noneCon"></div>
           </>
         )}
       </div>

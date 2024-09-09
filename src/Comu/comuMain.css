@@ -127,3 +127,10 @@ html, body {
     border: none;
     box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.04);
 }
+
+#comuBtn {
+    position: fixed;
+    bottom: 100px; /* 필요에 따라 조정 */
+    right: 24px;  /* 필요에 따라 조정 */
+    z-index: 1000; /* 버튼이 항상 위에 있도록 설정 */
+}
