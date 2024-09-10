@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import "./comuDetail.css";
 import returnIcon from "../image/return.png";
@@ -7,13 +7,46 @@ import heartIcon1 from "../image/heart_empty.png";
 import comuIcon from "../image/comuIcon.png";
 import dotIcon from "../image/dotIcon.png";
 import dotIcon2 from "../image/dotIcon2.png";
-import { commentImfo } from './commentImfo';
+import { commentImfo, addComment } from './commentImfo';
 
 const ComuDetail = () => {
     const navigate = useNavigate();
+    const [isCommenting, setIsCommenting] = useState(false);
+    const [commentText, setCommentText] = useState('');
+    const [comments, setComments] = useState(commentImfo);
 
     const handleReturnClick = () => {
         navigate(-1); // 뒤로 이동
+    };
+
+    const handleCommentClick = () => {
+        setIsCommenting(true); // 상태 변경
+    };
+
+    const handleCommentChange = (event) => {
+        setCommentText(event.target.value);
+    };
+
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter' && commentText.trim() !== '') {
+            const formatDate = (date) => {
+                const year = String(date.getFullYear()).slice(2);
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const day = String(date.getDate()).padStart(2, '0');
+                return `${year}.${month}.${day}`;
+            };
+    
+            const newComment = {
+                id: item.id,
+                name: '사용자 이름', // 실제 사용자 이름으로 대체
+                time: formatDate(new Date()), // 원하는 형식으로 날짜 포맷
+                comment: commentText
+            };
+            addComment(newComment);
+            setComments([...comments, newComment]);
+            setCommentText('');
+            setIsCommenting(false);
+        }
     };
 
     const location = useLocation();
@@ -50,24 +83,39 @@ const ComuDetail = () => {
                     </div>
                 </div>
             </div>
-            <div className='comuDcon5'>
-                {commentImfo.filter(comment => comment.id === item.id).map((comment, index) => (
-                    <div className='comuDcon8' key={index}>
-                        <div className='comuDcon6'>
-                            <div className='cmtCon'>
-                                <div className='comuDcon7'></div>
-                                <div className='comuProfile2'></div>
-                                <div className='comuUser'>
-                                    <p id='uname'>{comment.name}</p>
-                                    <p id='utime'>{comment.time}</p>
-                                </div>
-                                <img id='dotIcon2' src={dotIcon2} alt="dotIcon2" />
-                            </div>
-                            <p id='cmtText'>{comment.comment}</p>
-                        </div>
-                    </div>
-                ))}
+            <div className='commentBcon'>
+                <span id='commentBtn' onClick={handleCommentClick}>댓글 쓰기</span>
             </div>
+            {isCommenting ? (
+                <div className='commentWrite'>
+                    <textarea
+                        id='commentBox'
+                        placeholder="댓글을 입력하세요"
+                        value={commentText}
+                        onChange={handleCommentChange}
+                        onKeyPress={handleKeyPress}
+                    ></textarea>
+                </div>
+            ) : (
+                <div className='comuDcon5'>
+                    {comments.filter(comment => comment.id === item.id).map((comment, index) => (
+                        <div className='comuDcon8' key={index}>
+                            <div className='comuDcon6'>
+                                <div className='cmtCon'>
+                                    <div className='comuDcon7'></div>
+                                    <div className='comuProfile2'></div>
+                                    <div className='comuUser'>
+                                        <p id='uname'>{comment.name}</p>
+                                        <p id='utime'>{comment.time}</p>
+                                    </div>
+                                    <img id='dotIcon2' src={dotIcon2} alt="dotIcon2" />
+                                </div>
+                                <p id='cmtText'>{comment.comment}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            )}
         </div>
     );
 };

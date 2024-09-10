@@ -91,6 +91,30 @@
     margin-left: 3px;
 }
 
+.commentBcon {
+    margin-top: 10px;
+}
+
+#commentBtn {
+    font-size: 14px;
+    color: #767676;
+    margin-left: 5%;
+}
+
+.commentWrite {
+    width: 100%;
+    margin-top: 8px;
+    text-align: center;
+}
+
+#commentBox {
+    width: 80%;
+    border: none;
+    border-radius: 15px;
+    align-content: center;
+    padding: 23px 5%;
+}
+
 .comuDcon5 {
     background-color: #F2F3F5;
     position: relative;
