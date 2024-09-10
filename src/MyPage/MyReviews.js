@@ -43,7 +43,7 @@ const MyReviews = () => {
         </button>
         <div className="title3">나의 리뷰</div>
       </div>
-      <div className="app-container3">
+      <div className="app-container12">
         {reviews.map(review => (
           <div key={review.id} className="review-card">
             <div className="review-header">

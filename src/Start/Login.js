@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './Profile.css';
-import ClearIcon from '@mui/icons-material/Clear';
+import './Login.css';
 import defaultProfileImage from '../image/Profile.png';  
 import picture from '../image/picture.png';
 import { useNavigate } from 'react-router-dom';
@@ -9,7 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-function Profile() {
+function Login() {
   const [profileImage, setProfileImage] = useState(defaultProfileImage);
   const [name, setName] = useState('');
   const [team, setTeam] = useState('');
@@ -54,7 +53,7 @@ function Profile() {
   const handleConfirm = () => {
     localStorage.setItem('name', name);
     localStorage.setItem('team', team);
-    navigate('/my');
+    navigate('/Home'); 
   };
 
   const toggleImageActions = () => {
@@ -79,13 +78,7 @@ function Profile() {
 
   return (
     <div className="profile-container">
-      <div className="profile-header">
-        <ClearIcon className="clear-icon" onClick={() => navigate('/my')} />
-        <span className="edit-profile-text">프로필 편집</span>
-        <button className="confirm-button" onClick={handleConfirm}>완료</button>
-      </div>
-
-      <div className="profile-body">
+      <div className="login-body">
         <div className="profile-image-container" ref={imageContainerRef}>
           <img
             src={profileImage}
@@ -113,7 +106,7 @@ function Profile() {
           )}
         </div>
 
-        <div className="input-group">
+        <div className="input-group2">
           <div className="name2">이름</div>
           <label htmlFor="name-input"></label>
           <input
@@ -127,43 +120,49 @@ function Profile() {
         </div>
 
         <div className="input-group">
-          <div className="team2">MY 팀</div>
-          <FormControl fullWidth sx={{ minWidth: 120, fontFamily:'Pretendard-Medium' }}>
-            <InputLabel id="team-select-label" sx={{fontFamily: 'Pretendard-Medium',}}></InputLabel>
+          <div className="team2">
+            MY 팀
+            <span className="team-description">응원하는 구단을 선택해주세요</span>
+          </div>
+          <FormControl fullWidth sx={{ minWidth: 310, fontFamily: 'Pretendard-Medium' }}>
+            <InputLabel id="team-select-label" sx={{ fontFamily: 'Pretendard-Medium' }}></InputLabel>
             <Select
-            labelId="team-select-label"
-            id="team-select"
-            value={team}
-            label=""
-            onChange={(event) => setTeam(event.target.value)}
-            sx={{ 
-              backgroundColor: '#E8ECEF', 
-              color: '#333', 
-              border: '0px solid #E8ECEF',
-              fontFamily: 'Pretendard-Medium',
-              '& .MuiSelect-icon': {
-                color: 'white',
-              },
-              '&:focus': {
-                border: '1px solid #E8ECEF',
-              }
-            }}
+              labelId="team-select-label"
+              id="team-select"
+              value={team}
+              label=""
+              onChange={(event) => setTeam(event.target.value)}
+              sx={{ 
+                backgroundColor: 'white', 
+                color: '#333', 
+                border: '0px solid #E8ECEF',
+                fontFamily: 'Pretendard-Medium',
+                '& .MuiSelect-icon': {
+                  color: 'white',
+                },
+                '&:focus': {
+                  border: '1px solid #E8ECEF',
+                }
+              }}
             >
-            <MenuItem value="KIA 타이거즈" sx={{ fontFamily: 'Pretendard-Medium' }}>KIA 타이거즈</MenuItem>
-            <MenuItem value="두산 베어스" sx={{ fontFamily: 'Pretendard-Medium' }}>두산 베어스</MenuItem>
-            <MenuItem value="롯데 자이언츠" sx={{ fontFamily: 'Pretendard-Medium' }}>롯데 자이언츠</MenuItem>
-            <MenuItem value="삼성 라이온즈" sx={{ fontFamily: 'Pretendard-Medium' }}>삼성 라이온즈</MenuItem>
-            <MenuItem value="SSG 랜더스" sx={{ fontFamily: 'Pretendard-Medium' }}>SSG 랜더스</MenuItem>
-            <MenuItem value="LG 트윈스" sx={{ fontFamily: 'Pretendard-Medium' }}>LG 트윈스</MenuItem>
-            <MenuItem value="키움 히어로즈" sx={{ fontFamily: 'Pretendard-Medium' }}>키움 히어로즈</MenuItem>
-            <MenuItem value="KT wiz" sx={{ fontFamily: 'Pretendard-Medium' }}>KT wiz</MenuItem>
-            <MenuItem value="한화 이글스" sx={{ fontFamily: 'Pretendard-Medium' }}>한화 이글스</MenuItem>
-          </Select>
+              <MenuItem value="KIA 타이거즈" sx={{ fontFamily: 'Pretendard-Medium' }}>KIA 타이거즈</MenuItem>
+              <MenuItem value="두산 베어스" sx={{ fontFamily: 'Pretendard-Medium' }}>두산 베어스</MenuItem>
+              <MenuItem value="롯데 자이언츠" sx={{ fontFamily: 'Pretendard-Medium' }}>롯데 자이언츠</MenuItem>
+              <MenuItem value="삼성 라이온즈" sx={{ fontFamily: 'Pretendard-Medium' }}>삼성 라이온즈</MenuItem>
+              <MenuItem value="SSG 랜더스" sx={{ fontFamily: 'Pretendard-Medium' }}>SSG 랜더스</MenuItem>
+              <MenuItem value="LG 트윈스" sx={{ fontFamily: 'Pretendard-Medium' }}>LG 트윈스</MenuItem>
+              <MenuItem value="키움 히어로즈" sx={{ fontFamily: 'Pretendard-Medium' }}>키움 히어로즈</MenuItem>
+              <MenuItem value="KT wiz" sx={{ fontFamily: 'Pretendard-Medium' }}>KT wiz</MenuItem>
+              <MenuItem value="한화 이글스" sx={{ fontFamily: 'Pretendard-Medium' }}>한화 이글스</MenuItem>
+            </Select>
           </FormControl>
         </div>
+        <button className="complete-button" onClick={handleConfirm}>
+          완료
+        </button>
       </div>
     </div>
   );
 }
 
-export default Profile;
+export default Login;

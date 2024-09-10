@@ -19,7 +19,7 @@ const BottomNav = () => {
 
   useEffect(() => {
     switch (location.pathname) {
-      case "/":
+      case "/home":
         setActiveButton(0);
         break;
       case "/team":
@@ -45,7 +45,7 @@ const BottomNav = () => {
   };
 
   const navItems = [
-    { text: "홈", path: "/", icon: activeButton === 0 ? icon2 : icon1 },
+    { text: "홈", path: "/home", icon: activeButton === 0 ? icon2 : icon1 },
     { text: "구단", path: "/team", icon: activeButton === 1 ? icon4 : icon3 },
     { text: "먹거리", path: "/food", icon: activeButton === 2 ? icon6 : icon5 },
     { text: "커뮤니티", path: "/community", icon: activeButton === 3 ? icon8 : icon7 },

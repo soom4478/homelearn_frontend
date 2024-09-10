@@ -22,7 +22,7 @@ const MyComments = () => {
 
   return (
     <div className="app-container">
-      <div className="header">
+      <div className="header2">
         <button className="back-button" onClick={() => navigate(-1)}>
           <ArrowBackIcon />
         </button>

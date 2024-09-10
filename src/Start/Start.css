@@ -1,0 +1,43 @@
+.start-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding: 2px;
+  }
+  
+  .Start-text{
+    font-size: 24px;
+    font-family: Pretendard-Bold;
+    margin-top: 162px;
+  }
+
+  .content {
+    text-align: center;
+    margin-top: 20%;        
+  }
+
+  .homelearn-logo{
+    margin-top: 63px;
+  }
+  
+  .kakao-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F9E000;
+    border: none;
+    border-radius: 50px;
+    padding: 15px;
+    font-size: 16px;
+    font-family: Pretendard-Medium;
+    color: #000;
+    margin-top: 207px;
+    width: 100%;
+  }
+  
+  .kakao-button img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }

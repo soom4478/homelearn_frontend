@@ -6,27 +6,27 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const MapDetail = () => {
   return (
-        <div className="app-container">
-      <div className="header">
+        
+      <div className="header4">
         <button className="back-button" onClick={() => window.history.back()}>
           <ArrowBackIcon />
         </button>
-        <div className="line2"></div>
+        <div className="line4"></div>
         <div className="text-container"></div>
       <div
-        className="stadium-map-detail"
+        className="stadium-map-detail2"
         style={{
           backgroundImage: `url(${stadiumMapImage})`,
         }}
       />
       <div
-        className="stadium-map-detail"
+        className="stadium-map-detail2"
         style={{
           backgroundImage: `url(${Samsung_Price})`,
         }}
       />
     </div>
-    </div>
+    
   );
 };
 

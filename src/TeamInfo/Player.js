@@ -74,7 +74,7 @@ const Player = () => {
     });
 
   return (
-    <div className="app-container">
+    <div className="container2">
       <div className="header">
         <button className="back-button" onClick={() => window.history.back()}>
           <ArrowBackIcon />

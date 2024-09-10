@@ -14,10 +14,14 @@ const Homeground = () => {
   }, []);
 
   return (
-    <div className="app-container">
+    <div className="container2">
       <div className="header">
         <button className="back-button" onClick={() => window.history.back()}>
-          <ArrowBackIcon />
+          <ArrowBackIcon
+            style={{
+              marginBottom:"35px"
+            }}
+          />
         </button>
         <div className="title">대구 삼성 라이온즈 파크</div>
         <div className="line"></div>
@@ -79,7 +83,7 @@ const Homeground = () => {
       </div>
 
       <button className="order-box">
-      <p className="order-text">지금 있는 구장에서<br />먹거리 주문하기</p>
+      <p className="order-text">지금 있는 구장에서<br/>먹거리 주문하기</p>
         <img src={foodOrderImage} alt="Food Order" className="order-image" />
       </button>
     </div>

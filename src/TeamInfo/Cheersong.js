@@ -57,7 +57,7 @@ const Cheersong = () => {
   };
 
   return (
-    <div className="app-container">
+    <div className="container10">
       <div className="header">
         <button className="back-button" onClick={() => window.history.back()}>
           <ArrowBackIcon />

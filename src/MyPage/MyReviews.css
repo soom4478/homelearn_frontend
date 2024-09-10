@@ -1,6 +1,9 @@
-.app-container3 {
+.app-container12 {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #E8ECEF;
     padding: 16px;
-    background-color: #F2F3F5;
   }
   
   .header3 {

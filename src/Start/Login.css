@@ -1,0 +1,181 @@
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 100px; 
+    padding: 0 21px; 
+    background-color: white;
+    border-bottom: 1px solid #E8ECEF;  
+    padding-bottom: 10px;
+  }
+  
+  .clear-icon {
+    position: absolute;
+    top: 67px;
+    left: 21px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #AEAEB2;
+  }
+  
+  .edit-profile-text {
+    flex: 1;
+    text-align: center;
+    font-size: 18px; 
+    font-weight: bold;
+    margin-top: 60px;
+    font-family: Pretendard-SemiBold;
+  }
+  
+  .confirm-button {
+    position: absolute;
+    right: 21px;
+    font-size: 14px; 
+    padding: 8px 16px;
+    top: 60px;
+    background-color: white; 
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Pretendard-Regular;
+  }
+  
+  .login-body {
+    padding: 20px 21px; 
+    margin-top: 109px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .profile-image {
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%;  
+    object-fit: cover; 
+    margin-bottom: 10px;  
+    cursor: pointer; 
+  }
+  
+  .image-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 120px;
+    z-index: 10;
+  }
+  
+  .image-action-button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    width: 150px;
+    font-family: Pretendard-Regular;
+  }
+  
+  .image-action-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .image-input {
+    display: none;
+  }
+  
+  .input-group2 {
+    width: 310px;
+    margin-bottom: 20px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  .name-input{
+    width: 95%;
+    height: 45px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-family: Pretendard-Medium;
+  }
+  
+  .team2 {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 8px;
+    font-family: Pretendard-SemiBold;
+  } 
+  
+  .picture {
+    position: absolute;  
+    width: 30px;  
+    height: 30px;  
+    border-radius: 50%; 
+    object-fit: cover;  
+    top: 60px; 
+    left: 60px;  
+  }
+  
+  .name2{
+    font-family: Pretendard-SemiBold;
+    font-size: 14px;
+  }
+  
+  .team-select-label{
+    font-family: Pretendard-Medium;
+  }
+  
+  .team-select{
+    font-family: Pretendard-Medium;
+  }
+
+  .team-description{
+    font-size: 14px;
+    color: gray;
+    margin-left: 14px;
+    font-family: Pretendard-Medium;
+  }
+
+  .complete-button {
+    padding: 10px 20px;
+    background-color: #7ED8CF;
+    color: white;
+    border: none;
+    border-radius: 50px;  
+    cursor: pointer;
+    height: 63px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 191px; 
+    font-family: Pretendard-SemiBold;
+    font-size: 18px;
+  }
+
+.complete-button:focus {
+    outline: none; 
+  }
+
+  .name2{
+    margin-bottom: 5px;
+  }
