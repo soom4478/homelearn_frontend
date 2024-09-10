@@ -1,19 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import "./comuDetail.css";
 import returnIcon from "../image/return.png";
 import { useNavigate } from 'react-router-dom';
 import heartIcon1 from "../image/heart_empty.png";
+import heartIcon2 from "../image/heart_full.png";
 import comuIcon from "../image/comuIcon.png";
 import dotIcon from "../image/dotIcon.png";
 import dotIcon2 from "../image/dotIcon2.png";
 import { commentImfo, addComment } from './commentImfo';
+import { comuImfo, updateHeartCount } from './comuImfo';
 
 const ComuDetail = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    const { item } = location.state;
+
     const [isCommenting, setIsCommenting] = useState(false);
     const [commentText, setCommentText] = useState('');
-    const [comments, setComments] = useState(commentImfo);
+    const [comments, setComments] = useState([...commentImfo]);
+    const [isHearted, setIsHearted] = useState(false);
+    const [heartCount, setHeartCount] = useState(item.comu_heart);
+
+    useEffect(() => {
+        const heartedStatus = localStorage.getItem(`isHearted_${item.id}`);
+        if (heartedStatus) {
+            setIsHearted(JSON.parse(heartedStatus));
+        }
+    }, [item.id]);
 
     const handleReturnClick = () => {
         navigate(-1); // 뒤로 이동
@@ -42,15 +56,21 @@ const ComuDetail = () => {
                 time: formatDate(new Date()), // 원하는 형식으로 날짜 포맷
                 comment: commentText
             };
-            addComment(newComment);
             setComments([...comments, newComment]);
+            addComment(newComment);
             setCommentText('');
             setIsCommenting(false);
         }
     };
 
-    const location = useLocation();
-    const { item } = location.state;
+    const handleHeartClick = () => {
+        const newHeartedStatus = !isHearted;
+        setIsHearted(newHeartedStatus);
+        localStorage.setItem(`isHearted_${item.id}`, JSON.stringify(newHeartedStatus));
+        const newHeartCount = newHeartedStatus ? heartCount + 1 : heartCount - 1;
+        setHeartCount(newHeartCount);
+        updateHeartCount(item.id, newHeartCount);
+    };
 
     return (
         <div className='comuDcon1'>
@@ -73,9 +93,9 @@ const ComuDetail = () => {
                 </div>
                 <p id='utext'>{item.comu_text}</p>
                 <div className='comuDcon4'>
-                    <div className="comuHcon">
-                        <img id="comuH" src={heartIcon1} alt="heartIcon" />
-                        <p id="comuHtext_2">{item.comu_heart}</p>
+                    <div className="comuHcon" onClick={handleHeartClick}>
+                        <img id="comuH" src={isHearted ? heartIcon2 : heartIcon1} alt="heartIcon" />
+                        <p id="comuHtext_2">{heartCount}</p>
                     </div>
                     <div className="comuCcon">
                         <img id="comuC" src={comuIcon} alt="commentIcon" />

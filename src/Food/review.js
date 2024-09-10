@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import returnIcon from "../image/return.png";
 import reviewStar from "../image/viewStar.png";
 import emptyStar from "../image/viewEmpty.png";
+import comuBtn from "../image/comuBtn.png";
 import "./review.css";
 import Rating from '@mui/material/Rating';
 import { reviewImfo } from "./reviewImfo"; // reviewImfo 배열을 임포트
@@ -14,7 +15,7 @@ const Review = () => {
     const { storeId } = useParams(); // storeId를 URL 파라미터로 가져옴
     const location = useLocation();
     const navigate = useNavigate(); // useNavigate 훅 사용
-    const [rating, setRating] = useState(4.3); // 별점 상태를 4.3으로 설정
+    const [rating, setRating] = useState(0); // 초기값을 0으로 설정
     const [sortOption, setSortOption] = useState("latest"); // 정렬 옵션 상태 관리
     const [store, setStore] = useState(null);
     const [menuId, setMenuId] = useState(null);
@@ -27,10 +28,17 @@ const Review = () => {
       setSortOption(event.target.value); // 정렬 옵션 변경
     };
 
+    const handleWriteClick = () => {
+      navigate("/review/write");
+    };
+
     useEffect(() => {
       const foundStore = stores.find((store) => store.id === parseInt(storeId));
       setStore(foundStore);
       setMenuId(location.state?.menuId || null); // menuId를 상태로 설정
+      if (foundStore) {
+        setRating(foundStore.rating); // store의 rating 값을 rating으로 설정
+      }
     }, [storeId, stores, location.state]);
 
     // store가 null이 아닌지 확인한 후에 필터링
@@ -53,14 +61,12 @@ const Review = () => {
                 name="customized-icons"
                 value={Math.round(rating * 2) / 2} // 반올림하여 표현
                 precision={0.5} // 반올림 설정
-                onChange={(event, newValue) => {
-                  setRating(newValue);
-                }}
-                icon={<img src={reviewStar} alt="review star" />}
-                emptyIcon={<img src={emptyStar} alt="empty star" />}
+                readOnly // 읽기 전용으로 설정
+                icon={<img src={reviewStar} alt="review star" style={{ width: '30px', height: '30px' }} />}
+                emptyIcon={<img src={emptyStar} alt="empty star" style={{ width: '30px', height: '30px' }} />}
               />
             </span>
-            <p id="starPointView">4.8</p>
+            <p id="starPointView">{rating}</p>
           </span>
         </div>
         <div className="reviewCon2">
@@ -82,10 +88,21 @@ const Review = () => {
                 </div>
               </div>
               <div className="reviewImg"/>
+              <div className="reviewRating">
+                <Rating
+                  name={`review-rating-${index}`}
+                  value={review.star}
+                  precision={0.5}
+                  readOnly
+                  icon={<img src={reviewStar} alt="review star" style={{ width: '20px', height: '20px' }} />}
+                  emptyIcon={<img src={emptyStar} alt="empty star" style={{ width: '20px', height: '20px' }} />}
+                />
+              </div>
               <div className="reviewText">{review.content}</div>
             </div>
           ))}
         </div>
+        <img id="comuBtn" src={comuBtn} alt="comuBtn" onClick={handleWriteClick} />
       </div>
     );
   };

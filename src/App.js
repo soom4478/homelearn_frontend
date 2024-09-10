@@ -26,7 +26,9 @@ import MyComments from './MyPage/MyComments';
 import MyReviews from './MyPage/MyReviews';
 import Settings from './MyPage/Settings';
 import ComuWrite from './Comu/comuWrite';
+import DisplayWrite from "./Comu/displayWrite"
 import Notifications from "./Alram/Notifications";
+import ReviewWrite from "./Food/reviewWrite";
 import Start from './Start/Start';  
 import Login from './Start/Login'; 
 
@@ -47,9 +49,11 @@ const App = () => {
           <Route path="/food" element={<><BottomNav /><FoodMain /></>} />
           <Route path="/food/:storeId" element={<FoodDetail />} />
           <Route path="/review/:storeId" element={<Review />} />
+          <Route path="/review/write" element={<ReviewWrite />} />
           <Route path="/community" element={<><BottomNav /><ComuMain /></>} />
           <Route path="/community/:detail" element={<ComuDetail />} />
           <Route path="/community/write" element={<ComuWrite />} />
+          <Route path="/community/display" element={<DisplayWrite />} />
           <Route path="/my" element={<><BottomNav /><PageMain /></>} />
           <Route path="/player" element={<Player />} />
           <Route path="/cheersong" element={<Cheersong />} />

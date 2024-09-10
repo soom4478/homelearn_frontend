@@ -1,0 +1,38 @@
+.disCon1 {
+    margin-top: 11px;
+}
+
+.imgInputCon {
+    height: 184px;
+    width: 90%;
+    background-color: #E8ECEF;
+    align-content: center;
+    text-align: center;
+    margin: 33px auto 0;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#disLine {
+    width: 90%;
+    color: #DEE1E6;
+    size: 1px;
+    margin: 30px auto 21px;
+}
+
+.disCon2 {
+    text-align: center;
+}
+
+.textInput {
+    width: 90%;
+    margin: auto 0;
+    font-size: 18px;
+    align-content: center;
+    height: 20px;
+}
+
+.disError {
+    color: #FF123A;
+}

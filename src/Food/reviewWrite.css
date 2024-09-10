@@ -1,0 +1,42 @@
+.reviewImg2 {
+    width: 130px;
+    height: 130px;
+    border: 10px;
+    border-radius: 5px;
+    background-color: #E8ECEF;
+    align-content: center;
+    text-align: center;
+    margin-top: 18px;
+    margin-left: 10%;
+}
+
+.reviewStarCon2 {
+    text-align: center;
+    padding: 42px 0 12px;
+}
+
+#reviewQ {
+    font-size: 16px;
+    color: #AEAEB2;
+    text-align: center;
+}
+
+#reviewLine {
+    size: 1px;
+    color: #DEE1E6;
+    width: 90%;
+    margin: 12px auto 0;
+}
+
+.reviewWcon {
+    width: 100%;
+    text-align: center;
+}
+
+.reviewWcon2 {
+    font-size: 16px;
+    border: none;
+    width: 90%;
+    align-content: center;
+    margin-top: 5px;
+}

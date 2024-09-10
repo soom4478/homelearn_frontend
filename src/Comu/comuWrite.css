@@ -30,12 +30,12 @@
     height: 45px;
     width: 90%;
     margin-top: 20px;
+    margin-bottom: 21px;
     font-size: 18px;
 }
 
 .textInput {
     width: 90%;
     border: none;
-    margin-top: 21px;
     font-size: 16px;
 }
