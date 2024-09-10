@@ -37,11 +37,6 @@ const FoodDetail = () => {
     return <div>Store not found</div>;
   }
 
-  if (!store) {
-  return <div>Store not found</div>;
-}
-
-
   const b_menus = menuImfo.filter((item) => item.store_id === store.id && item.best); // store.name과 일치하고 best가 true인 모든 메뉴 찾기
   const s_menus = menuImfo.filter((item) => item.store_id === store.id && item.set);
   const o_menus = menuImfo.filter((item) => item.store_id === store.id && item.one);
@@ -108,67 +103,82 @@ const FoodDetail = () => {
             <p>음료</p>
           </div>
         </div>
-        {b_menus.length > 0 && (
-          <>
-            <div className="noneCon"></div>
-            <div className="foodDcon8">
-              <p id="cateText">Best</p>
-            </div>
-            {b_menus.map((menu, index) => (
-              <div key={index} className="foodDcon9">
-                <p id="DtailT">{menu.detail}</p>
-                <p id="nameT">{menu.name}</p>
-                <p id="priceT">{menu.price}원</p>
-              </div>
-              
-            ))}
-          </>
-        )}
-        {s_menus.length > 0 && (
-          <>
-            <div className="noneCon"></div>
-            <div className="foodDcon8">
-              <p id="cateText">Set</p>
-            </div>
-            {s_menus.map((menu, index) => (
-              <div key={index} className="foodDcon9">
-                <p id="DtailT">{menu.detail}</p>
-                <p id="nameT">{menu.name}</p>
-                <p id="priceT">{menu.price}원</p>
-              </div>
-            ))}
-          </>
-        )}
         <div className="noneCon"></div>
-        <div className="foodDcon8">
-            <p id="cateText">단품</p>
-        </div>
-        {o_menus.length > 0 && (
-          <>
-            {o_menus.map((menu, index) => (
-              <div key={index} className="foodDcon9">
-                <p id="DtailT">{menu.detail}</p>
-                <p id="nameT">{menu.name}</p>
-                <p id="priceT">{menu.price}원</p>
-              </div>
-            ))}
-          </>
-        )}
-        <div className="noneCon"></div>
-        {d_menus.length > 0 && (
-          <>
-            <div className="foodDcon8">
-              <p id="cateText">음료</p>
-            </div>
-            {d_menus.map((menu, index) => (
-              <div key={index} className="foodDcon9">
-                <p id="DtailT">{menu.detail}</p>
-                <p id="nameT">{menu.name}</p>
-                <p id="priceT">{menu.price}원</p>
-              </div>
-            ))}
+        {(activeCategory === 'cate1' || activeCategory === 'cate2') && (
+          <div className="bestCon">
+            {b_menus.length > 0 && (
+              <>
+                <div className="foodDcon8">
+                  <p id="cateText">Best</p>
+                </div>
+                {b_menus.map((menu, index) => (
+                  <div key={index} className="foodDcon9">
+                    <p id="DtailT">{menu.detail}</p>
+                    <p id="nameT">{menu.name}</p>
+                    <p id="priceT">{menu.price}원</p>
+                  </div>
+                ))}
+              </>
+            )}
             <div className="noneCon"></div>
-          </>
+          </div>
+        )}
+        {(activeCategory === 'cate1' || activeCategory === 'cate3') && (
+          <div className="setCon">
+            {s_menus.length > 0 && (
+              <>
+                <div className="foodDcon8">
+                  <p id="cateText">Set</p>
+                </div>
+                {s_menus.map((menu, index) => (
+                  <div key={index} className="foodDcon9">
+                    <p id="DtailT">{menu.detail}</p>
+                    <p id="nameT">{menu.name}</p>
+                    <p id="priceT">{menu.price}원</p>
+                  </div>
+                ))}
+              </>
+            )}
+            <div className="noneCon"></div>
+          </div>
+        )}
+        {(activeCategory === 'cate1' || activeCategory === 'cate4') && (
+          <div className="oneCon">
+            {o_menus.length > 0 && (
+              <>
+                <div className="foodDcon8">
+                  <p id="cateText">단품</p>
+                </div>
+                {o_menus.map((menu, index) => (
+                  <div key={index} className="foodDcon9">
+                    <p id="DtailT">{menu.detail}</p>
+                    <p id="nameT">{menu.name}</p>
+                    <p id="priceT">{menu.price}원</p>
+                  </div>
+                ))}
+              </>
+            )}
+            <div className="noneCon"></div>
+          </div>
+        )}
+        {(activeCategory === 'cate1' || activeCategory === 'cate5') && (
+          <div className="drinkCon">
+            {d_menus.length > 0 && (
+              <>
+                <div className="foodDcon8">
+                  <p id="cateText">음료</p>
+                </div>
+                {d_menus.map((menu, index) => (
+                  <div key={index} className="foodDcon9">
+                    <p id="DtailT">{menu.detail}</p>
+                    <p id="nameT">{menu.name}</p>
+                    <p id="priceT">{menu.price}원</p>
+                  </div>
+                ))}
+                <div className="noneCon"></div>
+              </>
+            )}
+          </div>
         )}
       </div>
     </div>

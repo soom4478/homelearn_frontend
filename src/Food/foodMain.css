@@ -66,7 +66,7 @@ nav {
     text-align: left;
     font-weight: bold;
     align-content: center;
-    margin-top: 0;
+    margin-bottom: 10px;
     display: flex; /* flexbox 사용 */
     align-items: center; /* 상하 가운데 정렬 */
     position: relative; /* 추가 */
@@ -93,13 +93,13 @@ nav {
     border-top-right-radius: 20px;
     height: auto;
     width: 100%;
-    margin-top: 3%;
+    margin-top: 0;
     display: block;
     padding-top: 5%;
     padding-left: 0;
     align-content: flex-start;
     text-align: left;
-    padding-bottom: 93px; /* 네비게이션바 높이만큼 padding-bottom 추가 */
+    padding-bottom: 85px; /* 네비게이션바 높이만큼 padding-bottom 추가 */
     overflow-x: hidden;
     border: none;
 }
