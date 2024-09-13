@@ -1,3 +1,7 @@
+.reviewWcon1 {
+    margin-top: 28px;
+}
+
 .reviewImg2 {
     width: 130px;
     height: 130px;
@@ -8,6 +12,9 @@
     text-align: center;
     margin-top: 18px;
     margin-left: 10%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .reviewStarCon2 {

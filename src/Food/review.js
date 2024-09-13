@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { useStore } from "./StoreContext";
-import { useParams, useLocation } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+import { useParams, useLocation, useNavigate } from "react-router-dom";
 import returnIcon from "../image/return.png";
 import reviewStar from "../image/viewStar.png";
 import emptyStar from "../image/viewEmpty.png";
 import comuBtn from "../image/comuBtn.png";
 import "./review.css";
 import Rating from '@mui/material/Rating';
-import { reviewImfo } from "./reviewImfo"; // reviewImfo 배열을 임포트
+import { useReviewImfo } from "./reviewImfo"; // useReviewImfo 훅을 임포트
 
 const Review = () => {
     const { stores } = useStore();
     const { storeId } = useParams(); // storeId를 URL 파라미터로 가져옴
     const location = useLocation();
     const navigate = useNavigate(); // useNavigate 훅 사용
+    const { reviews } = useReviewImfo(); // useReviewImfo 훅 사용
     const [rating, setRating] = useState(0); // 초기값을 0으로 설정
     const [sortOption, setSortOption] = useState("latest"); // 정렬 옵션 상태 관리
     const [store, setStore] = useState(null);
@@ -29,7 +29,7 @@ const Review = () => {
     };
 
     const handleWriteClick = () => {
-      navigate("/review/write");
+      navigate("/review/write", { state: { storeId } }); // storeId를 state로 전달
     };
 
     useEffect(() => {
@@ -42,7 +42,7 @@ const Review = () => {
     }, [storeId, stores, location.state]);
 
     // store가 null이 아닌지 확인한 후에 필터링
-    const filteredReviews = store ? reviewImfo.filter(review => review.store_id === store.id && (menuId ? review.menu_id === menuId : true)) : [];
+    const filteredReviews = store ? reviews.filter(review => review.store_id == parseInt(storeId)) : [];
 
     return (
       <div className="reviewCon1">
