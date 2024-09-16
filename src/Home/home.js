@@ -51,6 +51,10 @@ const Home = () => {
     }, 100);
   };
 
+  const handleReservationClick = () => {
+    window.location.href = 'https://www.ticketlink.co.kr/sports/baseball/';
+  };
+
   const handleDayClick = (index, day) => {
     setSelectedDayIndex(index); 
     setSelectedDay(day); 
@@ -158,7 +162,7 @@ const Home = () => {
           </div>
         </nav>
 
-        <div className="container5">
+        <div className="container5" onClick={handleReservationClick}>
           <div id="rinkText">통합예매 바로가기</div>
           <img id="icon1" src={star} alt="star" />
         </div>

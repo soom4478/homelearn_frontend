@@ -3,18 +3,22 @@ import { useParams } from "react-router-dom";
 import { useStore } from "./StoreContext";
 import { useNavigate } from 'react-router-dom';
 import { menuImfo } from "./menuImfo"; // menuImfo 배열 가져오기
+import { useReviewImfo } from "./reviewImfo"; // reviewImfo 배열 가져오기
 import returnIcon from "../image/return.png";
 import star from "../image/star.png";
 import map from "../image/mapIcon.png";
+import StarRating from "./starRating"; // StarRating 컴포넌트 가져오기
 import "./foodDetail.css";
 
 const FoodDetail = () => {
   const { storeId } = useParams();
   const { stores } = useStore();
   const navigate = useNavigate(); // useNavigate 훅 사용
+  const { reviews } = useReviewImfo(); // reviewImfo 가져오기
 
   const [activeCategory, setActiveCategory] = useState('cate1');
   const [store, setStore] = useState(null);
+  const [topReview, setTopReview] = useState(null);
 
   const handleReviewClick = () => {
     navigate(`/review/${store.id}`, { state: { store } });
@@ -24,6 +28,16 @@ const FoodDetail = () => {
     const foundStore = stores.find((store) => store.id === parseInt(storeId));
     setStore(foundStore);
   }, [storeId, stores]);
+
+  useEffect(() => {
+    if (store) {
+      const storeReviews = reviews.filter((review) => review.store_id === store.id);
+      if (storeReviews.length > 0) {
+        const highestRatedReview = storeReviews.reduce((max, review) => (review.star > max.star ? review : max), storeReviews[0]);
+        setTopReview(highestRatedReview);
+      }
+    }
+  }, [store, reviews]);
 
   const handleReturnClick = () => {
     navigate(-1); // 뒤로 이동
@@ -65,10 +79,15 @@ const FoodDetail = () => {
         <div className="foodDcon4">
           <p id="reviewN" onClick={handleReviewClick}>리뷰 104개 {">"}</p>
           <div className="foodDcon5">
-            <div className="populerReviewImg"></div>
-            <div className="foodDcon7">
-              <p id="reviewText">정말 맛있어요. 꼭 드세요~~<br/>다음에 또 먹으려고요 냠냠</p>
-            </div>
+            {topReview && (
+              <>
+                <div className="populerReviewImg" style={{ backgroundImage: `url(${topReview.img})` }}></div>
+                <div className="foodDcon7">
+                  <StarRating rating={topReview.star} starSize={20} /> {/* StarRating 컴포넌트 사용 */}
+                  <p id="reviewText">{topReview.content}</p>
+                </div>
+              </>
+            )}
           </div>
         </div>
         <div className="foodDcate">
